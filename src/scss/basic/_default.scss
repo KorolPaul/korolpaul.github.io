@@ -1,0 +1,92 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $color;
+    background: $bg_color;
+    font: #{$font-size__small}/#{1.2} $font-family;
+    padding: 0;
+    scroll-behavior: smooth;
+    padding: 0;
+    @include desktop {
+        font-size: $font-size;
+    }
+}
+
+a {
+    color: $color;
+    text-decoration: none;
+    transition: .2s $easing color;
+
+    &:hover,
+    &.hover {
+        text-decoration: underline;
+        outline: none;
+    }
+    &:active,
+    &.active {
+        outline: none;
+    }
+}
+
+p {
+    margin: 0 0 20px;
+    @include desktop {
+        margin-bottom: 22px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    &:focus {
+        outline: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+ol,
+ul {
+    padding: 0 0 0 20px;
+    margin: 0 0 20px;
+    @include tablet {
+        padding-left: 19px;
+    }
+    @include desktop {
+        padding-left: 28px;
+    }
+}
+a[name] {
+    position: relative;
+    top: -50px;
+}
+
+.menu-opened {
+    overflow: hidden;
+    @include desktop {
+        overflow: initial;
+    }
+}
+
+.bright {
+    color: $cOrange;
+}
+
+article {
+    @include layout;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    @include tablet {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}

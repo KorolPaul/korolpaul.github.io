@@ -1,0 +1,21 @@
+.advantage {
+    font-size: 26px;
+    max-width: 1520px;
+    margin: auto;
+    @include tablet {
+        width: 80%;
+        font-size: 40px;
+    }
+
+    &_title {
+        // @include appearance;
+        font: 19px $font-family__heading;
+        margin-bottom: 40px;
+        @include tablet {
+            font-size: 24px;
+        }
+    }
+    &_text {
+        // @include appearance(.2s);
+    }
+}

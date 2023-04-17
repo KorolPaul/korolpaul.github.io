@@ -1,0 +1,7 @@
+.seal {
+    width: 55px;
+
+    &.js-animation {
+        @include appearance(.2s);
+    }
+}

@@ -1,0 +1,19 @@
+.about {
+    font-family: $font-family__heading;
+    width: 80%;
+    max-width: 780px;
+    margin: auto;
+    font-size: 14px;
+    text-align: center;
+    @include tablet {
+        font-size: 17px;
+        width: 60%;
+    }
+
+    &_text {
+        font-size: 19px;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+}

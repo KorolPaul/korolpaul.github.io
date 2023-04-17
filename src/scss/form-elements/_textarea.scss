@@ -1,0 +1,31 @@
+textarea {
+    @include placeholder-color($cGray);
+    color: $color;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $cGray;
+    border-radius: 0;
+    box-sizing: border-box;
+    font: 19px $font-family__heading;
+    height: 46px;
+    line-height: 46px;
+    padding: 0 18px;
+    text-align: center;
+    resize: none;
+    height: 100px;
+    margin: 0;
+    width: 100%;
+    @include tablet {
+        font-size: 18px;
+    }
+
+    &:focus,
+    &.focus {
+        border-color: $color;
+    }
+
+    .error & {
+        @include placeholder-color($cRed);
+        color: $cRed;
+    }
+}
