@@ -88,5 +88,6 @@ article {
     @include tablet {
         margin-top: 100px;
         margin-bottom: 100px;
+        max-width: 1000px;
     }
 }
