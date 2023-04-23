@@ -1,0 +1,21 @@
+.menu-toggle {
+    @include button-reset;
+    position: fixed;
+    right: 24px;
+    top: 32px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border: 1px solid currentColor;
+    border-radius: 16px;
+    z-index: 10;
+    transition: .2s $easingSmooth opacity;
+    @include tablet {
+        right: 32px;
+        top: 40px;
+    }
+    @include desktop {
+        display: none;
+    }
+}

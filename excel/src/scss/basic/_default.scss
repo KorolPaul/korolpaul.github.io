@@ -1,0 +1,79 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: $cLight;
+    background: $color;
+    font: #{$font-size__small}/#{1.18} $font-family;
+    padding: 0;
+    letter-spacing: -0.04em;
+    scroll-behavior: smooth;
+    padding: 0;
+    @include desktop {
+        font-size: $font-size;
+        line-height: 1.25;
+    }
+}
+
+main {
+    padding: 64px 0 0;
+    @include tablet {
+        padding-top: 80px;
+    }
+    @include desktop {
+        padding-top: 168px;
+    }
+}
+
+a {
+    color: $color;
+    text-decoration: none;
+    transition: .2s $easing color;
+
+    &:hover,
+    &.hover {
+        text-decoration: underline;
+        outline: none;
+    }
+    &:active,
+    &.active {
+        outline: none;
+    }
+}
+
+p {
+    margin: 0 0 20px;
+    @include desktop {
+        margin-bottom: 22px;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    &:focus {
+        outline: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+ol,
+ul {
+    padding: 0 0 0 20px;
+    margin: 0 0 20px;
+    @include tablet {
+        padding-left: 19px;
+    }
+    @include desktop {
+        padding-left: 28px;
+    }
+}

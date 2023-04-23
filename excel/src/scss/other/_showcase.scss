@@ -1,0 +1,91 @@
+.showcase {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+        align-items: flex-end;
+    }
+
+    &_title {
+        margin: 0 0 $indent;
+        @include tablet {
+            max-width: 660px;
+        }
+        @include desktop {
+            margin-bottom: 80px;
+            max-width: 1550px;
+        }
+    }
+    &_text {
+        margin: 0 0 40px;
+        font-size: 22px;
+        padding-left: 50px;
+        @include tablet {
+            max-width: 470px;
+            padding: 0;
+        }
+        @include desktop {
+            margin-bottom: 128px;
+            font-size: 40px;
+            max-width: 1030px;
+        }
+    }
+    &_video-wrapper {
+        position: relative;
+    }
+    &_video {
+        width: 100%;
+    }
+    &_video-controls {
+        position: absolute;
+        bottom: $indent;
+        left: $indent;
+        right: $indent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include tablet {
+            left: 56px;
+            right: 56px;
+            bottom: 40px;
+        }
+        @include desktop {
+            flex-direction: column;
+            left: auto;
+            right: 108px;
+            bottom: 64px;
+            gap: 24px;
+        }
+    }
+    &_video-title {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 1;
+        @include tablet {
+            font-size: 24px;
+            line-height: 30px;
+        }
+        @include desktop {
+            font-size: 60px;
+            line-height: 70px;
+        }
+    }
+    &_video-button {
+        @include button-reset;
+        background: url(#{$img}/play.svg) no-repeat center right / auto 100%;
+        font-size: 0;
+        height: 40px;
+        width: 40px;
+        @include tablet {
+            height: 64px;
+            width: 64px;
+        }
+        @include desktop {
+            height: 84px;
+            width: 64px;
+            font-size: 24px;
+            line-height: 30px;
+            padding-right: 108px;
+            width: auto;
+        }
+    }
+}

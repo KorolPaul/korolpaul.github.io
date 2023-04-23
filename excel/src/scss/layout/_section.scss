@@ -1,0 +1,11 @@
+.section {
+    position: relative;
+    margin-bottom: 48px;
+    @include tablet {
+        margin-bottom: 75px;
+    }
+
+    &_holder {
+        @include layout;
+    }
+}
