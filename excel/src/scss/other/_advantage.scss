@@ -1,0 +1,28 @@
+.advantage {
+    border-radius: 16px;
+    padding: $indent;
+    position: relative;
+    background-color: $color;
+    color: #9A9AAC;
+
+    &_number {
+        position: absolute;
+        font-size: 12px;
+        color: #9A9AAC;
+        left: $indent;
+        top: $indent;
+    }
+    &_title {
+        font-size: 20px;
+        line-height: 1;
+        font-weight: 500;
+        display: block;
+        color: $cLight;
+        margin: 0 0 16px;
+        @include desktop {
+            margin-bottom: 32px;
+            font-size: 60px;
+            line-height: 70px;
+        }
+    }
+}

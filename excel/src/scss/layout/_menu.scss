@@ -12,6 +12,7 @@
     padding: 56px 13px 13px 13px;
     flex-direction: column;
     gap: 13px;
+    display: none;
     transition: .2s $easingSmooth opacity;
     @include desktop {
         flex-direction: row;

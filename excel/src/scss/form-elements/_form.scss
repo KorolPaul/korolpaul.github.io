@@ -5,13 +5,7 @@
     border-top: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
 
-    &_title {
-        @include appearance;
-        margin: 0 0 62px;
-    }
-
     &_row {
-        @include appearance(.2s);
         margin: 0 0 13px;
         position: relative;
 

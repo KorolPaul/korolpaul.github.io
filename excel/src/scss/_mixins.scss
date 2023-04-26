@@ -49,22 +49,26 @@
     }
 }
 
-@function vw($px) {
-    @return $px * 0.068vw
+@mixin right-side-text {
+    width: 300px;
+    @include tablet {
+        width: 465px;
+    }
+
+    @include desktop {
+        width: 55%;
+    }
 }
 
-@mixin appearance($delay: 0s) {
-    transform: translateY(90%);
-    opacity: 0;
-    filter: blur(2px);
-    transition: 1s $easing transform $delay,
-                .8s $easeInOutCirc filter $delay,
-                .8s $easing opacity $delay;
-
-    .animated &,
-    &.animated {
-        transform: translateY(0);
-        opacity: 1;
-        filter: blur(0);
+@mixin right-side-text-big {
+    @include tablet {
+        max-width: 660px;
     }
+    @include desktop {
+        max-width: 1550px;
+    }
+}
+
+@function vw($px) {
+    @return $px * 0.068vw
 }

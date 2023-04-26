@@ -3,45 +3,20 @@ const thresholdSteps = [...Array(10).keys()].map(i => i / 10);
 const isMobile = window.innerWidth <= 768
 
 // sliders
-const mainider = document.querySelectorAll('.slider');
-mainider.forEach(el => {
-    tns({
-        container: el,
-        items: 1,
-        center: true,
-        gutter: 0,
-        mouseDrag: true,
-        autoplay: true,
-        nav: true,
-        navPosition: 'bottom',
-        controls: true,
-        loop: true,
-        prevButton: false,
-        autoplayButton: false,
-        autoplayButtonOutput: false,
-        autoplayTimeout: 7000,
-        mode: 'gallery',
-        speed: 600,
-    });
-});
 
-const smallSlider = document.querySelectorAll('.small-slider');
-smallSlider.forEach(el => {
+const advantagesSlider = document.querySelectorAll('.advantages_slider');
+advantagesSlider.forEach(el => {
     tns({
         container: el,
         items: 1,
         center: true,
         gutter: 0,
         mouseDrag: true,
-        autoplay: true,
-        nav: true,
+        autoplay: false,
+        nav: false,
         navPosition: 'bottom',
-        controls: true,
+        controls: false,
         loop: true,
-        prevButton: false,
-        autoplayButton: false,
-        autoplayButtonOutput: false,
-        autoplayTimeout: 7000,
     });
 });
 
@@ -89,75 +64,29 @@ if (animatedElements.length) {
     })
 }
 
-const opacityElements = document.querySelectorAll('.js-opacity');
-opacityElements.forEach(el => {
-    const observerCallback = function (e) {
-        console.log(e[0].boundingClientRect.y);
+/* Tabs */
+function initTabs() {
+    const tabsContainers = document.querySelectorAll('.tabs');
 
-        const { target, intersectionRatio } = e[0];
-        if (e[0].boundingClientRect.y > 200) {
-            const opacity = intersectionRatio;
-            target.style.opacity = opacity > 0.85 ? 1 : opacity;
+    tabsContainers.forEach(tabContainer => {
+        const tabsButtons = tabContainer.querySelectorAll('.tabs_button');
+        const tabsBlocks = tabContainer.querySelectorAll('.tabs_tab');
+
+        if (tabsButtons.length) {
+            function switchTab(e) {
+                e.preventDefault();
+
+                const index = e.target.dataset.tab;
+                tabsButtons.forEach(el => el.classList.remove('active'));
+                tabsBlocks.forEach(el => el.classList.remove('active'));
+
+                tabsButtons[index - 1].classList.add('active');
+                tabsBlocks[index - 1].classList.add('active');
+            }
+
+            tabsButtons.forEach(el => el.addEventListener('click', switchTab));
         }
-    };
-
-    const observer = new IntersectionObserver(observerCallback, {
-        rootMargin: '-20% 0px -20% 0px',
-        threshold: thresholdSteps,
-        //root: document.body
-    });
-    observer.observe(el);
-});
-
-/* form */
-const feedbackAPiUrl = 'https://api.herowarsportal.com/api/feedback';
-const submitEl = document.querySelector('.form input[type="submit"]');
-
-const validateEmail = (email) => {
-    return String(email)
-        .toLowerCase()
-        .match(
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
-};
-
-if (submitEl) {
-    submitEl.addEventListener('click', (e) => {
-        const name = document.getElementById('name');
-        const email = document.getElementById('email');
-        const message = document.getElementById('message');
-
-        if (email.value === '' || !validateEmail(email.value)) {
-            email.parentElement.classList.add('error')
-        }
-        if (message.value === '') {
-            message.parentElement.classList.add('error')
-        }
-        if (name.value === '') {
-            name.parentElement.classList.add('error')
-        }
-
-        if (email.value === '' || !validateEmail(email.value) || message.value === '' || name.value === '') {
-            return
-        }
-
-        email.parentElement.classList.remove('error');
-        message.parentElement.classList.remove('error');
-
-        /*
-        fetch(feedbackAPiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify({
-                email: email.value,
-                question: message.value,
-            })
-        }).then(() => {
-            e.target.setAttribute('disabled', true)
-        })
-         */
-        
     });
 }
+
+initTabs()

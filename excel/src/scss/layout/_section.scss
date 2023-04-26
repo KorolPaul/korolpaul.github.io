@@ -1,11 +1,25 @@
 .section {
     position: relative;
     margin-bottom: 48px;
+    overflow: hidden;
     @include tablet {
         margin-bottom: 75px;
     }
 
+    &__green {
+        background-color: $cBright;
+        color: $color
+    }
+
     &_holder {
         @include layout;
+    }
+
+    &_title-holder {
+        @include right-side-text;
+    }
+
+    &_big-title-holder {
+        @include right-side-text-big;
     }
 }

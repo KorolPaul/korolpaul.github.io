@@ -1,0 +1,9 @@
+.advantages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &_description {
+        @include right-side-text;
+    }
+}
