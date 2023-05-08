@@ -6,15 +6,12 @@
     height: 100vh;
     pointer-events: none;
     transition: .3s $easing background;
-
+    
     .menu-opened &,
+    .special-menu-opened &,
     &.opened {
         background-color: rgba(0, 0, 0, 0.6);
         pointer-events: all;
         z-index: 10;
-    }
-
-    .filters-opened & {
-        z-index: 100;
     }
 } 

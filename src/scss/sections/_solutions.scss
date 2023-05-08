@@ -1,0 +1,216 @@
+.solutions {
+    margin: 0 0 120px;
+    @include desktop {
+        margin-bottom: vw(150);
+    }
+
+    &_holder {
+        @include layout;
+    }
+
+    &_subtitle {
+        font-family: $font-family;
+        font-size: 18px;
+        line-height: 130%;
+        margin: 0 auto 32px;
+        max-width: 240px;
+        text-align: center;
+        @include desktop {
+            font-size: 24px;
+            max-width: 400px;
+            margin-bottom: 56px;
+        }
+    }
+
+    &_cards {
+        padding: 6px 0 0;
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.6vw;
+        }
+    }
+    &_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 258px;
+        height: 520px;
+        display: flex;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: top left;
+        position: relative;
+        border-radius: 16px;
+        background-color: $cPurpleDark;
+        @include desktop {
+            border-radius: 30px;
+            height: auto;
+            min-height: vw(650);
+            width: 325px;
+        }
+        @include desktop-large {
+            width: 418px;
+        }
+
+        &__red {
+            background-color: $cRed;
+        }
+
+        &__blue {
+            background-color: $cBlue;
+        }
+    }
+
+    &_card-title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 125%;
+        min-height: 53px;
+        color: #fff;
+        @include desktop {
+            font-size: 38px;
+        }
+    }
+    &_card-vat {
+        font-size: 14px;
+        line-height: 1.2;
+        display: block;
+        margin: 10px 0 0;
+        color: $bg_color;
+        text-align: center;
+        @include desktop {
+            font-size: 16px;
+        }
+
+        .solutions_card__blue & {
+            color: $color;
+        }
+    }
+    &_card-price {
+        font-family: $font-family__heading;
+        font-weight: 700;
+        font-size: 36px;
+        color: $bg_color;
+        @include desktop {
+            font-size: 48px;
+        }
+    }
+    &_card-price-value {
+        font-size: 80px;
+        line-height: .94;
+        @include desktop {
+            font-size: 100px;
+        }
+        @include desktop-large {
+            font-size: vw(140);
+        }
+    }
+    &_card-list {
+        max-width: 305px;
+        font-size: 13px;
+        line-height: 1.4;
+        list-style: none;
+        padding-left: 18px;
+        @include desktop {
+            max-width: none;
+            font-size: 14px;
+            margin-left: 0;
+            padding-left: 30px;
+        }
+        @include desktop-large {
+            font-size: vw(16);
+        }
+
+        li {
+            position: relative;
+
+            &::before {
+                content: '';
+                background-color: $color;
+                position: absolute;
+                height: 5px;
+                width: 5px;
+                border-radius: 0 2px;
+                top: 7px;
+                left: -13px;
+                @include desktop {
+                    height: 8px;
+                    width: 8px;
+                    left: -23px;
+                    top: 8px;
+                }
+            }
+        }
+    }
+
+    &_card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 $indent;
+        flex-grow: 0;
+        @include desktop {
+            padding: 0 32px;
+        }
+    }
+
+    &_card-bottom {
+        border-radius: 16px;
+        background-color: #5D4D7E;
+        padding: $indent;
+        flex-grow: 1;
+        color: $bg_color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        @include desktop {
+            border-radius: 30px;
+            padding: 24px 32px;
+        }
+
+        .solutions_card__red & {
+            background-color: $cOrange;
+            color: $color;
+        }
+        .solutions_card__blue & {
+            background-color: $cBlueLight;
+            color: $color;
+        }
+    }
+
+    &_card-sold {
+        display: block;
+        font-family: $font-family__heading;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 120%;
+        text-align: center;
+        @include desktop {
+            font-size: 56px;
+        }
+    }
+
+    .tns-outer {
+        margin-right: -$indent;
+        margin-left: -$indent;
+        @include desktop {
+            margin-right: 0;
+        }
+    }
+
+    .tns-ovh {
+        padding-right: $indent;
+        padding-left: $indent;
+        @include desktop {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+
+    .button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+.speaker-form {
+    margin: 0 0 100px;
+    position: relative;
+    @include desktop {
+        margin-bottom: vw(150);
+    }
+
+    &_holder {
+        @include layout;
+    }
+    &_content {
+        max-width: 858px;
+        margin: auto;
+    }
+
+    .section-title {
+        @include desktop {
+            margin-bottom: vw(74);
+        }
+    }
+}

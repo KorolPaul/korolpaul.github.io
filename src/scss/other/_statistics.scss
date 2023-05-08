@@ -1,0 +1,99 @@
+.statistics {
+    margin: 0 0 64px;
+    @include desktop {
+        position: relative;
+        margin-bottom: vw(150);
+    }
+
+    &_holder {
+        @include layout;
+    }
+    &_grid {
+        display: grid;
+        row-gap: 20px;
+        column-gap: 8px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        padding: 16px 0 0;
+        @include desktop {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            padding-top: vw(40);
+        }
+    }
+    &_item {
+        padding: $indent;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 20px;
+        @include desktop {
+            border-radius: 30px;
+            padding: 32px;
+        }
+
+        &__first {
+            background-color: $cBlueLight;
+            grid-row: 1;
+            grid-column: 1;
+            @include desktop {
+                grid-column: 1 / 4;
+            }
+        }
+        &__second {
+            background-color: $cYellow;
+            grid-row: 1 / 2 span;
+            grid-column: 2;
+            @include desktop {
+                grid-row: 1;
+                grid-column: 4 / 8;
+            }
+        }
+        &__third {
+            background-color: $cOrange;
+            grid-row: 3;
+            grid-column: 2 / 3;
+            @include desktop {
+                grid-row: 1;
+                grid-column: 8 / 11;
+            }
+        }
+        &__fourth {
+            background-color: $cRed;
+            grid-row: 2;
+            grid-column: 1;
+            color: $bg_color;
+            @include desktop {
+                grid-column: 1 / 6;
+            }
+        }
+        &__fifth {
+            background-color: $cBlue;
+            grid-row: 3;
+            grid-column: 1;
+            color: $bg_color;
+            @include desktop {
+                grid-row: 2;
+                grid-column: 6 / 11;
+            }
+        }
+    }
+    &_item-number {
+        font-weight: 700;
+        font-family: $font-family__heading;
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 25px;
+        @include desktop {
+            font-size: 56px;
+        }
+    }
+    &_item-text {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.4;
+        width: 90%;
+        @include desktop {
+            font-size: 30px;
+        }
+    }
+}

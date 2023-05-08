@@ -1,0 +1,182 @@
+.speakers {
+    margin: 0 0 64px;
+    @include desktop {
+        overflow: hidden;
+        margin-bottom: vw(150);
+    }
+
+    &_holder {
+        @include layout;
+        position: relative;
+        padding-bottom: 45px;
+        @include desktop {
+            padding-bottom: 0;
+        }
+    }
+
+    
+    &_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $indent 8px;
+        @include tablet {
+            padding-top: 20px;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+        }
+        @include desktop {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+
+.speakers-card {
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    color: $color;
+    text-decoration: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 288px;
+    @include tablet {
+    }
+    @include desktop {
+        border-radius: 16px;
+        height: 300px;
+    }
+    @include desktop-large {
+        height: 310px;
+    }
+
+    &_image {
+        width: 100%;
+        aspect-ratio: 1 / 1.1;
+        object-fit: cover;
+    }
+    &_content {
+        color: $color;
+        background-color: $cRed;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        position: absolute;
+        left: 0;
+        top: 168px;
+        height: 100%;
+        width: 100%;
+        padding: $indent;
+        box-sizing: border-box;
+        transition: .3s $easeOutCirc top;
+        @include desktop {
+            border-radius: 16px;
+        }
+
+        .speakers-card:hover & {
+            top: 0;
+        }
+
+        .speakers-card:nth-child(1n) & {
+            background-color: $cRed;
+            color: $bg_color;
+        }
+        .speakers-card:nth-child(2n) & {
+            background-color: $cBlueLight;
+            color: $color;
+        }
+        .speakers-card:nth-child(3n) & {
+            background-color: $cPurpleDark;
+            color: $bg_color;
+        }
+        .speakers-card:nth-child(4n) & {
+            background-color: $cRed;
+            color: $bg_color;
+        }
+        .speakers-card:nth-child(5n) & {
+            background-color: $cOrange;
+            color: $bg_color;
+        }
+        .speakers-card:nth-child(6n) & {
+            background-color: $cYellow;
+            color: $color;
+        }
+        .speakers-card:nth-child(7n) & {
+            background-color: $cBlue;
+            color: $bg_color;
+        }
+        .speakers-card:nth-child(8n) & {
+            background-color: $cBlueLight;
+            color: $color;
+        }
+    }
+
+    &_name {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 4px;
+        display: block;
+        @include desktop {
+            font-size: vw(24);
+            margin-bottom: vw(12);
+        }
+    }
+    &_position {
+        font-size: 16px;
+        line-height: 1.4;
+        display: block;
+        margin: 0 0 20px;
+        @include desktop {
+            font-size: vw(24);
+            margin-bottom: 56px;
+        }
+    }
+    &_text {
+        padding: $indent;
+        margin: 0 #{-$indent};
+        border-radius: 8px;
+        opacity: 0;
+        transition: .2s $easing opacity;
+        @include tablet {
+            border-radius: 16px;
+        }
+
+        .speakers-card:hover & {
+            opacity: 1;
+        }
+
+        .speakers-card:nth-child(1n) & {
+            background-color: #aa2e27;
+        }
+
+        .speakers-card:nth-child(2n) & {
+            background-color: $cBlue;
+        }
+
+        .speakers-card:nth-child(3n) & {
+            background-color: rgb(26, 19, 37);
+            color: $bg_color;
+        }
+
+        .speakers-card:nth-child(4n) & {
+            background-color: #aa2e27;
+        }
+
+        .speakers-card:nth-child(5n) & {
+            background-color: #914b21;
+        }
+
+        .speakers-card:nth-child(6n) & {
+            background-color: $cOrange;
+        }
+
+        .speakers-card:nth-child(7n) & {
+            background-color: #15373f;
+        }
+
+        .speakers-card:nth-child(8n) & {
+            background-color: $cBlue;
+            color: $color;
+        }
+    }
+}

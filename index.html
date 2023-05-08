@@ -1,244 +1,1061 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wilfort</title>
+    <title>LINQ</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16"> 
-    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="48x48px.ico">
+    <link rel="icon" type="image/x-icon" href="48x48px.ico">
+    <link rel="icon" type="image/png" href="16x16px.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="32x32px.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="48x48px.png" sizes="48x48">
     <meta content="telephone=no" name="format-detection">
     <meta name="HandheldFriendly" content="true">
 </head>
 <body>
     <header class="header">
         <div class="header_holder">
-            <a href="/" class="logo">
-                <img src="src/img/logo.svg" alt="">
+            <a class="logo" href="/">
+                <img class="logo_image" src="src/img/logo.svg" alt="logo">
             </a>
-            <div class="header_menu-wrapper">
-                <nav class="menu">
-                    <a href="#about" class="menu_link">ABOUT US</a>
-                    <a href="#activities" class="menu_link">ACTIVITIES</a>
-                    <a href="#lifestyle" class="menu_link">LIFESTYLE</a>
-                    <a href="#contact" class="menu_link">CONTACT US</a>
+            <div class="menu">
+                <nav class="menu_links">
+                    <a href="#agenda" class="menu_link">Agenda</a>
+                    <a href="#speakers" class="menu_link">Speakers</a>
+                    <a href="#location" class="menu_link">Location</a>
+                    <a href="#partners" class="menu_link">Partners</a>
+                    <a href="#about" class="menu_link">About us</a>
+                    <a href="#faq" class="menu_link">FAQ</a>
+                    <a href="#contact" class="menu_link">Contact us</a>
                 </nav>
+            </div>
+            <div>
+                <a class="button" href="#">
+                    Get Tickets
+                </a>
                 <button class="menu-toggle">
                     <div class="menu-toggle_line"></div>
                     <div class="menu-toggle_line"></div>
                     <div class="menu-toggle_line"></div>
                 </button>
-                <nav class="menu menu__dropdown">
-                    <a href="#about" class="menu_link">ABOUT US</a>
-                    <a href="#activities" class="menu_link">ACTIVITIES</a>
-                    <a href="#lifestyle" class="menu_link">LIFESTYLE</a>
-                    <a href="#contact" class="menu_link">CONTACT US</a>
-                </nav>
             </div>
         </div>
     </header>
 
-    <main>
-        <section class="section section__overflow">
-            <div class="section_holder">
-                <div class="slider">
-                    <div>
-                        <div class="slide">
-                            <span class="slide_title">Private&nbsp;Aircraft Management</span>
-                            <img class="slide_image" src="src/img/slider-1.jpg" alt="">
-                            <img class="slide_image-small" src="src/img/slider-1-small.jpg" alt="">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="slide">
-                            <span class="slide_title">Charter&nbsp;Flights Operations</span>
-                            <img class="slide_image" src="src/img/slider-2.jpg" alt="">
-                            <img class="slide_image-small" src="src/img/slider-2-small.jpg" alt="">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="slide">
-                            <span class="slide_title">Aircraft Sales &&nbsp;Acquisitions</span>
-                            <img class="slide_image" src="src/img/slider-3.jpg" alt="">
-                            <img class="slide_image-small" src="src/img/slider-3-small.jpg" alt="">
-                        </div>
-                    </div>
-                    <div>
-                        <div class="slide">
-                            <span class="slide_title">Design&nbsp;&&nbsp;Completion Management</span>
-                            <img class="slide_image" src="src/img/slider-4.jpg" alt="">
-                            <img class="slide_image-small" src="src/img/slider-4-small.jpg" alt="">
-                        </div>
+    <main class="main main__small-top-indent">
+        <div class="showcase">
+            <div class="showcase_holder">
+                <img class="showcase_video" src="src/img/showcase.png" alt="">
+                <!--
+                    <video class="showcase_video" loop playsinline autoplay muted>
+                        <source src="src/img/showcase-mobile.mp4" data-url="src/img/showcase.mp4" data-url-mobile="src/img/showcase-mobile.mp4" type="video/mp4">
+                        <img src="src/img/showcase-photo.jpg" alt="">
+                    </video>
+                -->
+                <div class="showcase_content">
+                    <h2 class="showcase_title">
+                        Linq <span>qonference</span>
+                    </h2>
+                    <h3 class="showcase_subtitle">
+                        For tech minds and souls
+                    </h3>
+                    <div class="showcase_content-divider"></div>
+                    <h2 class="showcase_title showcase_title__big">
+                        <span class="bright">22-23</span> september
+                    </h2>
+                    <h3 class="showcase_subtitle">
+                        Minthis hills Paphos, Cyprus 
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+        <section class="intro intro__background-2">
+            <a name="about"></a>
+            <div class="intro_holder">
+                <h2 class="section-title">
+                    <strong>tech happining</strong>
+                    <span class="bright">in the heart</span> of Cyprus tech scene
+                </h2>
+                <div class="intro_content">
+                    <div class="intro_text">
+                        <p>
+                            Join Linq - a place where tech executives, investors, policymakers and tech-lovers come together to inspire, educate and connect, all while having an unparalleled experience.
+                        </p>
+                        <a href="#" class="button">About Linq</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="section_holder">
-                <a name="about"></a>
-                <h2 class="section_title animated">ABOUT WILFORT AERO</h2>
-                <div class="about">
-                    <p class="about_text">We provide our clients and partners with the most comprehensive private aviation market intelligence advice, customized to meet their needs. What really makes the difference is the pride we take in building long-term relationships and supporting our clients with an uncompromising commitment to aviation.</p>
-                    <img src="src/img/seal.svg" alt="" class="seal">
+        <section class="events">
+            <div class="events_holder">
+                <span class="section-title section-title__center events_title">
+                   <strong> What to expect</strong> <span class="bright">at Linq</span>
+                </span>
+                <div class="events_items">
+                    <div class="events_items-column">
+                        <div class="events_item">
+                            <div class="events_item-image-wrapper">
+                                <img class="events_item-image" src="src/img/events/event-1.jpg" loading="lazy" alt="events">
+                            </div>
+                            <div class="events_item-content">
+                                <span class="events_item-title">GameDev Camp by Google</span>
+                                <p class="events_item-text">Gain unparalleled insights from expert speakers in</p>
+                            </div>
+                        </div>
+                        <div class="events_item events_item__dummy"></div>
+                        <div class="events_item events_item__dummy"></div>
+                        <div class="events_item">
+                            <div class="events_item-image-wrapper">
+                                <img class="events_item-image" src="src/img/events/event-2.jpg" loading="lazy" alt="events">
+                            </div>
+                            <div class="events_item-content">
+                                <span class="events_item-title">Fun & rise for Startups</span>
+                                <p class="events_item-text">Gain unparalleled insights from expert speakers in an intimate setting.</p>
+                            </div>
+                        </div>
+                        <div class="events_item">
+                            <div class="events_item-image-wrapper">
+                                <img class="events_item-image" src="src/img/events/event-3.jpg" loading="lazy" alt="events">
+                            </div>
+                            <div class="events_item-content">
+                                <span class="events_item-title">Sport events</span>
+                                <p class="events_item-text">
+                                    Running
+                                    <br>
+                                    Cycling
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="events_items-column">
+                        <div class="events_item">
+                            <div class="events_item-image-wrapper">
+                                <img class="events_item-image" src="src/img/events/event-4.jpg" loading="lazy" alt="events">
+                            </div>
+                            <div class="events_item-content">
+                                <span class="events_item-title">Limassangeles</span>
+                                <p class="events_item-text">Gain unparalleled insights from expert speakers in an intimate setting.</p>
+                            </div>
+                        </div>
+                        <div class="events_item">
+                            <div class="events_item-image-wrapper">
+                                <img class="events_item-image" src="src/img/events/event-5.jpg" loading="lazy" alt="events">
+                            </div>
+                            <div class="events_item-content">
+                                <span class="events_item-title">C-level Boot Camp</span>
+                                <p class="events_item-text">Gain unparalleled insights from expert speakers in an intimate setting.</p>
+                            </div>
+                        </div>
+                        <div class="events_item">
+                            <div class="events_item-image-wrapper">
+                                <img class="events_item-image" src="src/img/events/event-6.jpg" loading="lazy" alt="events">
+                            </div>
+                            <div class="events_item-content">
+                                <span class="events_item-title">The hottest event season in Cyprus</span>
+                                <p class="events_item-text">Gain unparalleled insights from expert speakers</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         
-        <section class="section section__dark">
-            <div class="section_holder">
-                <div class="advantage">
-                    <p class="advantage_title">Wilfort Aero (part of the Wilfort Group) combines expertise in all segments of the business aviation industry to deliver a turnkey solution</p>
-                    <p class="advantage_text">We will provide the full range of services from charter organizing to interim solutions between the sale of your aircraft and the arrival of your new one.</p>
+        <section class="topics">
+            <a name="agenda"></a>
+            <div class="topics_figures-wrapper">
+                <div class="topics_holder">
+                    <div class="topics_content">
+                        <h2 class="section-title">
+                            <strong>What we’ll be</strong>
+                            <span class="bright">talking about</span>
+                        </h2>
+                        <div class="topics_text">
+                            <p>
+                                We're committed to giving you an experience like no other –a vibrant hub for innovation in tech
+                            </p>
+                        </div>
+                    </div>
+                    <div class="topics_items">
+                        <a href="#" class="topics_item">
+                            <span class="topics_item-title">C-level & Head of</span>
+                            <div class="topics_item-content">
+                                <ul class="topics_item-list">
+                                    <li>Negotiation Skills</li>
+                                    <li>Sales and Pitches</li>
+                                    <li>Team Efficiency</li>
+                                    <li>Modern Marketing&PR in Tech</li>
+                                    <li>Business Intelligence</li>
+                                    <li>Emerging Markets</li>
+                                    <li>Leadership in 2025</li>
+                                </ul>
+                                <div class="topics_item-logo-wrapper">
+                                    <img src="src/img/partners/vacant.png" alt="" class="topics_item-logo">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="topics_item topics_item__purple">
+                            <span class="topics_item-title">Startups & investors</span>
+                            <div class="topics_item-content">
+                                <ul class="topics_item-list">
+                                    <li>Pitching start-ups</li>
+                                    <li>Pimp My Start-up</li>
+                                    <li>Team Efficiency</li>
+                                    <li>Competition</li>
+                                    <li>Venture Capital Trends </li>
+                                    <li>Angel Investor Communities</li>
+                                    <li>Future of startup accelerators in Cyprus</li>
+                                    <li>Opportunities for Cyprus based Start-ups</li>
+                                </ul>
+                                <div class="topics_item-logo-wrapper">
+                                    <img src="src/img/partners/vacant.png" alt="" class="topics_item-logo">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="topics_item topics_item__orange">
+                            <span class="topics_item-title">Game camp</span>
+                            <div class="topics_item-content">
+                                <ul class="topics_item-list">
+                                    <li>Match 3 genre issues for SMBs</li>
+                                    <li>Hybrid models of monetisation</li>
+                                    <li>Complicated regulatory cases</li>
+                                    <li>Game marketing</li>
+                                    <li>New ways of UA</li>
+                                    <li>Emerging markets</li>
+                                </ul>
+                                <div class="topics_item-logo-wrapper">
+                                    <img src="src/img/partners/vacant.png" alt="" class="topics_item-logo">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="topics_item  topics_item__yellow">
+                            <span class="topics_item-title">Shape stage</span>
+                            <div class="topics_item-content">
+                                <ul class="topics_item-list">
+                                    <li>Creativity</li>
+                                    <li>Secret recipes for effective time management</li>
+                                    <li>Verbal Skills for Founder's </li>
+                                    <li>Speech</li>
+                                    <li>Tech community of Cyprus</li>
+                                    <li>Panel discussion SexTech</li>
+                                    <li>Kinky in tech</li>
+                                    <li>Music & party</li>
+                                </ul>
+                                <div class="topics_item-logo-wrapper">
+                                    <img src="src/img/partners/vacant.png" alt="" class="topics_item-logo">
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="topics_bottom">
+                        <a href="#" class="button">See program</a>
+                    </div>
                 </div>
             </div>
         </section>
-        <img src="src/img/plane-1.jpg" alt="" class="section_image js-opacity">
 
-        <section class="section">
-            <div class="section_holder">
-                <h2>Wilfort aero activities</h2>
-                <div class="activities">
-                    <div class="activity">
-                        <h3 class="activity_title">Charter flight operations</h3>
-                        <p class="activity_text">Our flight operations are achieved quietly with exacting efficiency and accountability. Whether travelling for business or leisure, when a flight request is received, our Charter Operatorс will ensure every aspect of your flight is planned, coordinated and confirmed, providing a seamless travel experience.</p>
+        <section class="statistics">
+            <div class="statistics_holder">
+                <h2 class="section-title section-title__center">
+                    <strong>Who you will</strong>
+                    <div class="bright">meet at Linq</div>
+                </h2>
+                <div class="statistics_grid">
+                    <div class="statistics_item statistics_item__first">
+                        <div class="statistics_item-number">
+                            700
+                        </div>
+                        <div class="statistics_item-text">
+                            Attendees
+                        </div>
                     </div>
-                    <div class="activity">
-                        <img src="src/img/activity-1.png" alt="" class="activity_image js-animation">
-                        <h3 class="activity_title">Private aircraft managements</h3>
-                        <p class="activity_text">Wilfort Aero offers a full suite of aircraft management services giving you the advantage of our experience in all fields, and providing you with the peace of mind that your aircraft is in the best of care. Our management services are based on turnkey solutions adaptable to the preferences and needs of our aircraft owners – either covering the entire suite of tasks required for aircraft operations or fine-tuning to our customer’s needs.</p>
+                    <div class="statistics_item statistics_item__second">
+                        <div class="statistics_item-number">
+                            70%
+                        </div>
+                        <div class="statistics_item-text">
+                            Owners and c-level executives
+                        </div>
+                    </div>
+                    <div class="statistics_item statistics_item__third">
+                        <div class="statistics_item-number">
+                            15
+                        </div>
+                        <div class="statistics_item-text">
+                            Countries
+                        </div>
+                    </div>
+
+                    <div class="statistics_item statistics_item__fourth">
+                        <div class="statistics_item-number">
+                            100%
+                        </div>
+                        <div class="statistics_item-text">
+                            Decision-makers
+                        </div>
+                    </div>
+                    <div class="statistics_item statistics_item__fifth">
+                        <div class="statistics_item-number">
+                            130+
+                        </div>
+                        <div class="statistics_item-text">
+                            Companies
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section__dark">
-            <div class="section_holder">
-                <div class="advantage">
-                    <p class="advantage_title">Your trusted partner in private aviation</p>
-                    <p class="advantage_text">Wilfort is connected to the world's largest private aviation infrastructure. This means we have operational structure and stability while providing access to unrivaled aviation resources.</p>
+        <section class="speakers">
+            <a name="speakers"></a>
+            <div class="speakers_holder">
+                <div class="section-top">
+                    <h2 class="section-title">Speakers</h2>
+                    <a href="#" class="button">All speakers</a>
+                </div>
+                <div class="speakers_grid">
+                    <a href="#" class="speakers-card">
+                        <img class="speakers-card_image" src="src/img/speakers/speaker-1.png" alt="Madison Hutchinson">
+                        <div class="speakers-card_content">
+                            <span class="speakers-card_name">
+                                Mariusz Gasiewski
+                            </span>
+                            <span class="speakers-card_position">
+                                CEE Mobile Gaming Lead
+                            </span>
+                            <div class="speakers-card_text">
+                                <p>Mariusz Gasiewski has been with Google since 2007. He is leading mobile gaming and apps initiatives at Google for Startups Campus in Warsaw, supporting growth of mobile gaming and apps ecosystem</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="speakers-card">
+                        <img class="speakers-card_image" src="src/img/speakers/speaker-2.png" alt="Madison Hutchinson">
+                        <div class="speakers-card_content">
+                            <span class="speakers-card_name">
+                                Mariusz Gasiewski
+                            </span>
+                            <span class="speakers-card_position">
+                                CEE Mobile Gaming Lead
+                            </span>
+                            <div class="speakers-card_text">
+                                <p>Mariusz Gasiewski has been with Google since 2007. He is leading mobile gaming and apps initiatives at Google for Startups Campus in Warsaw, supporting growth of mobile gaming and apps ecosystem</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="speakers-card">
+                        <img class="speakers-card_image" src="src/img/speakers/speaker-3.png" alt="Madison Hutchinson">
+                        <div class="speakers-card_content">
+                            <span class="speakers-card_name">
+                                Mariusz Gasiewski
+                            </span>
+                            <span class="speakers-card_position">
+                                CEE Mobile Gaming Lead
+                            </span>
+                            <div class="speakers-card_text">
+                                <p>Mariusz Gasiewski has been with Google since 2007. He is leading mobile gaming and apps initiatives at Google for Startups Campus in Warsaw, supporting growth of mobile gaming and apps ecosystem</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="speakers-card">
+                        <img class="speakers-card_image" src="src/img/speakers/speaker-4.png" alt="Madison Hutchinson">
+                        <div class="speakers-card_content">
+                            <span class="speakers-card_name">
+                                Mariusz Gasiewski
+                            </span>
+                            <span class="speakers-card_position">
+                                CEE Mobile Gaming Lead
+                            </span>
+                            <div class="speakers-card_text">
+                                <p>Mariusz Gasiewski has been with Google since 2007. He is leading mobile gaming and apps initiatives at Google for Startups Campus in Warsaw, supporting growth of mobile gaming and apps ecosystem</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="speakers-card">
+                        <img class="speakers-card_image" src="src/img/speakers/speaker-1.png" alt="Madison Hutchinson">
+                        <div class="speakers-card_content">
+                            <span class="speakers-card_name">
+                                Mariusz Gasiewski
+                            </span>
+                            <span class="speakers-card_position">
+                                CEE Mobile Gaming Lead
+                            </span>
+                            <div class="speakers-card_text">
+                                <p>Mariusz Gasiewski has been with Google since 2007. He is leading mobile gaming and apps initiatives at Google for Startups Campus in Warsaw, supporting growth of mobile gaming and apps ecosystem</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="speakers-card">
+                        <img class="speakers-card_image" src="src/img/speakers/speaker-2.png" alt="Madison Hutchinson">
+                        <div class="speakers-card_content">
+                            <span class="speakers-card_name">
+                                Mariusz Gasiewski
+                            </span>
+                            <span class="speakers-card_position">
+                                CEE Mobile Gaming Lead
+                            </span>
+                            <div class="speakers-card_text">
+                                <p>Mariusz Gasiewski has been with Google since 2007. He is leading mobile gaming and apps initiatives at Google for Startups Campus in Warsaw, supporting growth of mobile gaming and apps ecosystem</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="speakers-card">
+                        <img class="speakers-card_image" src="src/img/speakers/speaker-3.png" alt="Madison Hutchinson">
+                        <div class="speakers-card_content">
+                            <span class="speakers-card_name">
+                                Mariusz Gasiewski
+                            </span>
+                            <span class="speakers-card_position">
+                                CEE Mobile Gaming Lead
+                            </span>
+                            <div class="speakers-card_text">
+                                <p>Mariusz Gasiewski has been with Google since 2007. He is leading mobile gaming and apps initiatives at Google for Startups Campus in Warsaw, supporting growth of mobile gaming and apps ecosystem</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="speakers-card">
+                        <img class="speakers-card_image" src="src/img/speakers/speaker-4.png" alt="Madison Hutchinson">
+                        <div class="speakers-card_content">
+                            <span class="speakers-card_name">
+                                Mariusz Gasiewski
+                            </span>
+                            <span class="speakers-card_position">
+                                CEE Mobile Gaming Lead
+                            </span>
+                            <div class="speakers-card_text">
+                                <p>Mariusz Gasiewski has been with Google since 2007. He is leading mobile gaming and apps initiatives at Google for Startups Campus in Warsaw, supporting growth of mobile gaming and apps ecosystem</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
-        <img src="src/img/plane-2.jpg" alt="" class="section_image js-opacity">
 
-        <section class="section section__big-top-indent">
-            <div class="section_holder">
-                <a name="activities"></a>
-                <div class="activities">
-                    <div class="activity">
-                        <img src="src/img/activity-2.png" alt="" class="activity_image js-animation">
-                        <h3 class="activity_title">Aircraft sales and acquisition</h3>
-                        <p class="activity_text">Buying or selling an aircraft is a complex process, and you need to seek professional advice to ensure that nothing is overlooked. This, combined with experienced legal counsel, will ensure a smooth transaction. Wilfort Aero combines expertise in all segments of the business aviation industry to deliver a turnkey solution - from pre-purchase inspections to pricing negotiations, legal support, import or export requirements, aircraft registry selection, crew selection and appointment to maintenance and even refurbishment management.</p>
-                        <p class="activity_disclaimer">Our charter team can provide interim solutions between the sale of your aircraft and the arrival of your new one.</p>
-                    </div>
-                    <div class="activity">
-                        <img src="src/img/activity-3.png" alt="" class="activity_image js-animation">
-                        <h3 class="activity_title">Design and completion management</h3>
-                        <p class="activity_text">Your brand, whether personal or corporate, has taken years to realize the esteem it rightly deserves. You have worked hard to develop a reputation for quality, performance, and value. Like everything else in your life, your aircraft should reflect the success of that brand. Our professional design team, in collaboration with our skilled and experienced consultants, ensures your private jet interior is not only exquisite and fulfills your every desire, but also has the fit and finish to last for years.</p>
-                        <p class="activity_disclaimer">Wilfort Aero’s innovative interior solutions enhance the overall cabin aesthetics as well as your on-board experience, comfort, convenience, and enjoyment. We hand-craft nearly every aspect of an aircraft interior, right down to the stitching on the seats.</p>
-                    </div>
-                </div>
+        <section class="join">
+            <a name="contact"></a>
+
+            <div class="join_holder">
+                <h2 class="section-title section-title__center">
+                    <strong>join the community</strong>
+                    <span class="cold">of cyprus tech minds&souls</span>
+                </h2>
+                <form class="join_form">
+                    <input class="join_form-input" type="text" placeholder="Enter your email">
+                    <input class="join_form-button" type="submit" value="">
+                </form>
             </div>
         </section>
 
-
-        <section class="section section__dark">
-            <div class="section_holder">
-                <div class="advantage js-animation">
-                    <p class="advantage_title">We focus on you and your needs</p>
-                    <p class="advantage_text">Tired of waiting for hours, being stuck in check-in queues, having to sit in narrow seats, or missing a scheduled flight? No problem, your private jet awaits you.</p>
+        <section class="location">
+            <a name="location"></a>
+            <div class="location_holder">
+                <h2 class="section-title">Limassol</h2>
+                <div class="location_content">
+                    <p>The location of this year's conference is everything and we can't wait for you to experience it firsthand! </p>
+                    <a class="button" href="#">Get Tickets</a>
                 </div>
+                <img class="location_image" src="src/img/locations/location-1.png" loading="lazy" alt="">
+                <img class="location_image" data-src="src/img/locations/location-2.png" loading="lazy" alt="">
+                <img class="location_image" data-src="src/img/locations/location-3.png" loading="lazy" alt="">
             </div>
         </section>
 
         
-        <section class="section  section__overflow">
-            <div class="section_holder">
-                <a name="lifestyle"></a>
-                <div class="experience js-animation">
-                    <h2 class="experience_title">Wilfort Lifestyle Experiences</h2>
-                    <img src="src/img/experience.jpg" alt="" class="experience_image">
-                    <img src="src/img/experience-small.jpg" alt="" class="experience_image-small">
-                    <div class="about">
-                        <h2 class="about_title">Experience wilfort lifestyle</h2>
-                        <p class="about_text">Discover the best in cultural and cullinary experiences with Wilfort. Our like-minded partners in fine wine and cuisine, international art, and health and welness help us create unuque luxury experiences by extending a variety of exclusive offeings to our Owners.</p>
-                        <img src="src/img/seal.svg" alt="" class="seal">
+        <section class="video">
+            <div class="video_holder">
+                <h2 class="section-title section-title__center">Linq 2023 teaser</h2>
+                <div class="video_item">
+                    <iframe src="https://www.youtube.com/embed/YvGpmrdjXe4" title="Highlights from Cyprus IT Forum 2021" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0">
+                    </iframe>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="comments">
+            <div class="comments_holder">
+                <h2 class="section-title section-title__center">What people say</h2>
+                <div class="comments_grid">
+                    <div class="comments_card">
+                        <img class="comments_card-image" src="src/img/comments/comment-1.png" alt="comment">
+                        <div class="comments_card-text">
+                            <p>
+                                “It was very nice to see a warm, friendly atmosphere, high professionalism of the team and an excellent selection of speakers.”
+                            </p>
+                        </div>
+                        <span class="comments_card-name">
+                            Dmitry Danilenko
+                        </span>
+                        <span class="comments_card-position">
+                            Founder, PIKE
+                        </span>
+                    </div>
+                    <div class="comments_card">
+                        <img class="comments_card-image" src="src/img/comments/comment-2.png" alt="comment">
+                        <div class="comments_card-text">
+                            <p>
+                                “Great experience after a long pause”
+                            </p>
+                        </div>
+                        <span class="comments_card-name">
+                            Vladimir Polakov
+                        </span>
+                        <span class="comments_card-position">
+                            Head of Sales, Eccompay
+                        </span>
+                    </div>
+                    <div class="comments_card">
+                        <img class="comments_card-image" src="src/img/comments/comment-3.png" alt="comment">
+                        <div class="comments_card-text">
+                            <p>
+                                “A well-organized event for IT specialists with productive networking and an interesting program of speeches.”
+                            </p>
+                        </div>
+                        <span class="comments_card-name">
+                            Denys Garmash
+                        </span>
+                        <span class="comments_card-position">
+                            CEO, Physarium Development
+                        </span>
+                    </div>
+                    <div class="comments_card">
+                        <img class="comments_card-image" src="src/img/comments/comment-4.png" alt="comment">
+                        <div class="comments_card-text">
+                            <p>
+                                “The best IT event on the island so far, by far.”
+                            </p>
+                        </div>
+                        <span class="comments_card-name">
+                            Alexey Kvasov
+                        </span>
+                        <span class="comments_card-position">
+                            CIO, GAme Insight
+                        </span>
+                    </div>
+                    <div class="comments_card">
+                        <img class="comments_card-image" src="src/img/comments/comment-1.png" alt="comment">
+                        <div class="comments_card-text">
+                            <p>
+                                “It was very nice to see a warm, friendly atmosphere, high professionalism of the team and an excellent selection of speakers.”
+                            </p>
+                        </div>
+                        <span class="comments_card-name">
+                            Dmitry Danilenko
+                        </span>
+                        <span class="comments_card-position">
+                            Founder, PIKE
+                        </span>
+                    </div>
+                    <div class="comments_card">
+                        <img class="comments_card-image" src="src/img/comments/comment-2.png" alt="comment">
+                        <div class="comments_card-text">
+                            <p>
+                                “Great experience after a long pause”
+                            </p>
+                        </div>
+                        <span class="comments_card-name">
+                            Vladimir Polakov
+                        </span>
+                        <span class="comments_card-position">
+                            Head of Sales, Eccompay
+                        </span>
+                    </div>
+                    <div class="comments_card">
+                        <img class="comments_card-image" src="src/img/comments/comment-3.png" alt="comment">
+                        <div class="comments_card-text">
+                            <p>
+                                “A well-organized event for IT specialists with productive networking and an interesting program of speeches.”
+                            </p>
+                        </div>
+                        <span class="comments_card-name">
+                            Denys Garmash
+                        </span>
+                        <span class="comments_card-position">
+                            CEO, Physarium Development
+                        </span>
+                    </div>
+                    <div class="comments_card">
+                        <img class="comments_card-image" src="src/img/comments/comment-4.png" alt="comment">
+                        <div class="comments_card-text">
+                            <p>
+                                “The best IT event on the island so far, by far.”
+                            </p>
+                        </div>
+                        <span class="comments_card-name">
+                            Alexey Kvasov
+                        </span>
+                        <span class="comments_card-position">
+                            CIO, GAme Insight
+                        </span>
+                    </div>
+                </div>
+            </div>
+                    
+        </section>
+
+        <section class="solutions">
+            <div class="solutions_holder">
+                <h2 class="section-title section-title__center">Tickets</h2>
+                <h3 class="solutions_subtitle">Find solutions to your most pressing issues </h3>
+                <div class="timeline">
+                    <div class="timeline_item timeline_item__ended">
+                        <div class="timeline_item-title">
+                            <span>Super</span>
+                            Early Bird
+                        </div>
+                        <div class="timeline_item-date">Ended</div>
+                    </div>
+                    <div class="timeline_item timeline_item__current">
+                        <div class="timeline_item-title">Early Bird</div>
+                        <div class="timeline_item-date">Ends June 1</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_item-title">Regular</div>
+                        <div class="timeline_item-date">Ends July 1</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_item-title">Late</div>
+                        <div class="timeline_item-date">Ends August 1</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_item-title">Final</div>
+                        <div class="timeline_item-date">Ends October 13</div>
+                    </div>
+                    <div class="timeline_item">
+                        <div class="timeline_item-title">
+                            <span>Last</span>
+                            Cchance
+                        </div>
+                        <div class="timeline_item-date">Ends October 13</div>
+                    </div>
+                </div>
+
+                <div class="solutions_cards js-tickets-slider">
+                    <div>
+                        <div class="solutions_card">
+                            <div class="solutions_card-top">
+                                <div class="solutions_card-title">Business</div>
+                                <span class="solutions_card-price">$100</span>
+                            </div>
+                            <div class="solutions_card-bottom">
+                                <div>
+                                    <span class="solutions_card-list-title">Professional Value </span>
+                                    <ul class="solutions_card-list">
+                                        <li>Access to all stages & an after-party</li>
+                                        <li>One place on LINQ's job board</li>
+                                        <li>Access to the networking app 14 days prior to the event</li>
+                                    </ul>
+                                    <span class="solutions_card-list-title">Fun features </span>
+                                    <ul class="solutions_card-list">
+                                        <li>Participation in prize lotteries & access to special offers from sponsors</li>
+                                        <li>Great afterparties with the 70's music, electronic late night rave</li>
+                                        <li>Merch “Tech Mind & Soul”</li>
+                                    </ul>
+                                </div>
+                                <span class="solutions_card-sold">SOLD OUT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="solutions_card solutions_card__red">
+                            <div class="solutions_card-top">
+                                <div class="solutions_card-title">Executive</div>
+                                <span class="solutions_card-price">$860</span>
+                            </div>
+                            <div class="solutions_card-bottom">
+                                <div>
+                                    <span class="solutions_card-list-title">Professional Value </span>
+                                    <ul class="solutions_card-list">
+                                        <li>Set of start-ups' contact details, pitchdecks</li>
+                                        <li>Specially curated content</li>
+                                        <li>Safe networking</li>
+                                        <li>Access to speakers' area</li>
+                                    </ul>
+                                    <span class="solutions_card-list-title">Comfort features</span>
+                                    <ul class="solutions_card-list">
+                                        <li>Dedicated private networking zone</li>
+                                        <li>Lunch & dinner, bar, shisha</li>
+                                        <li>Reserved</li>
+                                    </ul>
+                                    <span class="solutions_card-list-title">Fun features </span>
+                                    <ul class="solutions_card-list">
+                                        <li>Dedicated cycling event</li>
+                                        <li>Exclusive merch "Tech Community Supporter"</li>
+                                        <li>Our respect & gratitude</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a class="button button__dark" href="#">Get Ticket</a>
+                                    <span class="solutions_card-vat">VAT not included</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="solutions_card solutions_card__blue">
+                            <div class="solutions_card-top">
+                                <div class="solutions_card-title">Start-Up</div>
+                                <span class="solutions_card-price">$2000</span>
+                            </div>
+                            <div class="solutions_card-bottom">
+                                <div>
+                                    <span class="solutions_card-list-title">Professional Value </span>
+                                    <ul class="solutions_card-list">
+                                        <li>Business tickets for up to 3 team members</li>
+                                        <li>Mini-stand with a TV screen included</li>
+                                        <li>Safe networking</li>
+                                        <li>Pitchdeck & contact details sent to investors</li>
+                                        <li>Pitch work-shop included</li>
+                                    </ul>
+                                    <span class="solutions_card-list-title">Fun features </span>
+                                    <ul class="solutions_card-list">
+                                        <li>Exclusive team merch «StartUp Mind Inside»</li>
+                                        <li>Registration for Pimp My Start-up Competition</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a class="button button__dark" href="#">Get Ticket</a>
+                                    <span class="solutions_card-vat">VAT not included</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="section_holder">
-                <div class="small-slider-wrapper js-animation">
-                    <div class="small-slider">
-                        <div>
-                            <img src="src/img/slide-1.jpg" alt="" class="small-slider_image">
-                        </div>
-                        <div>
-                            <img src="src/img/slide-1.jpg" alt="" class="small-slider_image">
-                        </div>
-                        <div>
-                            <img src="src/img/slide-1.jpg" alt="" class="small-slider_image">
-                        </div>
-                    </div>
+
+        <section class="sponsors">
+            <div class="sponsors_holder">
+                <div class="section-top">
+                    <h2 class="section-title">generals sponsors</h2>
+                    <a href="#" class="button">Become sponsor</a>
+                </div>
+                <div class="sponsors_grid sponsors_grid__pro">
+                    <a href="#" class="sponsors_card sponsors_card__pro">
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card sponsors_card__pro">
+                        <img class="sponsors_card-image" src="src/img/partners/vm.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card sponsors_card__pro">
+                        <img class="sponsors_card-image" src="src/img/partners/alive-media.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card sponsors_card__pro">
+                        <img class="sponsors_card-image" src="src/img/partners/deloitte.svg" alt="sponsor icon">
+                    </a>
+                </div>
+                <h2 class="section-title sponsors_title">power of tracks</h2>
+                <div class="sponsors_grid sponsors_grid__pro">
+                    <a href="#" class="sponsors_card sponsors_card__pro">
+                        <span class="sponsors_card-label">Game camp track</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card sponsors_card__pro">
+                        <span class="sponsors_card-label">C-suite Track</span>
+                        <img class="sponsors_card-image" src="src/img/partners/vm.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card sponsors_card__pro">
+                        <span class="sponsors_card-label">Startup Alley</span>
+                        <img class="sponsors_card-image" src="src/img/partners/alive-media.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card sponsors_card__pro">
+                        <span class="sponsors_card-label">Shape Track</span>
+                        <img class="sponsors_card-image" src="src/img/partners/deloitte.svg" alt="sponsor icon">
+                    </a>
+                </div>
+
+                <h2 class="section-title sponsors_title">Special Event Sponsors</h2>
+                <div class="sponsors_grid">
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
+                    <a href="#" class="sponsors_card">
+                        <span class="sponsors_card-name">Name</span>
+                        <img class="sponsors_card-image" src="src/img/partners/chrysostomides.svg" alt="sponsor icon">
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="section_holder">
-                <div class="book js-animation">
-                    <h2 class="book_title">BOOK YOUR EXPERIENCE</h2>
-                    <p class="book_text">Ready to start your engines? Let us now your schedule and destination, and we'll take care of the rest.</p>
-                </div>
-                <div class="form js-animation">
-                    <a name="contact" style="top: -100px"></a>
-                    <h2 class="form_title">BOOK YOUR FLIGHT OR CONTACT US</h2>
-                    <div class="form_row">
-                        <input type="text" id="name" placeholder="Your name" required>
-                    </div>
-                    <div class="form_row">
-                        <input type="email" id="email" placeholder="Email address" required>
-                    </div>
-                    <div class="form_row">
-                        <textarea placeholder="Your message" id="message" required></textarea>
-                    </div>
-                    <div class="form_row">
-                        <div class="button-wrapper">
-                            <input type="submit" value="Submit">
+        <section class="partners">
+            <a name="partners"></a>
+
+            <div class="partners_holder">
+                <h2 class="section-title  section-title__wide">Media partners</h2>
+            </div>
+            <div class="partners_grid">
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/alive-media.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/chrysostomides.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/tengo.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/deloitte.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/alive-media.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/g.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/tengo.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/deloitte.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/alive-media.svg" alt="partners logo">
+                </a>
+                <a class="partners_item" href="#">
+                    <img class="partners_image" src="src/img/partners/g.svg" alt="partners logo">
+                </a>
+            </div>
+        </section>
+
+        <section class="faq">
+            <a name="faq"></a>
+            <div class="faq_holder">
+
+                <h1 class="section-title section-title__center">FAQ</h1>
+
+                <div class="faq_content">
+                    <div class="accordion accordion__simple">
+                        <div class="accordion_item">
+                            <button class="accordion_button active">
+                                What is your refund policy?
+                            </button>
+                            <div class="accordion_content active">
+                                <div class="accordion_text">
+                                    <p>If you change your mind, you can cancel your ticket no later than August 1st, 2022. </p>
+                                    <p>You can change the name on your ticket and pass it on to the person of your choice. To do this, please contact us through this form (ссылка на форму get in touch).</p>
+                                    <p>If you’re unable to visit Linq this year, you can transfer your ticket to Linq 2023. To do this, please contact us through this form (ссылка на форму get in touch).</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion_item">
+                            <button class="accordion_button">
+                                Can I pay for my ticket via invoice and not through the website?
+                                <span class="accordion_button-icon"></span>
+                            </button>
+                            <div class="accordion_content">
+                                <div class="accordion_text">
+                                    <p>We know that your brand is everything, which is why we offer multiple branding options to make sure it has the right impact.</p>
+                                    <p>From logo placements to high-visibility signage - we'll make sure you're never lost among the crowd!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion_item">
+                            <button class="accordion_button">
+                                Will I receive an invoice after I’ve made a payment?
+                                <span class="accordion_button-icon"></span>
+                            </button>
+                            <div class="accordion_content">
+                                <div class="accordion_text">
+                                    <p>We know that your brand is everything, which is why we offer multiple branding options to make sure it has the right impact.</p>
+                                    <p>From logo placements to high-visibility signage - we'll make sure you're never lost among the crowd!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion_item">
+                            <button class="accordion_button">
+                                Will I receive an invoice after I’ve made a payment?
+                                <span class="accordion_button-icon"></span>
+                            </button>
+                            <div class="accordion_content">
+                                <div class="accordion_text">
+                                    <p>We know that your brand is everything, which is why we offer multiple branding options to make sure it has the right impact.</p>
+                                    <p>From logo placements to high-visibility signage - we'll make sure you're never lost among the crowd!</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </section>
-    
-        <footer class="footer">
-            <div class="footer_holder">
-                <div class="footer_contacts">
-                    <p class="footer_contact">
-                        Call us and we'll be in touch:
-                        <a href="tel:+971 52 450 9168">+971 52 450 9168</a>
-                    </p>
-                    <p class="footer_contact">
-                        Mail us and we'll be in touch:
-                        <a href="mailto:info@wilfort.aero">info@wilfort.aero</a>
-                    </p>
-                    <img src="src/img/seal.svg" alt="" class="seal animated">
-                </div>
-                <div class="footer_menu">
-                    <span class="footer_copyrights">© WILFORT AERO, 2023</span>
-                    <a href="/policy.html" class="footer_link" target="_blank">PRIVACY</a>
-                    <a href="/terms.html" class="footer_link" target="_blank">TERMS & CONDITIONS</a>
-                </div>
-            </div>
-        </footer>
     </main>
 
+    <footer class="footer">
+        <div class="footer_holder">
+            <div class="footer_top">
+                <div class="footer_left">
+                    <div class="footer_column">
+                        <span class="footer_column-title">
+                            Let’s stay linqed
+                        </span>
+                        <p class="footer_text">
+                            Enter your email to stay up-to-date with the Linq latest news and offers
+                        </p>
+                        <form class="footer_form">
+                            <input class="footer_form-input" type="text" placeholder="Enter your email address" required>
+                            <input class="footer_form-button" type="submit" value="">
+                        </form>
+                        <span class="footer_form-success">
+                            We know that your email address is sacred. We promise to treat it with respect and only send valuable information, news, and updates!
+                        </span>
+                    </div>
+                </div>
+                <div class="footer_right">
+                    <div class="footer_column">
+                        <span class="footer_column-title">
+                            Contact us
+                        </span>
+                        <p class="footer_text">
+                            <span>Star Hills Production Ltd</span>
+                            <span>registered office:</span>
+                            <span>9 Spyrou Kyprianou street,</span>
+                            <span>Neda Center, Office 1B, 3070,</span>
+                            <span> Limassol, Cyprus</span>
+                            <span>Vat No: 10377100 H</span>
+                        </p>
+                        <p class="footer_text">
+                            <a href="mailto:team@shp.agency">team@shp.agency</a>
+                            <a href="tel:357 94 05 86 55">357 94 05 86 55</a>
+                        </p>
+                    </div>
+                    <div class="footer_column">
+                        <span class="footer_column-title">
+                            Follow us
+                        </span>
+                        <div class="footer_social">
+                            <div class="social">
+                                <a href="#" class="social_link" target="__blank">
+                                    <img src="src/img/social/fb.svg" alt="facebook">
+                                </a>
+                                <a href="#" class="social_link" target="__blank">
+                                    <img src="src/img/social/insta.svg" alt="instagram">
+                                </a>
+                                <a href="#" class="social_link" target="__blank">
+                                    <img src="src/img/social/tg.svg" alt="telegram">
+                                </a>
+                                <a href="#" class="social_link" target="__blank">
+                                    <img src="src/img/social/in.svg" alt="linkedin">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="footer_cards">
+                            <span  class="footer_card">
+                                <img src="/src/img/visa.svg" alt="visa">
+                            </span >
+                            <span class="footer_card">
+                                <img src="/src/img/mastercard.svg" alt="mastercard">
+                            </span >
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer_bottom">
+                <span class="footer_copyrights">
+                    Created by
+                    <a class="footer_copyrights-link" href="https://shp.agency/" target="__blank">shp.agency</a>
+                    <span class="footer_copyrights-text">All rights the Linq Conference 2022</span>
+                </span>
+                <div class="footer_menu">
+                    <a class="footer_link" href="/page/terms">Terms &amp; Conditions</a>
+                    <a class="footer_link footer-bottom__link-mobile" href="/page/сookie">Cookie Statement</a>
+                    <a class="footer_link" href="/page/privacy">Privacy Statement</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="popup" data-popup="cookie-policy">
+        <button class="popup_close"></button>
+        <div class="popup_content">
+            <h1>Privacy & Cookie Policy</h1>
+            <h2>Compliance</h2>
+            <p>
+                All personal data gathered by STAR HILLS PRODUCTION LTD (hereinafter referred to as the ''Company'') in the course of its business shall be kept and handled in accordance with the Cyprus Processing of Personal Data (Protection of the Individual) Law of 2001, as amended from time to time, on protection of personal data and any other applicable legislation as per the relevant jurisdiction.
+            </p>
+            <h3>Gathering of Personal Data</h3>
+            <p>
+                The Company primarily gathers your personal data in the case of any contractual relations. You may be asked to provide your personal data upon usage of any websites of the Company. The data is gathered discretely and only the Company has access to it during this topics. By engaging in contractual relations with the Company, you give your express consent to the Company to gather and process your personal data. You are fully responsible for the accuracy of the data provided to the Company. By engaging in contractual relations with the Company, you agree that the Company may collect, store, disclose and transfer internationally (including disclosure to any related legal entities of the Company or to its subcontractors) personal data, including sensitive personal data, relating to you and/or your employees for various purposes including (i) processing, reviewing and administering your registration/purchase form to seminars/conferences/events, (ii) maintaining the administrative or client relationship management systems of the Company, (iii) quality and risk management reviews, (iv) statistical reviews, (v) providing you with information about the Company and of seminars/conferences/events offers and/or organized, (vi) meeting the requirements of applicable laws and regulations. When you provide personal data to us about your employees and other individuals, you confirm that you only do so provided that you have the authority to act as their agent and that you have obtained any required approval and/or consent from such employees and/or other individuals.
+            </p>
+        </div>
+    </div>
+
+    <div class="fade"></div>
+
+    <div class="cookies">
+        <div class="cookies_content">
+            <p class="cookies_text">
+                We use cookies to improve your experience on our website. By browsing this website, you agree to our <a href="#">use of cookies</a>.
+            </p>
+            <button class="cookies_button">Accept all cookies</button>
+        </div>
+    </div>
+
+
     <script src="./src/js/tiny-slider.js"></script>
+    <script src="./src/js/js-cookie.js"></script>
     <script src="./src/js/main.js"></script>
 </body>
 </html>

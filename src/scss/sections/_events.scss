@@ -1,0 +1,102 @@
+.events {
+    overflow: hidden;
+    margin: 0 0 64px;
+    @include desktop {
+        margin-bottom: vw(124);
+    }
+
+    &_title {
+        @include desktop {
+            position: absolute;
+            top: 0;
+            left: 360px;
+            max-width: 450px;
+            text-align: left;
+        }
+    }
+
+    &_holder {
+        @include layout;
+        @include desktop {
+            position: relative;
+        }
+    }
+
+    &_items {
+        display: flex;
+        gap: 8px;
+        @include tablet {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &_items-column {
+        flex-grow: 1;
+        @include tablet {
+            display: contents;
+        }
+    }
+
+    &_item {
+        border-radius: 16px;
+        background-color: #fff;
+        padding: 6px;
+        margin: 0 0 $indent;
+        @include tablet {
+            width: 236px;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        @include desktop {
+            width: 278px;
+        }
+
+        &__dummy {
+            display: none;
+            @include desktop {
+                display: block;
+                height: 0;
+                padding: 0;
+            }
+        }
+    }
+    &_item-content {
+        padding: 0 10px 10px;
+        @include tablet {
+            padding: 0 16px 16px;
+        }
+    }
+    &_item-title {
+        color: $cOrange;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.25;
+        display: block;
+        @include tablet {
+            font-size: 24px;
+            margin: 0 0 10px;
+        }
+    }
+    &_item-text {
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        @include tablet {
+            font-size: 16px;
+        }
+    }
+    &_item-image-wrapper {
+        // filter: drop-shadow(0px 6px 0px #E68549) drop-shadow(0px 12px 0px #EEBA44) drop-shadow(0px 18px 0px #FFEBCB);
+        margin: 0 0 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        @include tablet {
+            border-radius: 12px;
+        }
+    }
+    &_item-image {
+        display: block;
+        width: 100%;
+    }
+}

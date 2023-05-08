@@ -1,13 +1,20 @@
 .logo {
-    display: block;
-    width: 144px;
-    @include tablet {
-        flex-shrink: 0;
-        width: 210px;
+    position: relative;
+    z-index: 12;
+    transition: .5s linear opacity;
+
+    &:hover {
+        opacity: .6;
+    }
+    &:active {
+        opacity: .8;
     }
 
     &_image {
         display: block;
-        width: 100%;
+        width: 67px;
+        @include desktop {
+            width: 110px;
+        }
     }
 }

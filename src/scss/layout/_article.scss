@@ -1,0 +1,42 @@
+.article {
+    margin: 0 0 106px;
+
+    @include desktop {
+        position: relative;
+        margin-bottom: vw(150);
+    }
+
+    &_holder {
+        @include layout;
+    }
+
+    h1 {
+        font-size: 48px;
+        line-height: .94;
+        font-weight: 400;
+        margin: 0 0 32px;
+
+        @include desktop {
+            font-size: vw(140);
+            margin-bottom: vw(56);
+        }
+    }
+
+    &_content {
+        @include desktop {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &_text {
+        line-height: 1.4;
+        font-weight: 400;
+        margin: 0 0 24px;
+
+        @include desktop {
+            margin-bottom: vw(40);
+            max-width: 70%;
+        }
+    }
+}

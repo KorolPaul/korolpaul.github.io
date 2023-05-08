@@ -4,29 +4,31 @@ html {
 
 body {
     color: $color;
-    background: $bg_color;
-    font: #{$font-size__small}/#{1.2} $font-family;
+    background: $bg_color url(#{$img}/bg.jpg) repeat;
+    font: 500 #{$font-size__small}/#{1.4} $font-family;
     padding: 0;
     scroll-behavior: smooth;
-    padding: 0;
-    @include desktop {
+    @include tablet {
         font-size: $font-size;
     }
 }
 
 a {
-    color: $color;
+    color: $cPurpleDark;
     text-decoration: none;
     transition: .2s $easing color;
 
     &:hover,
     &.hover {
-        text-decoration: underline;
         outline: none;
     }
     &:active,
     &.active {
         outline: none;
+    }
+
+    &[href^='tel'] {
+        white-space: nowrap;
     }
 }
 
@@ -39,6 +41,13 @@ p {
 
 img {
     max-width: 100%;
+
+    &[data-src] {
+        display: none;
+        @include desktop {
+            display: initial;
+        }
+    }
 }
 
 button,
@@ -56,18 +65,20 @@ table {
 
 ol,
 ul {
-    padding: 0 0 0 20px;
-    margin: 0 0 20px;
-    @include tablet {
-        padding-left: 19px;
-    }
+    padding: 0 0 0 26px;
+    margin: 0 0 22px;
     @include desktop {
-        padding-left: 28px;
+        padding-left: 30px;
     }
 }
+
 a[name] {
     position: relative;
-    top: -80px;
+    top: -50px;
+}
+
+#agendalist {
+    flex-grow: 1;
 }
 
 .menu-opened {
@@ -78,16 +89,9 @@ a[name] {
 }
 
 .bright {
-    color: $cOrange;
+    color: $cRed;
 }
 
-article {
-    @include layout;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    @include tablet {
-        margin-top: 100px;
-        margin-bottom: 100px;
-        max-width: 1000px;
-    }
+.cold {
+    color: $cBlue;
 }

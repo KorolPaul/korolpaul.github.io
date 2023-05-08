@@ -1,0 +1,79 @@
+.contacts {
+    margin: 0 0 64px;
+
+    @include desktop {
+        margin-bottom: vw(150);
+    }
+
+    &_holder {
+        @include layout;
+    }
+
+    &_image-wrapper {
+        position: relative;
+        margin: 0 0 72px;
+
+        @include desktop {
+            margin-bottom: 200px;
+        }
+    }
+
+    &_image {
+        width: 100%;
+    }
+
+    &_columns {
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            gap: 100px;
+        }
+    }
+
+    &_column {
+        @include desktop {
+            width: 50%;
+        }
+
+        &:first-child {
+            display: none;
+
+            @include desktop {
+                display: block;
+            }
+        }
+    }
+
+    &_item {
+        margin: 0 0 40px;
+        width: vw(220);
+    }
+
+    &_item-title {
+        display: block;
+        font-size: vw(18);
+        line-height: 1.4;
+        color: $cBlue;
+        margin: 0 0 vw(16);
+    }
+
+    &_item-value {
+        display: block;
+        font-weight: 700;
+        font-size: vw(24);
+        line-height: 1.26;
+
+        &[href] {
+            color: $color;
+            transition: .2s $easing opacity;
+
+            &:hover {
+                opacity: .6;
+            }
+
+            &:active {
+                opacity: .8;
+            }
+        }
+    }
+}

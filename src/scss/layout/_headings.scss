@@ -1,70 +1,92 @@
 %heading-1 {
+    font-size: 48px;
     font-family: $font-family__heading;
-    font-size: 42px;
-    line-height: 1;
+    line-height: .95;
     font-weight: 400;
-    margin: 0 0 19px;
-    position: relative;
+    margin: 0 0 70px;
     @include desktop {
-        font-size: 62px;
-        margin-bottom: 40px;
+        font-size: vw(140);
+        margin-bottom: vw(120);
     }
 }
+
 %heading-2 {
+    font-size: 32px;
     font-family: $font-family__heading;
-    font-size: 17px;
-    font-weight: 700;
-    margin: 88px 0 14px;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 20px;
+    @include desktop {
+        font-size: vw(72);
+    }
 }
+
 %heading-3 {
-    font-family: $font-family;
-    font-size: 26px;
-    line-height: 1.2;
-    font-weight: 400;
-    margin-top: 48px;
-    margin-bottom: 24px;
-    @include tablet {
-        font-size: 41px;
-    }
-}
-%heading-4 {
-    font-family: $font-family__heading;
     font-size: 20px;
-    line-height: 1.3;
+    font-family: $font-family__heading;
+    line-height: 1.4;
     font-weight: 400;
     @include desktop {
-        font-size: 26px;
+        font-size: vw(60);
     }
 }
-%heading-5 {
+
+%heading-4 {
+    font-size: 20px;
     font-family: $font-family__heading;
-    font-size: 13px;
     line-height: 1.2;
     font-weight: 400;
     @include desktop {
-        font-size: 13px;
+        font-size: vw(40);
+    }
+}
+
+%heading-5 {
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: $font-family__heading;
+    font-weight: 400;
+    @include desktop {
+        font-size: vw(32);
+    }
+}
+
+%heading-6 {
+    font-size: 12px;
+    font-family: $font-family__heading;
+    line-height: 1.4;
+    font-weight: 400;
+    @include desktop {
+        font-size: vw(24);
     }
 }
 
 h1,
-.heading-1{
+.heading-1 {
     @extend %heading-1;
 }
+
 h2,
 .heading-2 {
     @extend %heading-2;
 }
+
 h3,
 .heading-3 {
     @extend %heading-3;
 }
+
 h4,
 .heading-4 {
     @extend %heading-4;
 }
+
 h5,
 .heading-5 {
     @extend %heading-5;
+}
+
+h6,
+.heading-6 {
+    @extend %heading-6;
 }

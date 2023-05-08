@@ -1,81 +1,112 @@
 
 .menu {
-    z-index: 9;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    right: -13px;
-    top: -13px;
-    padding: 56px 13px 13px 13px;
     background-color: $bg_color;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 11;
+    display: flex;
     flex-direction: column;
-    gap: 13px;
-    transition: .2s $easingSmooth opacity;
+    height: 100%;
+    overflow-y: auto;
+    left: 100%;
+    top: 0;
+    max-width: 1148px;
+    width: 100%;
+    padding: 88px 0 51px;
+    transform: translateX(0);
+    transition: .6s $easing transform;
     @include desktop {
-        flex-direction: row;
-        opacity: 1;
-        pointer-events: all;
-        position: static;
-        padding: 0;
         background-color: transparent;
-        gap: 75px;
-        height: 100%;
-        align-items: center;
-    }
-    @include desktop-large {
-        gap: 100px;
+        padding: 0;
+        position: static;
+        text-align: center;
+        height: auto;
+        overflow-y: initial;
     }
 
     .menu-opened & {
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    &__dropdown {
-        opacity: 0;
-        pointer-events: none;
-        position: fixed;
-        right: 10px;
-        top: 36px;
-        padding: 72px 13px 13px 13px;
-        background-color: $bg_color;
-        flex-direction: column;
-        gap: 19px;
-        height: auto;
-        align-items: flex-end;
-        @include media(1240px) {
-            right: auto;
-            left: 50%;
-            margin-left: 458px;
+        transform: translateX(-100%);
+        @include desktop {
+            transform: none;
         }
     }
 
-    .menu-opened &__dropdown {
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    &_link {
-        color: $color;
-        font-family: $font-family__heading;
-        font-size: 19px;
-        font-weight: 700;
-        line-height: 1;
-        white-space: nowrap;
-        letter-spacing: 1.2px;
+    &_links {
         @include desktop {
-            font-size: 17px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+        @include desktop-large {
+            gap: 40px;
+        }
+    }
+    &_link {
+        font-family: $font-family__heading;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 88px;
+        height: 88px;
+        color: $bg_color;
+        background-color: $cRed;
+        padding: 0 44px;
+        text-transform: uppercase;
+        border-radius: 100px 0 0 100px;
+        transition: .3s $easing color;
+        @include desktop {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 130%;
+            line-height: 1;
+            white-space: nowrap;
+            background-color: transparent;
+            padding: 0;
+            text-transform: none;
+            display: inline;
+            color: $cBlue;
+            height: auto;
+        }
+
+        &:nth-child(2n) {
+            background-color: $cOrange;
+            @include desktop {
+                background-color: transparent;
+            }
+        }
+        &:nth-child(3n) {
+            background-color: $cYellow;
+            @include desktop {
+                background-color: transparent;
+            }
+        }
+        &:nth-child(4n) {
+            background-color: $cBlueLight;
+            @include desktop {
+                background-color: transparent;
+            }
+        }
+        &:nth-child(5n) {
+            background-color: $cBlueMedium;
+            @include desktop {
+                background-color: transparent;
+            }
+        }
+        &:nth-child(6n) {
+            background-color: $cBlue;
+            @include desktop {
+                background-color: transparent;
+            }
+        }
+        &:nth-child(7n) {
+            background-color: $cPurple;
+            @include desktop {
+                background-color: transparent;
+            }
         }
 
         &:hover {
-            text-decoration: underline;
-        }
-
-        .menu__dropdown & {
-            font-size: 20px;
+            color: $cPurple;
         }
     }
 }

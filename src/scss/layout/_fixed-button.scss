@@ -1,0 +1,23 @@
+.fixed-button {
+    position: fixed;
+    right: $indent;
+    bottom: $indent;
+    z-index: 5;
+    transition: .4s $easingSmooth opacity;
+    @include tablet {
+        left: auto;
+        right: 48px;
+        bottom: 48px;
+    }
+    @include desktop-large {
+        right: 72px;
+    }
+
+    .button {
+        width: 100%;
+    }
+    &.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

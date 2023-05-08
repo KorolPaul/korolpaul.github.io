@@ -1,6 +1,10 @@
-main {
-    overflow: hidden;
+.main {
+    padding: 176px 0 0;
     @include desktop {
-        overflow: visible;
+        padding-top: 318px;
+    }
+
+    &__small-top-indent {
+        padding-top: 60px;
     }
 }

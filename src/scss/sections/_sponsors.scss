@@ -1,0 +1,157 @@
+.sponsors {
+    margin: 0 0 112px;
+    position: relative;
+    @include desktop {
+        margin-top: vw(190);
+    }
+    
+    &_holder {
+        @include layout;
+    }
+    &_title {
+        margin-bottom: 56px;
+        @include desktop {
+            margin-bottom: vw(110);
+        }
+    }
+
+    &_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        column-gap: 12px;
+        row-gap: 28px;
+        @include tablet {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            column-gap: vw(35);
+            row-gap: vw(40);
+        }
+
+        &__pro {
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 40px;
+            row-gap: 40px;
+            @include tablet {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                margin-bottom: vw(76);
+            }
+        }
+        &__lead {
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-bottom: 35px;
+            @include tablet {
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                margin-bottom: vw(70);
+                row-gap: vw(60);
+            }
+        }
+    }
+    &_card {
+        background-color: #fff;
+        border-radius: 4px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        @include tablet {
+            border-radius: 8px;
+            height: vw(110);
+        }
+
+        &__pro {
+            height: 80px;
+            @include tablet {
+                height: vw(170);
+            }
+        }
+        &__lead {
+            height: 55px;
+            @include tablet {
+                height: vw(133);
+            }
+        }
+    }
+    &_card-label {
+        background-color: $cPurple;
+        position: absolute;
+        left: -5px;
+        bottom: calc(100% - 8px);
+        font-size: 6px;
+        line-height: 1.26;
+        font-weight: 600;
+        padding: 2px 4px 8px;
+        border-radius: 4px;
+        @include tablet {
+            border-radius: 8px;
+            font-size: 16px;
+            padding: 5px 12px 24px;
+            bottom: calc(100% - 18px);
+            left: -15px;
+            border-radius: 8px;
+        }
+
+        &::before {
+            content: '';
+            background: $cPurpleDark;
+            width: calc(100% - 5px);
+            height: 7px;
+            border-radius: 4px 0 4px 0;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            @include tablet {
+                border-radius: 8px 0 8px 0;
+                height: 18px;
+                width: calc(100% - 15px);
+            }
+        }
+
+        .sponsors_card__lead & {
+            background-color: $cGreen;
+            left: -6px;
+            font-size: 8px;
+            @include desktop {
+                font-size: 18px;
+            }
+
+            &::before {
+                width: calc(100% - 6px);
+            }
+        }
+        .sponsors_card__pro & {
+            background-color: $cOrange;
+            left: -9px;
+            font-size: 12px;
+            @include desktop {
+                left: -20px;
+                font-size: 24px;
+            }
+
+            &::before {
+                width: calc(100% - 9px);
+                @include tablet {
+                    width: calc(100% - 20px);
+                }
+            }
+        }
+    }
+    &_card-image {
+        max-width: 80%;
+        filter: grayscale(1);
+        transition: .2s $easing filter;
+
+        .sponsors_card[href]:hover & {
+            filter: grayscale(0);
+        }
+        .sponsors_card[href]:active & {
+            filter: grayscale(.8);
+        }
+    }
+
+    &_card-name {
+        position: absolute;
+        left: 0;
+        bottom: 110%;
+    }
+}

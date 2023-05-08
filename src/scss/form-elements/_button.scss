@@ -1,33 +1,35 @@
 @mixin button {
     display: inline-block;
-    background: $color;
+    background: transparent;
     box-sizing: border-box;
+    border: none;
+    border-radius: 50px;
+    background-color: $cRed;
     cursor: pointer;
     color: $bg_color;
-    border: none;
-    border-radius: 0;
-    height: 41px;
-    line-height: 41px;
-    padding: 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 44px;
+    line-height: 43px;
+    padding: 0 24px;
     white-space: nowrap;
-    letter-spacing: 0.05em;
     text-align: center;
-    font-size: 19px;
-    line-height: 26px;
-    font-family: $font-family__heading;
-    min-width: 250px;
-    width: 100%;
-    transition: .2s $easing opacity;
-    @include tablet {
-        width: auto;
-        font-size: $font-size;
+    transform: scale(1);
+    transition: .2s $easing color,
+                .2s $easing background-color,
+                .2s $easing transform;
+    @include desktop {
+        font-size: 18px;
+        height: 60px;
+        line-height: 60px;
     }
 
     &:hover {
-        opacity: .6;
+        background-color: $bg_color;
+        transform: scale(1.02);
     }
     &:active {
-        opacity: .8;
+        transform: scale(.98);
     }
     &:disabled {
         opacity: .6;
@@ -37,21 +39,20 @@
 @mixin button-reset {
     border: none;
     padding: 0;
-    background-color: transparent;
+    background: transparent;
     height: auto;
     line-height: 1.2;
     min-width: 0;
     width: auto;
     border-radius: 0;
-    text-transform: none;
 
     &:hover {
         transform: none;
-        background-color: transparent;
+        background: transparent;
     }
     &:active {
         transform: none;
-        background-color: transparent;
+        background: transparent;
     }
 }
 
@@ -60,4 +61,47 @@ button,
 input[type="button"],
 input[type="submit"] {
     @include button;
+}
+
+.button {
+    &__dark {
+        color: $bg_color;
+        background-color: $color;
+        border-color: $color;
+
+        &:hover {
+            color: $color;
+            background-color: $bg_color;
+        }
+    }
+    &__pink {
+        color: $bg_color;
+        background-color: $cPink;
+        border-color: $cPink;
+
+        &:hover {
+            background-color: $bg_color;
+            color: $cPink;
+        }
+    }
+    &__purple {
+        color: $bg_color;
+        background-color: $cPurpleLight;
+        border-color: $cPurpleLight;
+
+        &:hover {
+            background-color: $bg_color;
+            color: $cPurpleLight;
+        }
+    }
+    &__orange {
+        color: $bg_color;
+        background-color: $cOrange;
+        border-color: $cOrange;
+
+        &:hover {
+            background-color: $bg_color;
+            color: $cOrange;
+        }
+    }
 }
