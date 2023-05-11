@@ -92,6 +92,7 @@
             position: relative;
 
             &::before {
+                animation: bounce 2s ease-in-out infinite; 
                 content: '';
                 background: url(#{$img}/timeline-current-marker.svg)  no-repeat center / 100%;
                 width: 28px;
@@ -127,5 +128,17 @@
         @include desktop {
             font-size: 16px;
         }
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(-50%, -12px);
+    }
+    50% {
+        transform: translate(-50%, 0px);
+    }
+    100% {
+        transform: translate(-50%, -12px);
     }
 }

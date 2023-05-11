@@ -24,6 +24,7 @@
         @include tablet {
             display: flex;
             justify-content: space-between;
+            align-items: stretch;
             gap: 20px;
         }
     }
@@ -242,6 +243,8 @@
 
     .tns-item {
         @include tablet {
+            display: flex;
+            align-items: stretch;
             flex-grow: 1;
             width: calc(33% - 40px);
         }
