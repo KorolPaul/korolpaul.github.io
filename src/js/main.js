@@ -13,7 +13,8 @@ ticketsSlider.forEach(el => {
         gutter: 16,
         mouseDrag: true,
         autoplay: false,
-        nav: false,
+        nav: true,
+        navPosition: 'bottom',
         controls: false,
         loop: false,
         responsive: {
@@ -645,3 +646,6 @@ if (animatedElements.length) {
         observer.observe(el);
     })
 }
+
+// .speakers cards
+document.querySelectorAll('.speakers-card').forEach(el => el.addEventListener('click', () => el.classList.toggle('active')))
