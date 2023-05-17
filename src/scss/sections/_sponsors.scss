@@ -6,7 +6,7 @@
         @include layout;
     }
     &_title {
-        margin-bottom: 16px;
+        margin-bottom: 36px;
         @include desktop {
             padding-bottom: 56px;
         }
@@ -100,6 +100,7 @@
     }
 
     &_card-image {
+        max-height: 90%;
         max-width: 80%;
         filter: grayscale(1);
         transition: .2s $easing filter;

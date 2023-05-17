@@ -157,10 +157,6 @@
             @include desktop {
                 font-size: 16px;
             }
-
-            &:last-child {
-                border-bottom: none;
-            }
         }
 
         .topics_item__orange & li,
@@ -174,8 +170,22 @@
         align-items: center;
         justify-content: center;
         height: 48px;
+        transform-origin: center;
+        transition: .2s $easing transform;
         @include desktop {
             height: 80px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+        &:active {
+            transform: scale(1.05);
+        }
+
+        img {
+            max-height: 95%;
+            max-width: 95%;
         }
     }
 
