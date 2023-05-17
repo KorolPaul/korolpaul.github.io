@@ -30,6 +30,7 @@
         @include desktop {
             font-size: vw(24);
             max-width: 50%;
+            padding-top: 8px;
         }
 
         .button {
