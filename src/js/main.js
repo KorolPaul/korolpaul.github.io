@@ -542,43 +542,47 @@ if (Cookies) {
 const accordionElements = document.querySelectorAll('.accordion');
 
 accordionElements.forEach(accordion => {
-    const accordionButtons = accordion.querySelectorAll('.accordion_button:not(.accordion_button__inner)');
-    const accordionContent = accordion.querySelectorAll('.accordion_content:not(.accordion_content__inner)');
-    const accordionInnerButtons = accordion.querySelectorAll('.accordion_button__inner');
-
-
-    if (accordionButtons.length) {
-        function toggle(e) {
-            e.preventDefault();
-
-            if (e.target.classList.contains('active')) {
-                e.target.classList.remove('active');
-                e.currentTarget.nextElementSibling.classList.remove('active');
-                e.currentTarget.parentElement.classList.remove('active');
-                return;
-            }
-
-            if (isDesktop) {
-                e.currentTarget.classList.add('active');
-                e.currentTarget.nextElementSibling.classList.add('active');
-                e.currentTarget.parentElement.classList.add('active');
-            } else {
-                e.currentTarget.classList.toggle('active');
-                e.currentTarget.nextElementSibling.classList.toggle('active');
-                e.currentTarget.parentElement.classList.toggle('active');
-            }
+    const accordionButtons = accordion.querySelectorAll('.accordion_button');
+    
+    function toggle(e) {
+        e.preventDefault();
+        
+        if (e.target.classList.contains('active')) {
+            e.target.classList.remove('active');
+            e.currentTarget.nextElementSibling.classList.remove('active');
+            e.currentTarget.parentElement.classList.remove('active');
+            return;
         }
-
-        function toggleInner(e) {
-            e.preventDefault();
-
+        
+        if (isDesktop) {
+            e.currentTarget.classList.add('active');
+            e.currentTarget.nextElementSibling.classList.add('active');
+            e.currentTarget.parentElement.classList.add('active');
+        } else {
             e.currentTarget.classList.toggle('active');
             e.currentTarget.nextElementSibling.classList.toggle('active');
+            e.currentTarget.parentElement.classList.toggle('active');
+        }
+    }
+    
+    
+    accordionButtons.forEach(el => el.addEventListener('click', toggle));
+    
+    const accordionTabButtons = accordion.querySelectorAll('.accordion_tab-button');
+    const accordionTabContent = accordion.querySelectorAll('.accordion_tab-content');
+
+    accordionTabButtons.forEach(el => el.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (e.target.classList.contains('active')) {
+            return;
         }
 
-        accordionButtons.forEach(el => el.addEventListener('click', toggle));
-        accordionInnerButtons.forEach(el => el.addEventListener('click', toggleInner));
-    }
+        accordionTabButtons.forEach(el => el.classList.remove('active'));
+        accordionTabContent.forEach(el => el.classList.remove('active'));
+        e.target.classList.add('active');
+        e.target.nextElementSibling.classList.add('active');
+    }));
 });
 
 /* popup form */
@@ -587,7 +591,9 @@ const popupFormTriggers = document.querySelectorAll('.js-popup-form-trigger');
 function toggleFormPopup(e) {
     e.preventDefault();
 
-    document.querySelector('.js-form-popup').classList.toggle('opened');
+    const form = e.target.dataset.form;
+
+    document.querySelector(`.js-form-popup[data-form="${form}"]`).classList.toggle('opened');
     if (fadeElement) {
         fadeElement.classList.toggle('opened');
     }
@@ -595,8 +601,10 @@ function toggleFormPopup(e) {
 
 popupFormTriggers.forEach((trigger) => {
     trigger.addEventListener('click', toggleFormPopup);
-    document.querySelector('.form-popup_close').addEventListener('click', toggleFormPopup);
 });
+
+console.log(document.querySelector('.form-popup_close'));
+document.querySelectorAll('.form-popup_close').forEach(el => el.addEventListener('click', closeAllOpened));
 
 /* unavailable ticketss form */
 const unavailableFormLink = document.querySelector('.js-tickets-unavailable-link');

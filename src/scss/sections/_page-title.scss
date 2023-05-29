@@ -4,6 +4,7 @@
     max-width: 710px;
     text-align: center;
     font-size: 18px;
+    position: relative;
     @include desktop {
         font-size: 24px;
     }
@@ -14,6 +15,36 @@
         background: url(#{$img}/page-title-bg.svg) no-repeat bottom 20px center;
         @include desktop {
             font-size: 80px;
+        }
+
+        span {
+            display: block;
+            font-size: 32px;
+            @include desktop {
+                font-size: 56px;
+            }
+        }
+    }
+
+    &_caption {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .button {
+        margin-top: 40px;
+        @include desktop {
+            margin-top: 66px;
+        }
+    }
+
+    .back-button {
+        display: none;
+        position: absolute;
+        left: -270px;
+        top: 0;
+        @include desktop {
+            display: block;
         }
     }
 }
