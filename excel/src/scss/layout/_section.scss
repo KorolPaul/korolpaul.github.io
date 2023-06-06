@@ -1,9 +1,12 @@
 .section {
     position: relative;
-    margin-bottom: 48px;
-    overflow: hidden;
+    padding-top: 48px;
     @include tablet {
-        margin-bottom: 75px;
+        padding-top: 75px;
+    }
+
+    &__overflow {
+        overflow: hidden;
     }
 
     &__green {

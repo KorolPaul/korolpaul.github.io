@@ -4,18 +4,17 @@ input[type="search"],
 input[type="email"],
 input[type="url"],
 input[type="tel"] {
-    @include placeholder-color($cGray);
+    @include placeholder-color(#9A9AAC);
     color: $color;
     background: transparent;
     border: none;
-    border-bottom: 1px solid $cGray;
+    border-bottom: 1px solid $cLight;
     border-radius: 0;
     box-sizing: border-box;
-    font: 19px $font-family;
-    height: 46px;
-    line-height: 46px;
-    padding: 0 18px;
-    text-align: center;
+    font: 22px $font-family;
+    height: 74px;
+    line-height: 26px;
+    padding: 24px 18px;
     width: 100%;
     transition: .2s ease-in border-color,
                 .2s ease-in color;

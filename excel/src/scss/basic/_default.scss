@@ -17,12 +17,15 @@ body {
 }
 
 main {
-    padding: 64px 0 0;
-    @include tablet {
-        padding-top: 80px;
-    }
-    @include desktop {
-        padding-top: 168px;
+    section:first-child {
+        padding-top: 136px;
+        @include tablet {
+            padding-top: 152px;
+        }
+        @include desktop {
+            padding-top: 292px;
+        }
+
     }
 }
 

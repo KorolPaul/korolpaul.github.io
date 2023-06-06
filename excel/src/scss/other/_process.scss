@@ -1,0 +1,82 @@
+.process {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+        align-items: flex-end;
+    }
+
+    &_title {
+        @include desktop {
+            margin-bottom: 80px;
+        }
+    }
+
+    &_description {
+        @include right-side-text-medium;
+        margin-bottom: 40px;
+        @include desktop {
+            margin-bottom: 80px;
+        }
+    }
+
+    &_grid {
+        margin: 0 0 56px;
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 16px;
+            margin-bottom: 48px;
+        }
+        @include desktop {
+            gap: $indent $indent;
+            margin-bottom: 80px;
+        }
+
+        & > div:nth-child(1) {
+            @include tablet {
+                width: calc(50% - 16px);
+            }
+            @include desktop {
+                width: calc(60% - 16px);
+            }
+        }
+        & > div:nth-child(2) {
+            @include tablet {
+                width: calc(50% - 16px);
+            }
+            @include desktop {
+                width: calc(40% - 16px);
+            }
+        }
+        & > div:nth-child(3) {
+            @include tablet {
+                width: calc(50% - 16px);
+            }
+            @include desktop {
+                width: calc(40% - 16px);
+            }
+        }
+        & > div:nth-child(4) {
+            @include tablet {
+                width: calc(50% - 16px);
+            }
+            @include desktop {
+                width: calc(60% - 16px);
+            }
+        }
+        & > div:nth-child(5) {
+            @include tablet {
+                width: calc(50% - 16px);
+            }
+        }
+        & > div:nth-child(6) {
+            @include tablet {
+                width: calc(50% - 16px);
+            }
+        }
+    }
+
+    &_other {
+        @include right-side-text;
+    }
+}

@@ -27,6 +27,70 @@
     }
     &_video-wrapper {
         position: relative;
+        margin: 0 0 40px;
+        @include desktop {
+            margin-bottom: 60pxpx;
+        }
+        @include desktop {
+            margin-bottom: 180px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35%;
+            height: 20%;
+            border-radius: 50%;
+            background-color: $cPurple;
+            filter: blur(100px);
+            animation: top-left-shadow 10s $easeInOutCirc infinite;
+            z-index: -1;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 75%;
+            height: 25%;
+            border-radius: 50%;
+            background-color: $cPurple;
+            filter: blur(100px);
+            animation: top-left-shadow 10s $easeInOutCirc infinite;
+            z-index: -1;
+        }
+    }
+    &_video-shadow-wrapper {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -20px;
+            width: 35%;
+            height: 20%;
+            border-radius: 50%;
+            background-color: $cPurple;
+            filter: blur(100px);
+            animation: top-left-shadow 10s 1s $easeInOutCirc infinite;
+            z-index: -1;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            right: 20px;
+            bottom: -20px;
+            width: 75%;
+            height: 25%;
+            border-radius: 50%;
+            background-color: $cPurple;
+            filter: blur(100px);
+            animation: top-left-shadow 10s .5s $easeInOutCirc infinite;
+            z-index: -1;
+        }
     }
     &_video {
         width: 100%;
@@ -83,5 +147,28 @@
             padding-right: 108px;
             width: auto;
         }
+    }
+}
+
+@keyframes top-left-shadow {
+    0% {
+        transform: translate(0, 0) scale(.9);
+    }
+    50% {
+        transform: translate(10%, 1%) scale(1);
+    }
+    100% {
+        transform: translate(0, 0) scale(.9);
+    }
+}
+@keyframes top-right-shadow {
+    0% {
+        transform: translate(0, 0) scale(.9);
+    }
+    40% {
+        transform: translate(-7%, 1%) scale(1);
+    }
+    100% {
+        transform: translate(0, 0) scale(.9);
     }
 }

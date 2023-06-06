@@ -22,6 +22,7 @@
         position: static;
         padding: 0;
         gap: 48px;
+        display: flex;
     }
 
     .menu-opened & {
@@ -31,13 +32,14 @@
 
 
     &_link {
-        color: $cLight;
         font-size: 20px;
         line-height: 1.2;
         white-space: nowrap;
+        color: $cGray;
 
         &:hover {
-            text-decoration: underline;
+            text-decoration: none;
+            color: $cLight
         }
     }
 

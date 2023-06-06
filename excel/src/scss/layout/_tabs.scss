@@ -63,9 +63,10 @@
     }
     &_content {
         position: relative;
-        padding: 40px 0 0;
+        padding: 40px 0 90px;
         @include desktop {
             padding-top: 80px;
+            padding-bottom: 200px;
         }
     }
     &_tab {

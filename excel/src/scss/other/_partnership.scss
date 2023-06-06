@@ -1,0 +1,61 @@
+.partnership {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+    @include tablet {
+        padding-bottom: 120px;
+        align-items: flex-end;
+    }
+    @include desktop {
+        padding-bottom: 250px;
+    }
+
+    &_title {
+        margin-top: 40px;
+        @include desktop {
+            margin-top: 180px;
+        }
+    }
+
+    &_head {
+        @include right-side-text-medium;
+        margin-bottom: 40px;
+        @include desktop {
+            margin-bottom: 80px;
+        }
+    }
+
+    &_text {
+        @include right-side-text-big;
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            align-items: flex-end;
+        }
+
+        h2 {
+            margin-bottom: 24px;
+            @include desktop {
+                margin-bottom: 80px
+            }
+        }
+
+        .button {
+            margin-top: 40px;
+            @include desktop {
+                margin-top: 80px
+            }
+        }
+    }
+
+    &_text-description {
+        @include right-side-text-medium;
+    }
+
+    &_slider {
+        margin-bottom: 80px;
+        @include desktop {
+            margin-bottom: 256px;
+        }
+    }
+}

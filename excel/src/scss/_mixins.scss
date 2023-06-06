@@ -9,12 +9,9 @@
     white-space: nowrap;
 }
 @mixin tablet() {
-    @media all and (min-width: 640px) { @content; }
+    @media all and (min-width: 768px) { @content; }
 }
 @mixin desktop() {
-    @media all and (min-width: 1070px) { @content; }
-}
-@mixin desktop-large() {
     @media all and (min-width: 1360px) { @content; }
 }
 @mixin desktop-extra-large() {
@@ -57,6 +54,15 @@
 
     @include desktop {
         width: 55%;
+    }
+}
+
+@mixin right-side-text-medium {
+    @include tablet {
+        max-width: 465px;
+    }
+    @include desktop {
+        max-width: 1028px;
     }
 }
 

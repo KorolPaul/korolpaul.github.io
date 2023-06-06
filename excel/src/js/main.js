@@ -8,15 +8,76 @@ const advantagesSlider = document.querySelectorAll('.advantages_slider');
 advantagesSlider.forEach(el => {
     tns({
         container: el,
-        items: 1,
-        center: true,
-        gutter: 0,
         mouseDrag: true,
         autoplay: false,
         nav: false,
         navPosition: 'bottom',
         controls: false,
-        loop: true,
+        loop: false,
+        gutter: 0,
+        items: 1,
+        center: true,
+        responsive: {
+            768: {
+                //autoWidth: true,
+                fixedWidth: 370,
+                items: 3.5,
+                center: false,
+                gutter: 16,
+            },
+            1360: {
+                gutter: 32,
+                fixedWidth: 816,
+            },
+        }
+    });
+});
+
+const processSlider = document.querySelectorAll('.process_grid');
+processSlider.forEach(el => {
+    tns({
+        container: el,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        navPosition: 'bottom',
+        controls: false,
+        loop: false,
+        gutter: 0,
+        items: 1,
+        center: true,
+        responsive: {
+            1024: {
+                disable: true,
+            },
+        }
+    });
+});
+
+const partnershipSlider = document.querySelectorAll('.partnership_slider');
+partnershipSlider.forEach(el => {
+    tns({
+        container: el,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        navPosition: 'bottom',
+        controls: false,
+        loop: false,
+        gutter: 0,
+        items: 1,
+        center: true,
+        responsive: {
+            768: {
+                autoWidth: true,
+                items: 3.5,
+                center: false,
+                gutter: 16,
+            },
+            1360: {
+                gutter: 32,
+            },
+        }
     });
 });
 

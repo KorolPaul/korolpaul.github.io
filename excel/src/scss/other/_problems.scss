@@ -6,6 +6,7 @@
     }
 
     &_title {
+        margin-top: 0;
         @include desktop {
             max-width: 565px;
         }
@@ -13,8 +14,17 @@
 
     &_item {
         display: flex;
-        justify-content: flex-end
+        flex-direction: column;
+        justify-content: flex-end;
+        @include tablet {
+            flex-direction: row;
+            gap: 50px;
+        }
+        @include desktop {
+            gap: 150px;
+        }
     }
+
     &_item-text {
         @include right-side-text;
         font-size: 15px;

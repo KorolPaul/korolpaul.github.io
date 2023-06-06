@@ -5,6 +5,15 @@
     top: 0;
     z-index: 11;
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+    @include desktop {
+        max-width: $max-width;
+    }
     
     &_holder {
         display: flex;

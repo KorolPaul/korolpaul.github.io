@@ -2,8 +2,34 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin-bottom: 120px;
+    @include desktop {
+        margin-bottom: 256px;
+    }
+
+    &_title {
+        margin-top: 70px;
+        @include desktop {
+            margin-top: 250px
+        }
+    }
 
     &_description {
         @include right-side-text;
+        margin-bottom: 20px;
+        @include desktop {
+            margin-bottom: 60px;
+        }
+    }
+
+    &_slider {
+        .advantage {
+            @include tablet {
+                width: 370px;
+            }
+            @include desktop{
+                width: 816px;
+            }
+        }
     }
 }
