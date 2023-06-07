@@ -17,8 +17,6 @@
 @import "form-elements/radio";
 @import "form-elements/label";
 @import "form-elements/form";
-@import "form-elements/input-number";
-@import "form-elements/button-link";
 
 /*layout*/
 @import "layout/headings";
@@ -27,62 +25,20 @@
 @import "layout/footer";
 @import "layout/menu";
 @import "layout/menu-toggle";
-@import "layout/content";
-@import "layout/popup";
-@import "layout/fade";
-@import "layout/section-title";
-@import "layout/section-label";
-@import "layout/table-wrapper";
-@import "layout/main";
+@import "layout/section";
 @import "layout/tabs";
-@import "layout/article";
-@import "layout/fixed-button";
-
-/* sections */
-@import "sections/terms";
-@import "sections/partners";
-@import "sections/showcase";
-@import "sections/sponsors";
-@import "sections/intro";
-@import "sections/solutions";
-@import "sections/events";
-@import "sections/topics";
-@import "sections/location";
-@import "sections/speakers";
-@import "sections/participation-banner";
-@import "sections/comments";
-@import "sections/video";
-@import "sections/timeline";
-@import "sections/speaker-form";
-@import "sections/agenda";
-@import "sections/schedule";
-@import "sections/faq";
-@import "sections/advantages";
-@import "sections/partner";
-@import "sections/contacts";
-@import "sections/about";
-@import "sections/join";
-@import "sections/page-title";
+@import "layout/preloader";
 
 /* other */
-@import "other/social";
-@import "other/tickets-comparison";
-@import "other/rates";
-@import "other/cart";
-@import "other/checkout";
-@import "other/back-button";
-@import "other/statistics";
-@import "other/congratulations";
-@import "other/track";
-@import "other/filters";
-@import "other/cookies";
-@import "other/accordion";
-@import "other/advantage";
-@import "other/form-popup";
-@import "other/page-404";
-@import "other/unavailable-form";
-@import "other/parallax";
-@import "other/divider";
-
-/* plugins */
 @import "plugins/tiny-slider";
+
+/* other */
+@import "other/problems";
+@import "other/showcase";
+@import "other/clients";
+@import "other/advantages";
+@import "other/advantage";
+@import "other/process";
+@import "other/partnership";
+@import "other/partner";
+@import "other/social";

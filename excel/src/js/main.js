@@ -11,23 +11,23 @@ advantagesSlider.forEach(el => {
         mouseDrag: true,
         autoplay: false,
         nav: false,
-        navPosition: 'bottom',
         controls: false,
         loop: false,
-        gutter: 0,
+        gutter: 16,
         items: 1,
         center: true,
         responsive: {
             768: {
-                //autoWidth: true,
+                // autoWidth: true,
                 fixedWidth: 370,
-                items: 3.5,
+                items: 2,
                 center: false,
                 gutter: 16,
+                lazyload: true,
             },
             1360: {
                 gutter: 32,
-                fixedWidth: 816,
+                fixedWidth: 650,
             },
         }
     });
@@ -43,7 +43,7 @@ processSlider.forEach(el => {
         navPosition: 'bottom',
         controls: false,
         loop: false,
-        gutter: 0,
+        gutter: 16,
         items: 1,
         center: true,
         responsive: {
@@ -64,7 +64,7 @@ partnershipSlider.forEach(el => {
         navPosition: 'bottom',
         controls: false,
         loop: false,
-        gutter: 0,
+        gutter: 16,
         items: 1,
         center: true,
         responsive: {
@@ -75,7 +75,7 @@ partnershipSlider.forEach(el => {
                 gutter: 16,
             },
             1360: {
-                gutter: 32,
+                gutter: 28,
             },
         }
     });

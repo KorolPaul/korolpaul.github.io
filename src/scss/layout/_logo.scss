@@ -1,24 +1,13 @@
 .logo {
-    position: relative;
-    z-index: 12;
-    transition: .5s linear opacity;
-
-    &:hover {
-        opacity: .6;
-    }
-    &:active {
-        opacity: .8;
+    display: block;
+    width: 144px;
+    @include tablet {
+        flex-shrink: 0;
+        width: 210px;
     }
 
     &_image {
         display: block;
-        width: 74px;
-        @include desktop {
-            width: 98px;
-        }
-
-        .blue-page & {
-            filter: hue-rotate(180deg) brightness(2.5);
-        }
+        width: 100%;
     }
 }

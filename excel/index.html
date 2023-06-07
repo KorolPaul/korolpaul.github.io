@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,7 +15,9 @@
 </head>
 <body>
     <div class="preloader">
-        <lottie-player src="/src/backgrounds/preloader.json"  background="transparent"  speed="1" autoplay></lottie-player>
+        <div class="preloader_holder">
+            <lottie-player src="/src/backgrounds/preloader.json"  background="transparent"  speed="1" autoplay></lottie-player>
+        </div>
     </div>
 
     <header class="header">
@@ -40,6 +43,7 @@
         <section class="section">
             <div class="section_bg">
                 <lottie-player src="/src/backgrounds/1/data.json"  background="transparent"  speed="1" loop autoplay></lottie-player>
+                <lottie-player src="/src/backgrounds/2/data.json"  background="transparent"  speed="1" loop autoplay></lottie-player>
             </div>
             <div class="section_holder">
                 <div class="showcase">
@@ -70,15 +74,12 @@
                     <div class="tabs">
                         <div class="tabs_buttons">
                             <button class="tabs_button active" data-tab="1">
-                                <img src="src/img/plus.svg" alt="" class="tabs_button-icon">
                                 Customer acquisition
                             </button>
                             <button class="tabs_button" data-tab="2">
-                                <img src="src/img/heart.svg" alt="" class="tabs_button-icon">
                                 Operational efficiency
                             </button>
                             <button class="tabs_button" data-tab="3">
-                                <img src="src/img/people.svg" alt="" class="tabs_button-icon">
                                 Data-driven insights
                             </button>
                         </div>
@@ -88,6 +89,7 @@
                                 <div class="problems_item">
                                     <img src="src/img/problem-1.svg" alt="" class="problem_item-image">
                                     <div class="problems_item-text">
+                                        <p>Insurance companies often struggle to acquire new customers and maintain existing one. Excel™ solves this problem by using predictive modeling, data science, machine learning, and artificial intelligence to match consumers with the most optimal products and services to best meet their needs, helping insurance companies acquire the right customers at scale.</p>
                                         <p>Insurance companies often struggle to acquire new customers and maintain existing one. Excel™ solves this problem by using predictive modeling, data science, machine learning, and artificial intelligence to match consumers with the most optimal products and services to best meet their needs, helping insurance companies acquire the right customers at scale.</p>
                                     </div>
                                 </div>
@@ -103,9 +105,8 @@
                             </div>
                             <div class="tabs_tab">
                                 <div class="problems_item">
-                                    <img src="src/img/problem-3.svg" alt="" class="problem_item-image">
+                                    <img src="src/img/problem-1.svg" alt="" class="problem_item-image">
                                     <div class="problems_item-text">
-                                        <p>Insurance companies often struggle to acquire new customers and maintain existing one. Excel™ solves this problem by using predictive modeling, data science, machine learning, and artificial intelligence to match consumers with the most optimal products and services to best meet their needs, helping insurance companies acquire the right customers at scale.</p>
                                         <p>Insurance companies often struggle to acquire new customers and maintain existing one. Excel™ solves this problem by using predictive modeling, data science, machine learning, and artificial intelligence to match consumers with the most optimal products and services to best meet their needs, helping insurance companies acquire the right customers at scale.</p>
                                         <p>Insurance companies often struggle to acquire new customers and maintain existing one. Excel™ solves this problem by using predictive modeling, data science, machine learning, and artificial intelligence to match consumers with the most optimal products and services to best meet their needs, helping insurance companies acquire the right customers at scale.</p>
                                     </div>
@@ -157,42 +158,55 @@
                         <p>At Excel™, we believe in providing value at every stage, from start to finish. Our focus is on delivering exceptional results for our clients and building long-lasting partnership based on trust and success.</p>
                     </div>
                     <div class="process_grid">
-                        <div class="advantage">
-                            <span class="advantage_number">01</span>
-                            <img class="advantage_image" src="src/img/process-1.svg" alt="" />
-                            <span class="advantage_title">Quality</span>
-                            <span class="advantage_text">We have a quality-over-quantity approach. We constantly optimize to ensure we have the highest conversion rates, and lowest CPA possible. </span>
+                        <div>
+                            <div class="advantage">
+                                <span class="advantage_number">01</span>
+                                <img class="advantage_image" src="src/img/process-1.svg" alt="" />
+                                <span class="advantage_title">Quality</span>
+                                <span class="advantage_text">We have a quality-over-quantity approach. We constantly optimize to ensure we have the highest conversion rates, and lowest CPA possible. </span>
+                            </div>
                         </div>
-                        <div class="advantage">
-                            <span class="advantage_number">02</span>
-                            <img class="advantage_image" src="src/img/process-2.svg" alt="" />
-                            <span class="advantage_title">Integration</span>
-                            <span class="advantage_text">We can integrate with almost any system, CRM, and/or lead management platform. </span>
+                        <div>
+                            <div class="advantage">
+                                <span class="advantage_number">02</span>
+                                <img class="advantage_image" src="src/img/process-2.svg" alt="" />
+                                <span class="advantage_title">Integration</span>
+                                <span class="advantage_text">We can integrate with almost any system, CRM, and/or lead management platform. </span>
+                            </div>
                         </div>
-                        <div class="advantage">
-                            <span class="advantage_number">03</span>
-                            <img class="advantage_image" src="src/img/process-3.svg" alt="" />
-                            <span class="advantage_title">Reporting</span>
-                            <span class="advantage_text">We have an online portal so you can view real-time volume reports and much more.</span>
+                        <div>
+                            <div class="advantage">
+                                <span class="advantage_number">03</span>
+                                <img class="advantage_image" src="src/img/process-3.svg" alt="" />
+                                <span class="advantage_title">Reporting</span>
+                                <span class="advantage_text">We have an online portal so you can view real-time volume reports and much more.</span>
+                            </div>
                         </div>
-                        <div class="advantage">
-                            <span class="advantage_number">04</span>
-                            <img class="advantage_image" src="src/img/process-3.svg" alt="" />
-                            <span class="advantage_title">Tiers</span>
-                            <span class="advantage_text">We tier leads using data analysis for transparent pricing and quality, due to market not ready for solely automated lead evaluation.</span>
+                        <div>
+                            <div class="advantage">
+                                <span class="advantage_number">04</span>
+                                <img class="advantage_image" src="src/img/process-3.svg" alt="" />
+                                <span class="advantage_title">Tiers</span>
+                                <span class="advantage_text">We tier leads using data analysis for transparent pricing and quality, due to market not ready for solely automated lead evaluation.</span>
+                            </div>
                         </div>
-                        <div class="advantage">
-                            <span class="advantage_number">05</span>
-                            <img class="advantage_image" src="src/img/process-3.svg" alt="" />
-                            <span class="advantage_title">Exclusivity</span>
-                            <span class="advantage_text">We want to prove to our partners that we are not just another lead generation company, but are serious about quality.</span>
+                        <div>
+                            <div class="advantage">
+                                <span class="advantage_number">05</span>
+                                <img class="advantage_image" src="src/img/process-3.svg" alt="" />
+                                <span class="advantage_title">Exclusivity</span>
+                                <span class="advantage_text">We want to prove to our partners that we are not just another lead generation company, but are serious about quality.</span>
+                            </div>
                         </div>
-                        <div class="advantage">
-                            <span class="advantage_number">06</span>
-                            <img class="advantage_image" src="src/img/process-3.svg" alt="" />
-                            <span class="advantage_title">Pricing</span>
-                            <span class="advantage_text">We operate a free-marketplace auction-based pricing model whereas a combination of filters and pricing determine the ultimate buyer of a lead.</span>
+                        <div>
+                            <div class="advantage">
+                                <span class="advantage_number">06</span>
+                                <img class="advantage_image" src="src/img/process-3.svg" alt="" />
+                                <span class="advantage_title">Pricing</span>
+                                <span class="advantage_text">We operate a free-marketplace auction-based pricing model whereas a combination of filters and pricing determine the ultimate buyer of a lead.</span>
+                            </div>
                         </div>
+                        
                     </div>
                     <div class="process_other">
                         <p>We have covered this topic more extensively. Go to our solutions page to learn more about what we can do.</p>
@@ -211,7 +225,7 @@
                     </div>
                     <div class="advantages_slider">
                         <div>
-                            <div class="advantage">
+                            <div class="advantage advantage__alternate">
                                 <span class="advantage_number">01</span>
                                 <img class="advantage_image" src="src/img/advantage-1.svg" alt="" />
                                 <span class="advantage_title">Leads</span>
@@ -219,7 +233,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="advantage">
+                            <div class="advantage advantage__alternate">
                                 <span class="advantage_number">02</span>
                                 <img class="advantage_image" src="src/img/advantage-2.svg" alt="" />
                                 <span class="advantage_title">Calls</span>
@@ -227,7 +241,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="advantage">
+                            <div class="advantage advantage__alternate">
                                 <span class="advantage_number">03</span>
                                 <img class="advantage_image" src="src/img/advantage-1.svg" alt="" />
                                 <span class="advantage_title">Leads</span>
@@ -235,7 +249,7 @@
                             </div>
                         </div>
                         <div>
-                            <div class="advantage">
+                            <div class="advantage advantage__alternate">
                                 <span class="advantage_number">04</span>
                                 <img class="advantage_image" src="src/img/advantage-2.svg" alt="" />
                                 <span class="advantage_title">Calls</span>
@@ -251,7 +265,7 @@
 
         <section class="section">
             <div class="section_bg">
-                <lottie-player src="/src/backgrounds/2/data.json"  background="transparent"  speed="1" loop autoplay></lottie-player>
+                <lottie-player src="/src/backgrounds/3/data.json"  background="transparent"  speed="1" loop autoplay></lottie-player>
             </div>
             <div class="section_holder">
                 <div class="partnership">

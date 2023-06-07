@@ -7,6 +7,28 @@
     color: #9A9AAC;
     text-align: right;
 
+    &__alternate {
+        padding-top: 120px;
+        @include desktop {
+            padding-top: 210px;
+        }
+    }
+
+    &_image {
+        .advantage__alternate & {
+            @include tablet {
+                position: absolute;
+                top: 0;
+                right: 30px;
+                width: 174px;
+            }
+            @include desktop {
+                top: 15px;
+                width: 356px;
+            }
+        }
+    }
+
     &_number {
         position: absolute;
         font-size: 12px;
@@ -23,13 +45,17 @@
         margin: 0 0 16px;
         text-align: left;
         @include desktop {
-            margin-bottom: 32px;
-            font-size: 60px;
-            line-height: 70px;
+            margin-bottom: 26px;
+            font-size: 48px;
+            line-height: 1.1;
         }
     }
     &_text {
         display: block;
         text-align: left;
+
+        .advantage__alternate & {
+            max-width: 272px;
+        }
     }
 }

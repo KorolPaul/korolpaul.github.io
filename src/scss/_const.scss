@@ -1,31 +1,21 @@
 $img: "src/img";
 
-$bg_color: #F5DDB7;
+$color: #141418;
+$cLight: #F5F5F5;
+$cGray: #B0B0BF;
+$cGrayDark: #787891;
+$cBright: #CDF52D;
+$cGreen: #ADD60A;
+$cGreenDark: #7E9C07;
+$cPurple: #BF9FFF;
 
-$color: #382D4D;
-$cGreen: #60E771;
-$cRed: #E1564F;
-$cBlue: #357C8E;
-$cBlueLight: #6AC2C0;
-$cBlueMedium: #4DB0B2;
-$cOrange: #E68549;
-$cYellow: #EEBA44;
-$cPurple: #5B4B7C;
-$cPurpleDark:  #382D4D;
+$font-family: 'TTHovesProExpanded', helvetica, arial;
 
-$cPink: #F4A3DD;
-$cGrey: #E9E9E9;
-$cGreyLight: rgba(56, 45, 77, .3);
-$cPurpleLight: #9778DD;
+$font-size: 21px;
+$font-size__small: 15px;
 
-$font-family: 'ITC Avant Garde Std Bk', Helvetica, sans-serif;
-$font-family__heading: 'ITC Busorama Bold', Helvetica, sans-serif;
-
-$font-size: 18px;
-$font-size__small: 16px;
-
-$max-width: 1296px;
-$indent: 16px;
+$max-width: 1664px;
+$indent: 32px;
 
 // easings
 $easingSmooth: cubic-bezier(0.38, 0.005, 0.215, 1);

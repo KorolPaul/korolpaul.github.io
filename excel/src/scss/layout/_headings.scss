@@ -10,7 +10,7 @@
         font-size: 60px;
     }
     @include desktop {
-        font-size: 130px;
+        font-size: 104px;
         line-height: .95;
     }
 }
@@ -25,9 +25,9 @@
         margin-top: 128px;
     }
     @include desktop {
-        font-size: 60px;
-        margin-top: 256px;
-        margin-bottom: 90px;
+        font-size: 48px;
+        margin-top: 180px;
+        margin-bottom: 72px;
     }
 }
 %heading-3 {
@@ -38,7 +38,7 @@
     margin-top: 48px;
     margin-bottom: 24px;
     @include tablet {
-        font-size: 41px;
+        font-size: 32px;
     }
 }
 %heading-4 {

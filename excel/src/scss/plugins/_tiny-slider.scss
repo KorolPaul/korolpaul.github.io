@@ -69,6 +69,10 @@
 }
 .tns-ovh {
     overflow: hidden;
+    margin-left: -$indent;
+    margin-right: -$indent;
+    padding-left: $indent;
+    padding-right: $indent;
 }
 .tns-visually-hidden {
     position: absolute;
@@ -179,4 +183,8 @@
     }
     button:hover {
     }
+}
+
+.tns-item {
+    user-select: none;
 }

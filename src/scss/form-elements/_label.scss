@@ -7,21 +7,13 @@ label {
     position: relative;
     margin: 0 0 8px;
     @include tablet {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     &.required {
         &::after {
             content: ' *';
-            color: $cRed;
-        }
-    }
-
-    a {
-        color: $cRed;
-
-        &:hover {
-            text-decoration: underline;
+            color: #ff0000;
         }
     }
 }

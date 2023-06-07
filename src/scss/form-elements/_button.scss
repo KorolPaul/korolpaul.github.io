@@ -1,33 +1,31 @@
 @mixin button {
     display: inline-block;
-    background: $cRed url(#{$img}/pattern.png) no-repeat center;
+    background: transparent;
     box-sizing: border-box;
-    border: none;
-    border-radius: 50px;
     cursor: pointer;
-    color: $bg_color;
-    font-size: 14px;
-    font-weight: 500;
-    height: 44px;
-    line-height: 46px;
-    padding: 0 30px;
+    color: $cLight;
+    border: 1px solid #9A9AAC;
+    border-radius: 24px;
+    padding: 0 50px;
     white-space: nowrap;
     text-align: center;
-    transform: scale(1);
-    transition: .2s $easing color,
-                .2s $easing background-color,
-                .2s $easing filter,
-                .2s $easing box-shadow,
-                .2s $easing border,
-                .2s $easing transform;
-    @include desktop {
-        font-size: 18px;
-        height: 60px;
-        line-height: 60px;
+    height: 84px;
+    font-size: 20px;
+    line-height: 80px;
+    font-family: $font-family;
+    min-width: 250px;
+    width: 100%;
+    transition: .3s $easing background,
+                .2s $easing color,
+                .2s $easing border-color;
+    @include tablet {
+        width: auto;
     }
 
     
+
     &:disabled {
+        pointer-events: none;
         opacity: .6;
     }
 }
@@ -35,12 +33,13 @@
 @mixin button-reset {
     border: none;
     padding: 0;
-    background: transparent;
+    background-color: transparent;
     height: auto;
     line-height: 1.2;
     min-width: 0;
     width: auto;
     border-radius: 0;
+    text-transform: none;
 
     &:hover {
         transform: none;
@@ -60,53 +59,102 @@ input[type="submit"] {
 }
 
 .button {
+    overflow: hidden;
+    position: relative;
+
     &:hover {
-        @include tablet {
-            transform: translateY(-4px);
-            box-shadow: 0px 6px 0px $cOrange, 0px 12px 0px $cYellow, 0px 18px 0px #FFEBCB;
-        }
+        text-decoration: none;
+        color: $color;
+        border-color: $cBright;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background: transparent;
+        border-radius: 100%;
+        top: 50%;
+        left: 50%;
+        box-shadow: 0 1em 2em 3em rgba(#CDF52D, 0.5),
+            4em 0em 2em 2em rgba(#B0B0BF, 0.6),
+            -4em -2em 2em 2em rgba(#CDF52D, 0.5),
+            -4em 2em 2em 4em rgba(#B0B0BF, 0.5);
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transition: .2s ease opacity;
+        animation: bg-mix 4s linear infinite;
+    }
+
+    &:hover::before {
+        opacity: 1;
     }
 
     &:active {
-        @include tablet {
-            transform: translateY(0);
-            box-shadow: 0px -6px 0px #b4413b;
-        }
+        background: $cBright;
     }
 
-    &__blue {
-        background-color: $cBlue;
-
-        &:hover {
-            @include tablet {
-                box-shadow: 0px 6px 0px #4BAFB1, 0px 12px 0px #68C1BF, 0px 18px 0px #A4DAD9;
-            }
-        }
-
-        &:active {
-            @include tablet {
-                box-shadow: 0px -6px 0px #405d65;
-            }
-        }
+    &:active::before {
+        opacity: 0;
     }
 
-    &__secondary {
-        color: $bg_color;
-        background: transparent;
-        border: 2px solid currentColor;
-        color: $cRed;
-
-        &:hover {
-            color: $bg_color;
-            background-color: $cRed;
-            filter: none;
-            transform: none;
-            box-shadow: none;
-        }
-        &:active {
-            filter: none;
-            box-shadow: none;
-            transform: none;
-        }
+    &_text {
+        position: relative;
+        z-index: 1;
     }
+}
+
+.button__dark {
+    color: $color;
+    border: 1px solid $color;
+
+    &:hover {
+        background: $color;
+        color: $cLight;
+    }
+
+    &::before {
+        content: '';
+        box-shadow: 0 1em 2em 3em rgba(#515159, 0.7),
+                    4em 0em 2em 2em rgba(#787891, 0.8),
+                    -4em -2em 2em 2em rgba(#515159, 0.7),
+                    -4em 2em 2em 4em rgba(#787891, 0.7);
+        animation: bg-dark-mix 4s linear infinite;
+    }
+
+    &:active {
+        background: $color;
+    }
+}
+
+@keyframes bg-mix {
+  30% {
+    box-shadow: 0 -1em 2em 6em rgba(#CDF52D, 0.5),
+                4em -1em 2em 6em rgba(#B0B0BF, 0.8),
+                -4em 2em 3em 5em rgba(#CDF52D, 0.5),
+                -4em -2em 2em 5em rgba(#B0B0BF, 0.6);
+  }
+  
+  60% {
+    box-shadow: 2em 1em 2em 6em rgba(#B0B0BF, 0.5),
+                3em 1em 2em 6em rgba(#CDF52D, 0.6),
+                3em -2em 3em 5em rgba(#B0B0BF, 0.5),
+                -4em 2em 2em 5em rgba(#CDF52D, 0.6);
+  }
+}
+
+@keyframes bg-dark-mix {
+  30% {
+    box-shadow: 0 -1em 2em 3em rgba(#515159, 0.7),
+                4em -1em 2em 3em rgba(#787891, 0.9),
+                -4em 2em 3em 2em rgba(#515159, 0.7),
+                -4em -2em 2em 2em rgba(#787891, 0.8);
+  }
+  
+  60% {
+    box-shadow: 2em 1em 2em 3em rgba(#515159, 0.7),
+                3em 1em 2em 3em rgba(#787891, 0.8),
+                3em -2em 3em 3em rgba(#787891, 0.7),
+                -4em 2em 2em 3em rgba(#515159, 0.8);
+  }
 }
