@@ -6,48 +6,51 @@ input[type="checkbox"] {
     & + label:not([class]) {
         cursor: pointer;
         display: inline-block;
-        padding: 0 0 0 26px;
+        padding: 0 0 0 30px;
         min-height: 20px;
-        font-size: 12px;
         position: relative;
         margin: 0;
         transition: .2s $easing color;
         @include desktop {
-            font-size: 13px;
+            font-size: 18px;
+            padding: 0 0 0 36px;
         }
 
         &::before {
+            background-color: #fff;
             content: '';
             box-sizing: border-box;
-            border: 1px solid #000;
+            border: 1px solid #ECECEC;
             border-radius: 4px;
             height: 20px;
             width: 20px;
             position: absolute;
-            top: 0px;
+            top: -2px;
             left: 0;
             transition: .1s ease-in-out border-color, .1s ease-in-out background-color;
+            @include desktop {
+                height: 26px;
+                width: 26px;
+                top: 1px;
+            }
         }
         &::after {
             content: '';
             box-sizing: border-box;
             background: url(#{$img}/check.svg) no-repeat center / 100% 100%;
-            width: 13px;
-            height: 8px;
+            width: 9px;
+            height: 9px;
             position: absolute;
-            top: 6px;
-            left: 4px;
+            top: 4px;
+            left: 6px;
             opacity: 0;
             transform: scale(.3);
             transition: .1s $easing opacity, .2s $easing transform;
-        }
-
-        a {
-            color: $color;
-            text-decoration: underline;
-
-            &:hover {
-                text-decoration: none;
+            @include desktop {
+                width: 12px;
+                height: 12px;
+                top: 8px;
+                left: 7px;
             }
         }
     }
@@ -58,8 +61,8 @@ input[type="checkbox"] {
     }
     &:checked + label {
         &::before {
-            background-color: $cGreen;
-            border-color: $cGreen;
+            background-color: $cBlueLight ;
+            border-color: $cBlueLight;
         }
         &::after {
             opacity: 1;
@@ -80,6 +83,21 @@ input[type="checkbox"] {
         }
     }
     .error & + label:not([class])::before {
-        border-color: #ff0000;
+        border-color: $cRed;
+        box-shadow: 0 0 2px $cRed;
+    }
+    .form_accept & + label:not([class]) {
+        &::before {
+            top: 2px;
+            @include desktop {
+                top: 1px;
+            }
+        }
+        &::after {
+            top: 8px;
+            @include desktop {
+                top: 8px;
+            }
+        }
     }
 }

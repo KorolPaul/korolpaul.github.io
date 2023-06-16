@@ -1,0 +1,10 @@
+.tickets-comparison {
+    margin: 0 0 80px;
+    @include desktop {
+        margin-bottom: 200px;
+    }
+
+    &_holder {
+        @include layout;
+    }
+}

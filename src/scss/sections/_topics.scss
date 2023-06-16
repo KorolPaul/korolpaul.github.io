@@ -1,0 +1,202 @@
+.topics {
+    @include section;
+    position: relative;
+
+    &_holder {
+        @include layout;
+        position: relative;
+    }
+    &_content {
+        margin: 0 0 24px;
+        position: relative;
+        z-index: 1;
+        font-size: 18ox;
+        text-align: center;
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+
+        .section-title {
+            @include desktop {
+                text-align: left;
+            }
+        }
+    }
+    &_text {
+        font-size: 18px;
+        line-height: 1.4;
+        @include desktop {
+            font-size: vw(24);
+            max-width: 50%;
+            padding-top: 8px;
+        }
+
+        .button {
+            margin: 4px 0 8px;
+            @include desktop {
+                margin-top: vw(24);
+            }
+        }
+    }
+    &_items {
+        margin: 0 0 24px;
+        @include tablet {
+            margin-bottom: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        @include desktop {
+            flex-wrap: nowrap;
+        }
+    }
+    &_item {
+        background: #4DB0B2 url(#{$img}/pattern.png) no-repeat -100px -100px;
+        font-size: 24px;
+        line-height: 1.2;
+        color: $bg_color;
+        width: 100%;
+        border-radius: 16px;
+        min-height: 72px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        transition: .3s $easeInCirc color;
+        margin: 0 0 20px;
+        @include tablet {
+            width: 48%;
+        }
+        @include desktop {
+            border-radius: 20px;
+            margin: 0;
+            width: calc(25% - 60px);
+            flex-grow: 1;
+        }
+
+        &__orange {
+            background-color: $cRed;
+        }
+
+        &__purple {
+            background-color: $cPurpleDark;
+        }
+
+        &__yellow {
+            background-color: #EEBA44;
+            color: $color;
+        }
+    }
+
+    &_item-title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 130%;
+        display: block;
+        margin: 14px 0;
+        padding: 0 $indent;
+        flex-grow: 0;
+        @include desktop {
+            font-size: 24px;
+            margin: 20px 0;
+            padding: 0 28px;
+        }
+    }
+    
+    &_item-content {
+        box-sizing: border-box;
+        padding: $indent;
+        border-radius: 16px;
+        text-align: left;
+        flex-grow: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+        background: $cBlue url(#{$img}/pattern.png) repeat -150px -130px;
+        @include desktop {
+            padding-left: 28px;
+            padding-right: 28px;
+            border-radius: 20px;
+        }
+
+        .topics_item__orange & {
+            background-color: $cOrange;
+            color: $color;
+        }
+
+        .topics_item__purple & {
+            background-color: $cPurple;
+        }
+
+        .topics_item__yellow & {
+            background-color: #FACD68;
+            color: $color;
+        }
+    }
+
+    &_item-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            font-size: 14px;
+            line-height: 1.4;
+            padding: 12px 0;
+            border-bottom: 1px dashed rgba($bg_color, .5);
+            @include desktop {
+                font-size: 16px;
+            }
+        }
+
+        .topics_item__orange & li,
+        .topics_item__yellow & li {
+            border-bottom: 1px dashed rgba($color, .5);
+        }
+    }
+
+    &_item-logo-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+        transform-origin: center;
+        transition: .2s $easing transform;
+        @include desktop {
+            height: 80px;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+        &:active {
+            transform: scale(1.05);
+        }
+
+        img {
+            max-height: 95%;
+            max-width: 95%;
+        }
+    }
+
+    &_bottom {
+        text-align: center;
+
+        .button {
+            @include desktop {
+                padding-left: 57px;
+                padding-right: 57px;
+            }
+        }
+    }
+}

@@ -9,13 +9,13 @@
     white-space: nowrap;
 }
 @mixin tablet() {
-    @media all and (min-width: 768px) { @content; }
+    @media all and (min-width: 640px) { @content; }
 }
 @mixin desktop() {
-    @media all and (min-width: 1360px) { @content; }
+    @media all and (min-width: 1070px) { @content; }
 }
-@mixin desktop-extra-large() {
-    @media all and (min-width: 1900px) { @content; }
+@mixin desktop-large() {
+    @media all and (min-width: 1440px) { @content; }
 }
 @mixin media($resolution) {
     @media all and (min-width: $resolution) { @content; }
@@ -39,42 +39,32 @@
 @mixin layout {
     padding-left: $indent;
     padding-right: $indent;
-    @include desktop {
-        max-width: $max-width;
+    max-width: $max-width;
+    box-sizing: border-box;
+    @include tablet {
+        padding-left: 22px;
+        padding-right: 22px;
         margin-left: auto;
         margin-right: auto;
     }
 }
 
-@mixin right-side-text {
-    width: 300px;
-    @include tablet {
-        width: 465px;
-    }
-
-    @include desktop {
-        width: 55%;
-    }
-}
-
-@mixin right-side-text-medium {
-    @include tablet {
-        max-width: 465px;
-    }
-    @include desktop {
-        max-width: 822px;
-    }
-}
-
-@mixin right-side-text-big {
-    @include tablet {
-        max-width: 660px;
-    }
-    @include desktop {
-        max-width: 1240px;
+@mixin gradiented-text($color1, $color2, $degree: 65deg) {
+    @supports(-webkit-background-clip: text) {
+        background: linear-gradient($degree, $color1 0%, $color2 40%,$color2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
 
 @function vw($px) {
-    @return $px * 0.068vw
+    // @return $px * 0.068vw
+    @return #{$px}px
+}
+
+@mixin section {
+    margin-bottom: 46px;
+    @include desktop() {
+        margin-bottom: 64px;
+    }
 }

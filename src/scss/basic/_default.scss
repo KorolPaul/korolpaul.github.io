@@ -3,45 +3,40 @@ html {
 }
 
 body {
-    color: $cLight;
-    background: $color;
-    font: #{$font-size__small}/#{1.18} $font-family;
+    color: $color;
+    background: $bg_color url(#{$img}/pattern-big.png)  repeat-y top center;
+    font: 500 #{$font-size__small}/#{1.4} $font-family;
     padding: 0;
-    letter-spacing: -0.04em;
     scroll-behavior: smooth;
-    padding: 0;
-    @include desktop {
+    @include tablet {
         font-size: $font-size;
-        line-height: 1.25;
+    }
+    @include desktop-large {
+        background-size: 100% auto;
     }
 }
 
-main {
-    section:first-child {
-        padding-top: 136px;
-        @include tablet {
-            padding-top: 152px;
-        }
-        @include desktop {
-            padding-top: 292px;
-        }
-
-    }
+.blue-page {
+    background-color: $cBlue;
+    color: $bg_color;
 }
 
 a {
-    color: $color;
+    color: $cPurpleDark;
     text-decoration: none;
     transition: .2s $easing color;
 
     &:hover,
     &.hover {
-        text-decoration: underline;
         outline: none;
     }
     &:active,
     &.active {
         outline: none;
+    }
+
+    &[href^='tel'] {
+        white-space: nowrap;
     }
 }
 
@@ -54,6 +49,13 @@ p {
 
 img {
     max-width: 100%;
+
+    &[data-src] {
+        display: none;
+        @include desktop {
+            display: initial;
+        }
+    }
 }
 
 button,
@@ -71,12 +73,31 @@ table {
 
 ol,
 ul {
-    padding: 0 0 0 20px;
-    margin: 0 0 20px;
-    @include tablet {
-        padding-left: 19px;
-    }
+    padding: 0 0 0 26px;
+    margin: 0 0 22px;
     @include desktop {
-        padding-left: 28px;
+        padding-left: 30px;
     }
+}
+
+a[name] {
+    position: relative;
+    top: -100px;
+}
+
+#agendalist {
+    flex-grow: 1;
+}
+
+.bright {
+    color: $cRed;
+}
+
+.cold {
+    color: $cBlue;
+}
+
+mark {
+    padding: 6px;
+    border-radius: 6px;
 }

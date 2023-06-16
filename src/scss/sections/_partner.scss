@@ -1,0 +1,15 @@
+.partner {
+    margin: 0 0 84px;
+    @include desktop {
+        position: relative;
+        margin-bottom: vw(105);
+    }
+
+    &_holder {
+        @include layout;
+    }
+
+    &_accordion {
+        color: $color;
+    }
+}

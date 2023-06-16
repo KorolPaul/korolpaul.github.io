@@ -1,0 +1,42 @@
+.video {
+    @include section;
+    padding: 32px 0 54px;
+    border-radius: 30px;
+    background: $cPurpleDark url(#{$img}/pattern-big.png) repeat-y top center;
+    color: $bg_color;
+    @include tablet {
+        padding: 40px 0;
+    }
+    @include desktop {
+        padding: 54px 0 70px;
+    }
+
+    &_holder {
+        padding: 0;
+        @include tablet {
+            @include layout;
+            max-width: 858px;
+        }
+    }
+    &_item {
+        position: relative;
+        padding: 0 0 56%;
+        box-shadow: 0px 6px 0px #E68549, 0px 12px 0px #EEBA44, 0px 18px 0px #FFEBCB;
+        @include desktop {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0px 9px 0px #E68549, 0px 18px 0px #EEBA44, 0px 27px 0px #FFEBCB;
+        }
+
+        iframe {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+        }
+        video {
+            width: 100%;
+        }
+    }
+}

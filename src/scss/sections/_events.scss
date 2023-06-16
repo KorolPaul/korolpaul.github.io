@@ -1,0 +1,184 @@
+.events {
+    @include section;
+    position: relative;
+
+    &_title {
+        @include tablet {
+            position: absolute;
+            top: 0;
+            left: calc(33% + 20px);
+            max-width: 450px;
+            text-align: left;
+        }
+        @include desktop {
+            left: 360px;
+        }
+    }
+
+    &_holder {
+        @include layout;
+        @include desktop {
+            position: relative;
+        }
+    }
+
+    &_items {
+        display: flex;
+        gap: 8px;
+        @include tablet {
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+
+    &_items-column {
+        flex-grow: 1;
+        width: calc(50% - 8px);
+        @include tablet {
+            display: contents;
+        }
+    }
+
+    &_item {
+        border-radius: 16px;
+        background-color: #fff;
+        padding: 6px;
+        margin: 0 0 $indent;
+        box-sizing: border-box;
+        @include tablet {
+            width: 236px;
+            padding: 10px;
+            border-radius: 20px;
+            width: calc(33% - 8px - 8px);
+        }
+        @include desktop {
+            width: 278px;
+        }
+
+        &__dummy {
+            display: none;
+            @include desktop {
+                display: block;
+                height: 0;
+                padding: 0;
+            }
+        }
+
+        .events_items-column:first-child &:first-child {
+            margin-bottom: 36px;
+        }
+        
+        &:nth-child(4) {
+            @include tablet {
+                margin-top: 195px;
+            }
+            @include desktop {
+                margin-top: 16px;
+            }
+        }
+        &:nth-child(5) {
+            @include tablet {
+                margin-top: 70px;
+            }
+            @include desktop {
+                margin-top: -50px;
+            }
+        }
+
+        .events_items-column:nth-child(2) &:nth-child(1) {
+            @include tablet {
+                margin-top: -200px;
+            }
+        }
+        .events_items-column:nth-child(2) &:nth-child(2) {
+            @include desktop {
+                margin-top: -210px;
+            }
+        }
+        .events_items-column:nth-child(2) &:nth-child(3) {
+            @include tablet {
+                margin-top: -50px;
+            }
+            @include desktop {
+                margin-top: 0;
+            }
+        }
+    }
+    &_item-content {
+        padding: 0 10px 10px;
+        @include tablet {
+            padding: 0 16px 16px;
+        }
+    }
+    &_item-title {
+        color: $cOrange;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.25;
+        display: block;
+        @include tablet {
+            font-size: 24px;
+            margin: 0 0 10px;
+        }
+
+        span {
+            font-size: 14px;
+            display: block;
+            @include desktop {
+                font-size: 18px;
+            }
+        }
+    }
+    &_item-text {
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        @include tablet {
+            font-size: 16px;
+        }
+    }
+    &_item-image-wrapper {
+        // filter: drop-shadow(0px 6px 0px #E68549) drop-shadow(0px 12px 0px #EEBA44) drop-shadow(0px 18px 0px #FFEBCB);
+        margin: 0 0 10px;
+        border-radius: 10px;
+        overflow: hidden;
+        @include tablet {
+            border-radius: 12px;
+        }
+    }
+    &_item-image {
+        display: block;
+        width: 100%;
+    }
+
+    &_item-text-with-image {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: space-around;
+        align-items: center;
+
+        p {
+            width: 40%;
+            text-align: center;
+        }
+    }
+
+    &_item-text-images {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+
+        a {
+            display: block;
+            width: 40%;
+        }
+    }
+
+    &_item-text-image {
+        width: 100%;
+    }
+}

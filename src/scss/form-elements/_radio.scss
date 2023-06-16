@@ -51,10 +51,10 @@ input[type="radio"] {
         color: $color;
 
         &::before {
-            border-color: #ff0000;
+            border-color: $cRed;
         }
         &::after {
-            background-color: #ff0000;
+            background-color: $cRed;
             transform: scale(1);
         }
         &:hover::after {

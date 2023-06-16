@@ -1,0 +1,98 @@
+.contacts {
+    margin: 0 0 64px;
+
+    @include desktop {
+        margin-bottom: vw(150);
+    }
+
+    &_holder {
+        @include layout;
+    }
+
+    &_image-wrapper {
+        position: relative;
+        margin: 0 0 72px;
+
+        @include desktop {
+            margin-bottom: 200px;
+        }
+    }
+
+    &_image {
+        width: 100%;
+    }
+
+    &_columns {
+        @include desktop {
+            display: flex;
+            justify-content: space-between;
+            gap: 100px;
+        }
+    }
+
+    &_column {
+        @include desktop {
+            width: 50%;
+        }
+
+        &:first-child {
+            display: none;
+
+            @include desktop {
+                display: block;
+            }
+        }
+    }
+
+    &_item {
+        margin: 0 0 40px;
+        max-width: 420px;
+    }
+
+    &_item-title {
+        display: block;
+        line-height: 1.4;
+        color: $cBlue;
+        margin: 0 0 vw(16);
+    }
+
+    &_item-value {
+        display: block;
+        font-size: 24px;
+        line-height: 125%;
+
+        &[href] {
+            color: $color;
+            transition: .2s $easing opacity;
+
+            &:hover {
+                opacity: .6;
+            }
+
+            &:active {
+                opacity: .8;
+            }
+        }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        box-shadow: 0px 3px 0px #E68549, 0px 6px 0px #EEBA44, 0px 9px 0px #FFEBCB;
+        transition: .2s $easing box-shadow,
+                    .2s $easing border;
+        @include desktop {
+            box-shadow: 0px 6px 0px #E68549, 0px 12px 0px #EEBA44, 0px 18px 0px #FFEBCB;
+        }
+
+    }
+
+    .error input[type="text"],
+    .error input[type="email"],
+    .error input[type="tel"],
+    .error textarea {
+        box-shadow: none;
+    }
+
+}

@@ -1,0 +1,58 @@
+.agenda {
+    margin: 0 0 64px;
+    position: relative;
+    @include desktop {
+        margin-bottom: vw(150);
+    }
+
+    &_back {
+        margin: 0 0 32px;
+        @include desktop {
+            margin-bottom: 70px
+        }
+    }
+    &_holder {
+        @include layout;
+        overflow: hidden;
+        @include desktop {
+            overflow: auto;
+        }
+
+        & > p {
+            font-size: 12px;
+            line-height: 1.4;
+            color: $cPurpleDark;
+            @include desktop {
+                font-size: 18px;
+                margin-bottom: 28px;
+            }
+        }
+    }
+    &_grid {
+        @include desktop {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+            column-gap: vw(20);
+            row-gap: vw(20);
+        }
+    }
+    &_slider-counter {
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        font-size: 16px;
+        left: $indent;
+        @include desktop {
+            display: none;
+        }
+    }
+
+    .tns-ovh {
+        overflow: visible;
+    }
+    .tns-controls {
+        margin: 30px 0 0;
+        justify-content: flex-end;
+    }
+}
