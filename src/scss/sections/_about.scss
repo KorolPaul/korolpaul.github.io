@@ -156,13 +156,17 @@
         display: flex;
         align-items: flex-end;
         position: relative;
+        gap: 16px;
+        @include desktop {
+            gap: 20px;
+        }
     }
 
     &_slides-row {
         display: flex;
         align-items: flex-end;
         gap: 16px;
-        animation: infinite-rotation 5s linear infinite;
+        animation: infinite-rotation 9s linear infinite;
         flex-shrink: 0;
         @include desktop {
             gap: 20px;
@@ -208,10 +212,10 @@
 
 @keyframes infinite-rotation-dublicate {
     0% {
-        transform: translate(-20px);
+        transform: translate(0);
     }
 
     100% {
-        transform: translate(calc(-200% - 20px));
+        transform: translate(-200%);
     }
 }
