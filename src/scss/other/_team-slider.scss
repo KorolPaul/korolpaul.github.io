@@ -1,0 +1,36 @@
+.team-slider {
+    position: relative;
+
+    .tns-outer {
+        margin: 0 #{-$indent};
+        @include desktop {
+            margin-left: calc(-50vw - 22px + $max-width / 2 - 98px);
+            margin-right: calc(-50vw - 22px + $max-width / 2 - 98px);
+        }
+    }
+
+    .tns-ovh {
+        padding: 0 $indent;
+        @include desktop {
+            padding-left: calc(50vw - $max-width / 2 + 120px);
+        }
+    }
+
+    .tns-controls {
+        margin: 0;
+        
+        button {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        button[data-controls="prev"]{
+            left: -30px;
+        }
+        button[data-controls="next"]{
+            right: -30px;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+.cases {
+    border-radius: 30px;
+    background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, transparent 100%), #F7F9FC;
+    text-align: center;
+    padding: 32px $indent;
+    @include tablet {
+        padding: 60px;
+    }
+
+    .page-blue & {
+        background: linear-gradient(0deg, rgba(21, 125, 170, 0.30) 0%, rgba(21, 125, 170, 0.00) 100%),
+            linear-gradient(0deg, #EAFAFE 0%, #EAFAFE 100%),
+            linear-gradient(234deg, #157DAA -167.08%, rgba(21, 125, 170, 0.00) 100%);;
+    }
+
+    .page-orange & {
+        background: linear-gradient(0deg, rgba(238, 143, 0, 0.30) 0%, rgba(238, 143, 0, 0.00) 100%),
+            linear-gradient(0deg, #FDF5E8 0%, #FDF5E8 100%),
+            linear-gradient(234deg, #EE8F00 -167.08%, rgba(238, 143, 0, 0.00) 100%);
+    }
+
+    &_label {
+        border-radius: 100px;
+        background: $bg_color;
+        color: $cBright;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: uppercase;
+        padding: 11px $indent;
+
+        @include tablet {
+            padding: 11px 24px;
+        }
+    }
+
+    &_title {
+        display: block;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 130%;
+        margin: $indent 0;
+
+        @include tablet {
+            font-size: 48px;
+            margin: 30px 0;
+        }
+    }
+
+    &_items {
+        text-align: initial;
+    }
+
+    &_items {
+
+    }
+
+    .tns-outer {
+        position: relative;
+    }
+
+    .tns-controls {
+        @include tablet {
+            position: absolute;
+            right: 102px;
+            bottom: 60px;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

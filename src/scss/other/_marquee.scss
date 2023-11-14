@@ -1,0 +1,25 @@
+.marquee {
+    display: flex;
+    overflow: hidden;
+
+    gap: 30px;
+
+    &_image {
+        flex-shrink: 0;
+        height: 92px;
+        animation: marquee 20s linear infinite;
+        max-width: none;
+        @include tablet {
+            height: 300px;
+        }
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(-100%)
+    }
+}

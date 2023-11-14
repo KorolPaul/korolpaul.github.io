@@ -1,17 +1,15 @@
 @font-face {
-    font-family: 'ITC Busorama Bold';
-    src: url('src/fonts/ITCBusoramaBold.woff2') format('woff2'),
-        url('src/fonts/ITCBusoramaBold.woff') format('woff');
-    font-weight: 700;
+    font-family: 'VisbyCF';
+    src: url('src/fonts/VisbyCF-DemiBold.woff2') format('woff2');
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'ITC Avant Garde Std Bk';
-    src: url('src/fonts/ITCAvantGardeStd-Md.woff2') format('woff2'),
-        url('src/fonts/ITCAvantGardeStd-Md.woff') format('woff');
-    font-weight: 500;
+    font-family: 'VisbyCF';
+    src: url('src/fonts/VisbyCF.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }

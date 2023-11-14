@@ -1,0 +1,125 @@
+.reviews {
+    &_title {
+        margin: 0 0 32px;
+        @include tablet {
+            margin: 0 0 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        h2 {
+            margin: 0;
+            max-width: 800px;
+            font-size: 32px;
+            margin-bottom: $indent;
+            @include tablet {
+                font-size: 48px;
+                margin-bottom: 0;
+            }
+        }
+
+        img {
+            vertical-align: sub;
+        }
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        @include desktop {
+            flex-direction: row;
+            gap: 24px;
+        }
+    }
+
+    &_items {
+        background-color: $cWhite;
+        border-radius: 15px;
+        padding: 32px $indent;
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        @include tablet {
+            gap: 20px;
+            padding: 60px;
+        }
+
+        .page-green & {
+            background-color: $cPageGreenLight;
+        }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
+        }
+    
+        .page-orange & {
+            background-color: $cPageOrangeLight;
+        }
+    }
+
+    &_sourses {
+        background-color: $cWhite;
+        border-radius: 15px;
+        padding: 32px $indent;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        box-sizing: border-box;
+        min-width: 282px;
+        @include tablet {
+            padding: 75px 30px;
+        }
+
+        .page-green & {
+            background-color: $cPageGreenLight;
+        }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
+        }
+
+        .page-orange & {
+            background-color: $cPageOrangeLight;
+        }
+    }
+
+    &_source {
+        color: $color;
+
+        p {
+            font-size: 14px;
+            margin: 0;
+        }
+    }
+
+    &_source-header {
+        display: flex;
+        align-items: center;
+        gap: $indent;
+        margin: 0 0 8px;
+    }
+
+    &_source-icon {
+        max-width: 70px;
+    }
+
+    &_source-count {
+        font-size: 18px;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+
+    &_source-title {
+        font-size: 18px;
+        font-weight: 600;
+        display: block;
+        margin: 0 0 4px;
+        @include tablet {
+            font-size: 22px;
+        }
+    }
+}

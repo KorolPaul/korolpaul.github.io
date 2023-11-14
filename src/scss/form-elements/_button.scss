@@ -1,32 +1,38 @@
 @mixin button {
     display: inline-block;
-    background: $cRed url(#{$img}/pattern.png) no-repeat center;
+    background: $cBright;
     box-sizing: border-box;
-    border: none;
-    border-radius: 50px;
+    border: 1px solid $cBright;
+    border-radius: 10px;
     cursor: pointer;
     color: $bg_color;
-    font-size: 14px;
-    font-weight: 500;
-    height: 44px;
-    line-height: 46px;
-    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 $indent;
     white-space: nowrap;
     text-align: center;
-    transform: scale(1);
     transition: .2s $easing color,
                 .2s $easing background-color,
-                .2s $easing filter,
-                .2s $easing box-shadow,
-                .2s $easing border,
                 .2s $easing transform;
     @include desktop {
         font-size: 18px;
-        height: 60px;
-        line-height: 60px;
+        height: 56px;
+        line-height: 58px;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
-    
+    &:hover {
+        background-color: transparent;
+        color: $cBright;
+    }
+
+    &:active {
+        background-color: $cNavyLight;
+    }
+
     &:disabled {
         opacity: .6;
     }
@@ -43,11 +49,9 @@
     border-radius: 0;
 
     &:hover {
-        transform: none;
         background-color: transparent;
     }
     &:active {
-        transform: none;
         background-color: transparent;
     }
 }
@@ -60,53 +64,55 @@ input[type="submit"] {
 }
 
 .button {
-    &:hover {
-        @include tablet {
-            transform: translateY(-4px);
-            box-shadow: 0px 6px 0px $cOrange, 0px 12px 0px $cYellow, 0px 18px 0px #FFEBCB;
-        }
-    }
+    &__light {
+        background: transparent;
+        border-radius: 10px;
+        color: $cBright;
 
-    &:active {
-        @include tablet {
-            transform: translateY(0);
-            box-shadow: 0px -6px 0px #b4413b;
-        }
-    }
-
-    &__blue {
-        background-color: $cBlue;
-
-        &:hover {
-            @include tablet {
-                box-shadow: 0px 6px 0px #4BAFB1, 0px 12px 0px #68C1BF, 0px 18px 0px #A4DAD9;
-            }
+        &:hover,
+        &.active {
+            background-color: $cBright;
+            color: $bg_color;
         }
 
         &:active {
-            @include tablet {
-                box-shadow: 0px -6px 0px #405d65;
-            }
+            background-color: $cNavy;
+            border-color: $cNavy;
         }
     }
 
     &__secondary {
-        color: $bg_color;
-        background: transparent;
-        border: 2px solid currentColor;
-        color: $cRed;
+        background-color: rgba(31, 53, 240, .1);
+        border-color: rgba(31, 53, 240, .1);
+        color: $cBright;
 
-        &:hover {
+        &:hover,
+        &.active {
+            background-color: $cBright;
             color: $bg_color;
-            background-color: $cRed;
-            filter: none;
-            transform: none;
-            box-shadow: none;
         }
+
         &:active {
-            filter: none;
-            box-shadow: none;
-            transform: none;
+            background-color: $cNavy;
+            border-color: $cNavy;
+        }
+    }
+
+    &__white {
+        background-color: $bg_color;
+        border-color: $bg_color;
+        color: $cBright;
+
+        &:hover,
+        &.active {
+            background-color: $cBright;
+            border-color: $cBright;
+            color: $bg_color;
+        }
+
+        &:active {
+            background-color: $cNavy;
+            border-color: $cNavy;
         }
     }
 }

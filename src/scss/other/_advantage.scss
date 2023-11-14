@@ -1,86 +1,59 @@
 .advantage {
-    box-sizing: border-box;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: url(#{$img}/pattern.png) -30px -40px no-repeat;
+    border-radius: 15px;
+    padding: $indent;
+    background-color: $cPurpleLght;
     position: relative;
     overflow: hidden;
-    border-radius: 16px 16px 0 0;
-    color: $color;
-    @include desktop {
-        border-radius: 30px 30px 0 0;
-        min-height: 320px;
+    @include tablet {
+        padding: 60px;
+
     }
 
-    &__blue {
+    &:nth-child(2n) {
         background-color: $cBlueLight;
     }
-    &__orange {
-        background-color: $cYellow;
+    &:nth-child(3n) {
+        background-color: $cYellowLight;
     }
-    &__red {
-        background-color: $cRed;
+    &:nth-child(4n) {
+        background-color: $cNavyLight;
     }
-    &__purple {
-        background-color: $cPurpleDark;
-        color: $bg_color;
+    &:nth-child(5n) {
+        background-color: $cGreyLight;
+    }
+    &:nth-child(6n) {
+        background-color: $cGreenLight;
+    }
+    &:nth-child(7n) {
+        background-color: $cOrangeLight;
     }
 
-    &::after {
-        content: '';
-        width: 20px;
-        height: 20px;
-        top: 20px;
-        right: 20px;
+    &_image {
         position: absolute;
-        border-radius: 50%;
-        background: $cBlue url(#{$img}/pattern.png) -30px -40px no-repeat;
+        right: 0;
+        bottom: 0;
     }
 
     &_title {
-        font-family: $font-family;
-        font-weight: 500;
+        display: block;
         font-size: 24px;
-        line-height: 1.2;
-        margin: 0;
-        padding: 20px;
-        @include desktop {
-            padding: 40px;
-            font-size: 38px;
-        }
-
-        .advantage__red & {
-            color: $bg_color;
+        font-weight: 600;
+        line-height: 110%;
+        margin: 0 0 $indent;
+        width: 55%;
+        @include tablet {
+            font-size: 32px;
+            margin-bottom: 20px;
         }
     }
-    &_text {
-        font-size: 18px;
-        line-height: 130%;
-        padding: 20px;
-        border-radius: 16px 16px 0 0;
-        background: url(#{$img}/pattern.png) -50px -60px no-repeat;
-        @include desktop {
-            border-radius: 30px 30px 0 0;
-            padding: 40px;
-        }
 
-        .advantage__blue & {
-            background-color: $cBlueMedium;
-        }
-        .advantage__orange & {
-            background-color: $cOrange;
-        }
-        .advantage__red & {
-            background-color: $cOrange;
-        }
-        .advantage__purple & {
-            background-color: $cPurple;
-        }
+    p {
+        width: 55%;
+        margin: 0;
 
-        p {
-            max-width: 490px;
+        .bright {
+            font-size: 22px;
+            font-weight: 600;
         }
     }
 }

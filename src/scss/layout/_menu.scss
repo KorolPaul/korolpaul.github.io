@@ -1,155 +1,244 @@
-
 .menu {
-    background-color: $bg_color;
-    box-sizing: border-box;
-    position: fixed;
-    z-index: 11;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: auto;
-    left: 0;
-    top: 0;
-    max-width: 1148px;
-    width: 100%;
-    padding: 76px 0 0;
-    opacity: 0;
-    pointer-events: none;
-    transition: .7s $easing opacity;
-    @include desktop {
-        background-color: transparent;
-        padding: 0;
-        position: static;
-        text-align: center;
-        height: auto;
-        overflow-y: initial;
-        opacity: 1;
-        pointer-events: all;
-    }
 
     .menu-opened & {
         opacity: 1;
         pointer-events: all;
         transition: .3s $easing opacity;
         @include desktop {
-            pointer-events:all;
+            pointer-events: all;
             opacity: 1;
         }
     }
 
-    &_links {
+    &_items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
         @include desktop {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-        }
-        @include desktop-large {
-            gap: 40px;
+            flex-direction: row;
+            gap: 0;
         }
     }
-    &_link {
-        font-family: $font-family__heading;
-        font-weight: 700;
-        font-size: 4vh;
-        min-height: 50px;
-        line-height: 12vh;
-        height: 12vh;
-        color: $bg_color;
-        background-color: $cRed;
-        padding: 0 7.5vh;
-        text-transform: uppercase;
-        border-radius: 100px 0 0 100px;
-        display: block;
-        transform: translateX(100%);
-        transition: .2s $easing color,
-                    .3s $easing transform;
+
+    &_item {
+        position: relative;
         @include desktop {
-            font-family: $font-family;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 1;
-            white-space: nowrap;
-            background-color: transparent;
+            height: 56px;
+        }
+    }
+
+    &_link {
+        height: 100%;
+        color: $color;
+        font-weight: 600;
+        background-color: $cWhite;
+        padding: 0 50px;
+        position: relative;
+        z-index: 11;
+        display: none;
+        @include desktop {
+            display: flex;
+            line-height: 58px;
+        }
+
+        .menu_item:first-child & {
+            @include desktop {
+                border-radius: 10px 0 0 10px;
+            }
+        }
+
+        .menu_item:last-child & {
+            @include desktop {
+                border-radius: 0 10px 10px 0;
+            }
+        }
+
+        .menu_item__parent & {
+            padding-right: 22px;
+
+            &::after {
+                content: '';
+                background: url(#{$img}/menu-arrow.svg) no-repeat center / 100%;
+                height: $indent;
+                width: $indent;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                margin-top: calc(-1 * $indent / 2);
+                transform-origin: center;
+                transition: .2s $easing transform;
+            }
+
+            &:hover::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &_dropdown {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        box-sizing: border-box;
+        padding-top: 82px;
+        background: $bg_color;
+        opacity: 0;
+        pointer-events: none;
+        transition: .3s $easing opacity;
+        @include desktop {
+            background: rgba($bg_color, 0.97);
+            padding-top: 116px;
+        }
+
+        .menu-opened &,
+        .menu_item__parent:hover & {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    &_dropdown-content {
+        @include layout;
+    }
+
+    &_dropdown-title,
+    &_dropdown-description {
+        display: none;
+        @include desktop {
+            display: block;
+        }
+    }
+
+    &_dropdown-title {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%;
+        margin: 0 0 $indent;
+    }
+
+    &_dropdown-description {
+        margin: 0 0 54px;
+    }
+
+    &_dropdown-footer {
+        @include desktop {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &_dropdown-email {
+        font-weight: 600;
+        line-height: 150%;
+        display: block;
+        margin: 0 0 $indent;
+        @include desktop {
+            margin: 0;
+        }
+    }
+
+    &_dropdown-copyrights {
+        font-weight: 400;
+        line-height: 150%;
+        color: rgba($color, .3);
+    }
+
+    &_sublist {
+        display: flex;
+        flex-direction: column;
+        gap: $indent;
+        padding: 0;
+        margin: 0 0 6px;
+        list-style: none;
+        @include desktop {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            padding: 40px 0 60px;
+            border-top: 1px solid #E4E8F0;
+            gap: 26px;
+            margin: 0;
+        }
+        @include desktop {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    &_sublist-item-title {
+        color: $color;
+        line-height: 1;
+        font-weight: 600;
+        padding: $indent 32px $indent $indent;
+        margin: 0;
+        background: $cWhite;
+        border-radius: 10px;
+        display: block;
+        position: relative;
+        @include desktop {
             padding: 0;
-            text-transform: none;
-            display: inline;
-            color: $cBlue;
-            height: auto;
-            min-height: 0;
-            transform: none;
-            transition: .3s $easing color,
-                        .6s $easing transform;
+            margin: 0 0 10px;
+            background-color: transparent;
+            border-radius: 0;
+            font-size: 22px;
+            line-height: 1.5;
         }
 
-        &:nth-child(2n) {
-            background-color: $cOrange;
-            transition-delay: 0s, .05s;
+        &::after {
+            content: '';
+            background: url(#{$img}/menu-arrow.svg) no-repeat center / 100%;
+            height: $indent;
+            width: $indent;
+            position: absolute;
+            right: $indent;
+            top: 50%;
+            margin-top: calc(-1 * $indent / 2);
+            transform-origin: center;
+            transition: .2s $easing transform;
             @include desktop {
-                background-color: transparent;
-                transition-delay: 0s, .1s;
-            }
-        }
-        &:nth-child(3n) {
-            background-color: $cYellow;
-            transition-delay: 0s, .1s;
-            @include desktop {
-                background-color: transparent;
-                transition-delay: 0s, .2s;
-            }
-        }
-        &:nth-child(4n) {
-            background-color: $cBlueLight;
-            transition-delay: 0s, .15s;
-            @include desktop {
-                background-color: transparent;
-                transition-delay: 0s, .3s;
-            }
-        }
-        &:nth-child(5n) {
-            background-color: $cBlueMedium;
-            transition-delay: 0s, .2s;
-            @include desktop {
-                background-color: transparent;
-                transition-delay: 0s, .4s;
-            }
-        }
-        &:nth-child(6n) {
-            background-color: $cBlue;
-            transition-delay: 0s, .25s;
-            @include desktop {
-                background-color: transparent;
-                transition-delay: 0s, .4s;
-            }
-        }
-        &:nth-child(7n) {
-            background-color: $cPurple;
-            transition-delay: 0s, .3s;
-            @include desktop {
-                background-color: transparent;
-                transition-delay: 0s, .4s;
+                content: none;
             }
         }
 
-        &:hover {
-            @include desktop {
-                color: $cRed;
-            }
+        &.opened:after {
+            transform: rotate(180deg);
+        }
+    }
+
+    &_sublist-menu {
+        list-style: none;
+        margin: 0 0 0 $indent;
+        padding: $indent 0 0;
+        display: none;
+        @include desktop {
+            padding: 0;
+            display: block;
         }
 
-        .blue-page & {
-            @include desktop {
-                color: $bg_color;
-            }
+        .active + & {
+            display: block;
+        }
+    }
+
+
+    &_sublist-link {
+        font-weight: 600;
+        line-height: 1.5;
+        color: $color;
+        @include desktop {
+            color: #535479;
+            font-weight: 400;
         }
 
-        .blue-page &:hover {
-            @include desktop {
-                color: $cBlueLight;
-            }
-        }
-
-        .menu-opened & {
-            transform: translateX(0);
+        &::before {
+            content: '- ';
         }
     }
 }

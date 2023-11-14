@@ -1,17 +1,11 @@
 html {
-    @include desktop {
-        scroll-behavior: smooth;
-    }
-}
-
-html.loaded {
     scroll-behavior: smooth;
 }
 
 body {
     color: $color;
     background: $bg_color url(#{$img}/pattern-big.png)  repeat-y top center;
-    font: 500 #{$font-size__small}/#{1.4} $font-family;
+    font: 500 #{$font-size}/#{1.5} $font-family;
     padding: 0;
     scroll-behavior: smooth;
     @include tablet {
@@ -22,18 +16,26 @@ body {
     }
 }
 
-.blue-page {
-    background-color: $cBlue;
-    color: $bg_color;
+.page-green {
+    --cBright: #{$cPageGreen};
+}
+
+.page-blue {
+    --cBright: #{$cPageBlue};
+}
+
+.page-orange {
+    --cBright: #{$cPageOrange};
 }
 
 a {
-    color: $cPurpleDark;
+    color: $cBright;
     text-decoration: none;
     transition: .2s $easing color;
 
     &:hover,
     &.hover {
+        color: #192AC2;
         outline: none;
     }
     &:active,
@@ -47,21 +49,11 @@ a {
 }
 
 p {
-    margin: 0 0 20px;
-    @include desktop {
-        margin-bottom: 22px;
-    }
+    margin: 0 0 18px;
 }
 
 img {
     max-width: 100%;
-
-    &[data-src] {
-        display: none;
-        @include desktop {
-            display: initial;
-        }
-    }
 }
 
 button,
@@ -80,7 +72,7 @@ table {
 ol,
 ul {
     padding: 0 0 0 26px;
-    margin: 0 0 22px;
+    margin: 0 0 18px;
     @include desktop {
         padding-left: 30px;
     }
@@ -91,19 +83,51 @@ a[name] {
     top: -100px;
 }
 
-#agendalist {
-    flex-grow: 1;
+a[href^='mailto:'] {
+    background: url(#{$img}/email.svg) no-repeat left center;
+    font-weight: 600;
+    padding: 0 0 0 34px;
 }
+
 
 .bright {
-    color: $cRed;
+    color: $cBright;
 }
 
-.cold {
-    color: $cBlue;
+.gradiented-text {
+    @include gradiented-text($cBright, $cPurple);
+    font-weight: 600;
+}
+
+main {
+    padding-top: 82px;
+    @include tablet {
+        padding-top: 146px;
+    }
+}
+
+blockquote {
+    padding: $indent;
+    font-size: 18px;
+    font-weight: 600;
+    background: url(#{$img}/quotes.svg) no-repeat right top -5px;
+    border-radius: 15px;
+    box-shadow: 0 0 1px 1px #E4E8F0 inset;
+    margin: 0 0 $indent;
+    @include tablet {
+        padding: 30px;
+        margin: 0 0 30px;
+    }
+}
+
+picture {
+    source,
+    img {
+        width: 100%;
+    }
 }
 
 mark {
-    padding: 6px;
-    border-radius: 6px;
+    background-color: #0E0B3A;
+    color: $bg_color;
 }
