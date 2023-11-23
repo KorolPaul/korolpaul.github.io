@@ -17,6 +17,7 @@
 @import "form-elements/radio";
 @import "form-elements/label";
 @import "form-elements/form";
+@import "form-elements/file";
 
 /*layout*/
 @import "layout/headings";
@@ -37,6 +38,7 @@
 @import "layout/map";
 @import "layout/promo";
 @import "layout/banner";
+@import "layout/accordion";
 
 /* other */
 @import "other/intro";
@@ -72,6 +74,19 @@
 @import "other/services-list";
 @import "other/alphabet";
 @import "other/tricks";
+@import "other/positions";
+@import "other/talent";
+@import "other/infographics";
+@import "other/comparison";
+@import "other/faq";
+@import "other/contractors";
+@import "other/about";
+@import "other/employees";
+@import "other/plan-cards";
+@import "other/plan-card";
+@import "other/strategy";
 
 /* plugins */
 @import "plugins/tiny-slider";
+@import "plugins/comparison";
+@import "plugins/nice-select";

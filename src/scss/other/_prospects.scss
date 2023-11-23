@@ -40,14 +40,18 @@
             padding: 180px 0 0 0;
             max-width: 588px;
         }
+
+        & > div:last-child {
+            @include desktop {
+                margin-bottom: 600px;
+            }
+        }
     }
 
     &_content {
         @include desktop {
             display: flex;
             justify-content: space-between;
-        }
-        @include desktop {
             margin-left: calc(50vw - $max-width / 2 - $indent);
         }
     }
@@ -94,15 +98,20 @@
         background-color: $cBright;
         font-size: 64px;
         line-height: 191px;
-        color: $bg_color;
+        color: transparent;
         display: block;
         text-align: center;
         position: absolute;
         top: -90px;
         left: 50%;
         margin-left: -90px;
-        transform: scale(.3);
-        transition: .1s ease transform;
+        scale: .16;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .1s ease transform,
+                    .2s ease color,
+                    .4s ease scale;
 
         &::after {
             content: '';
@@ -118,7 +127,8 @@
         &:nth-child(2),
         &:nth-child(6) {
             top: 50%;
-            left: -90px;
+            left: auto;
+            right: -90px;
             margin: -90px 0 0;
         }
 
@@ -130,9 +140,35 @@
 
         &:nth-child(4) {
             top: 50%;
-            left: auto;
-            right: -90px;
+            left: -90px;
             margin: -90px 0 0;
+        }
+
+        &.active {
+            scale: (1);
+            z-index: 1;
+            color: $bg_color;
+            //transform: scale(1);
+        }
+
+        &.preactive {
+            scale: (.75);
+            z-index: 1;
+            color: $bg_color;
+            //transform: scale(1);
+        }
+
+        img {
+            transform-origin: center;
+            opacity: 0;
+            transform: scale(0);
+            transition: .2s $easingSmooth transform,
+                .2s $easingSmooth opacity;
+        
+        }
+        &.active img {
+            opacity: 1;
+            transform: scale(1);
         }
     }
 
