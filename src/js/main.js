@@ -463,21 +463,27 @@ if (!isMobile && prospectsElement) {
 
             // console.log(angle);
             prospectsNumberElements.forEach(el => el.classList.remove('active'));
+            prospectsNumberElements.forEach(el => el.classList.remove('preactive'));
 
             switch(true) {
                 case angle > -90:
+                    prospectsNumberElements[1].classList.add('preactive');
                     prospectsNumberElements[0].classList.add('active');
                     return;
                 case angle > -180:
+                    prospectsNumberElements[2].classList.add('preactive');
                     prospectsNumberElements[1].classList.add('active');
                     return;
                 case angle > -270:
+                    prospectsNumberElements[3].classList.add('preactive');
                     prospectsNumberElements[2].classList.add('active');
                     return;
                 case angle > -360:
+                    prospectsNumberElements[4].classList.add('preactive');
                     prospectsNumberElements[3].classList.add('active');
                     return;
                 case angle > -450:
+                    prospectsNumberElements[5].classList.add('preactive');
                     prospectsNumberElements[4].classList.add('active');
                     return;
                 case angle > -540:
