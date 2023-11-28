@@ -1,7 +1,7 @@
 const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 const thresholdSteps = [...Array(10).keys()].map(i => i / 10);
 const isMobile = window.innerWidth <= 768
-const isDesktop = window.innerWidth >= 1070
+const isDesktop = window.innerWidth >= 1200
 
 // sliders
 const showcaseSlider = document.querySelectorAll('.showcase_slider');
@@ -18,7 +18,7 @@ showcaseSlider.forEach(el => {
         loop: false,
         mode: 'gallery',
         responsive: {
-            768: {
+            1200: {
                 nav: false,
             }
         },
@@ -36,7 +36,7 @@ solutionsSlider.forEach(sliderElement => {
     const slider = tns({
         container: sliderElement,
         items: 1,
-        gutter: 16,
+        gutter: 0,
         mouseDrag: true,
         autoplay: false,
         nav: true,
@@ -53,11 +53,13 @@ solutionsSlider.forEach(sliderElement => {
             }
         },
         onInit: () => {
-            solutionsSliderButtons.forEach((element) => element.addEventListener('click', (e) => {
-                slider.goTo(Number(e.target.dataset.slide) - 1);
-                solutionsSliderButtons.forEach(el => el.classList.remove('active'));
-                e.target.classList.add('active');
-            }));
+            if (isDesktop){
+                solutionsSliderButtons.forEach((element) => element.addEventListener('click', (e) => {
+                    slider.goTo(Number(e.target.dataset.slide) - 1);
+                    solutionsSliderButtons.forEach(el => el.classList.remove('active'));
+                    e.target.classList.add('active');
+                }));
+            }
         }
     });
 
@@ -122,6 +124,28 @@ solutionsSlider.forEach(sliderElement => {
             root: null
         });
         observer.observe(wrapper);
+    }
+});
+
+const prospectsContainer = document.querySelectorAll('.prospects');
+
+prospectsContainer.forEach(tabContainer => {
+    const tabsButtons = tabContainer.querySelectorAll('.prospects_slider-button');
+    const tabsBlocks = tabContainer.querySelectorAll('.prospect');
+
+    if (tabsButtons.length) {
+        function switchTab(e) {
+            e.preventDefault();
+
+            const index = e.target.dataset.tab;
+            tabsButtons.forEach(el => el.classList.remove('active'));
+            tabsBlocks.forEach(el => el.classList.remove('active'));
+
+            tabsButtons[index - 1].classList.add('active');
+            tabsBlocks[index - 1].classList.add('active');
+        }
+
+        tabsButtons.forEach(el => el.addEventListener('click', switchTab));
     }
 });
 
@@ -234,6 +258,46 @@ partnersSlider.forEach(el => {
     });
 });
 
+const masonrySlider = document.querySelectorAll('.masonry');
+masonrySlider.forEach(el => {
+    const slider = tns({
+        container: el,
+        items: 1,
+        gutter: 0,
+        mouseDrag: true,
+        autoplay: false,
+        nav: true,
+        navPosition: 'bottom',
+        controls: false,
+        loop: false,
+        responsive: {
+            1200: {
+                disable: true,
+            }
+        },
+    });
+});
+
+const positionsSlider = document.querySelectorAll('.positions_list');
+positionsSlider.forEach(el => {
+    const slider = tns({
+        container: el,
+        items: 1,
+        gutter: 0,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        controlsPosition: 'bottom',
+        controls: true,
+        loop: false,
+        responsive: {
+            768: {
+                disable: true,
+            }
+        },
+    });
+});
+
 
 // menu
 const menuToggleElement = document.querySelector('.menu-toggle');
@@ -246,6 +310,12 @@ if (menuToggleElement) {
         }
     });
 }
+
+const submenuArrows = document.querySelectorAll('.menu_sublist-item-arrow');
+submenuArrows.forEach(el => el.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.target.parentElement.classList.toggle('opened');
+}));
 
 
 function closeAllOpened() {
@@ -520,13 +590,18 @@ if (!isMobile && prospectsElement) {
 const blinksElement = document.querySelector('.blinks');
 if (blinksElement) {
     document.addEventListener(wheelEvent, (e) => {
+        blinksElement.classList.remove('blinks__down');
+        blinksElement.classList.remove('blinks__up');
         if (e.deltaY > 0) {
-            blinksElement.classList.remove('blinks__down');
             blinksElement.classList.add('blinks__up');
         } else {
             blinksElement.classList.add('blinks__down');
-            blinksElement.classList.remove('blinks__up');
         }
+
+        setTimeout(() => {
+            blinksElement.classList.remove('blinks__down');
+            blinksElement.classList.remove('blinks__up');
+        }, 1000);
     });
 }
 
@@ -551,6 +626,12 @@ if (clientsMapButtons.length) {
         document.querySelector('.clients-map').dataset.place = activePlace;
     }));
 }
+
+const mapMarkers = document.querySelectorAll('.map_place');
+mapMarkers.forEach(el => el.addEventListener('click', function(e) {
+    mapMarkers.forEach(el => el.classList.remove('active'));
+    e.target.classList.add('active');
+}))
 
 // alphabet cards
 if (document.querySelector('.alphabet')) {
@@ -627,7 +708,7 @@ if ('NiceSelect' in window && document.querySelector('select')) {
 
 /* changable background */
 const strategyElement = document.querySelector('.strategy');
-if (strategyElement) {
+if (strategyElement && !isMobile) {
     const bgElement = strategyElement.querySelector('.strategy_bg');
     const items = strategyElement.querySelectorAll('.strategy_item');
 

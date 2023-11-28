@@ -1,12 +1,11 @@
 .footer {
-    padding: 64px 0 0;
+    padding: $indent 0 0;
     position: relative;
     color: $bg_color;
     color: #535479;
     @include desktop {
         padding-top: 100px;
     }
-
 
     &_holder {
         @include layout;
@@ -83,7 +82,7 @@
     &_contacts-links {
         width: 100%;
         @include tablet {
-            width: calc(100% - 26px);
+            width: calc(100% - 38px);
         }
     }
 
@@ -151,7 +150,7 @@
         @include tablet {
             padding: 0;
             margin: 0 0 10px;
-            background-color: transparent;
+            background-color: transparent !important;
             border-radius: 0;
             line-height: 1.5;
         }
@@ -178,6 +177,18 @@
 
         & + & {
             margin-top: $indent;
+        }
+
+        .page-green & {
+            background-color: $cPageGreenLight;
+        }
+
+        .page-blue & {
+            background-color: $cPageBlueLight;
+        }
+
+        .page-orange & {
+            background-color: $cPageOrangeLight;
         }
     }
 

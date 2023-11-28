@@ -1,12 +1,21 @@
 .showcase {
     position: relative;
+    @include desktop {
+        padding-bottom: 230px;
+        height: 704px;
+        box-sizing: border-box;
+    }
 
     &_buttons {
         display: none;
-        @include tablet {
+        @include desktop {
             display: flex;
             align-items: flex-end;
             gap: 24px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
         }
     }
 
@@ -67,7 +76,9 @@
     }
 
     &_bg-title {
-        @include tablet {
+        display: none;
+        @include desktop {
+            display: block;
             font-size: 200px;
             font-weight: 600;
             line-height: .9;

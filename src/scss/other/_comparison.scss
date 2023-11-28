@@ -41,20 +41,21 @@
 
     &_images {
         display: none;
-        @include desktop {
+        @include tablet {
             display: block;
             border-radius: 30px;
         }
     }
 
     &_tabs {
-        @include desktop {
+        @include tablet {
             display: none;
         }
     }
 
     &_tabs-buttons {
         display: flex;
+        justify-content: center;
         gap: 5px;
         overflow-x: auto;
         line-height: 0;
