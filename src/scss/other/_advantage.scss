@@ -35,7 +35,17 @@
     &_image {
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 50%;
+        transform: translate(50%);
+        @include desktop {
+            transform: none;
+            right: 0;
+        }
+
+        &__right {
+            transform: none;
+            right: 0;
+        }
     }
 
     &_title {
@@ -44,16 +54,34 @@
         font-weight: 600;
         line-height: 110%;
         margin: 0 0 $indent;
-        width: 55%;
         @include tablet {
+            width: 55%;
             font-size: 32px;
             margin-bottom: 20px;
         }
     }
 
+    &_number {
+        display: none;
+        @include desktop {
+            display: block;
+            font-size: 170px;
+            font-weight: 600;
+            position: absolute;
+            left: 0;
+            bottom: -110px;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: rgba($bg_color, $alpha: 1);
+        }
+    }
+
     p {
-        width: 55%;
         margin: 0;
+        @include tablet {
+            width: 55%;
+        }
 
         .bright {
             font-size: 22px;
