@@ -752,3 +752,23 @@ if (strategyElement && !isMobile) {
         observer.observe(el);
     })
 }
+
+/* reviews change */
+const reviewElements = document.querySelectorAll('.review');
+if (reviewElements.length) {
+    const reviewsCount = reviewElements.length;
+    let activeIndex = 0;
+
+    setInterval(() => {
+        reviewElements[activeIndex]?.classList.toggle('active');
+        reviewElements[activeIndex]?.nextElementSibling?.classList.toggle('active');
+        reviewElements[activeIndex]?.previousElementSibling?.classList.toggle('active');
+
+        if (activeIndex < reviewsCount - reviewsCount / 3) {
+            activeIndex += reviewsCount / 3;
+        } else {
+            activeIndex = 0;
+        }
+
+    }, 3000);
+}
