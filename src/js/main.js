@@ -90,6 +90,7 @@ solutionsSlider.forEach(sliderElement => {
                 slider.goTo('next');
                 solutionsSliderButtons.forEach(el => el.classList.remove('active'));
                 solutionsSliderButtons[index + 1].classList.add('active');
+                wrapper.dataset.slide = index + 2;
             } else {
                 if (index === 0) {
                     document.removeEventListener(wheelEvent, preventScroll, { passive: false });
@@ -99,6 +100,7 @@ solutionsSlider.forEach(sliderElement => {
                 slider.goTo('prev');
                 solutionsSliderButtons.forEach(el => el.classList.remove('active'));
                 solutionsSliderButtons[index - 1].classList.add('active');
+                wrapper.dataset.slide = index;
             }
         }
 
