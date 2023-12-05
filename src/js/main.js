@@ -469,26 +469,20 @@ if (Cookies) {
 const accordionElements = document.querySelectorAll('.accordion');
 
 accordionElements.forEach(accordion => {
-    const accordionButtons = accordion.querySelectorAll('.accordion_button');
+    const accordionButtons = accordion.querySelectorAll('.accordion_item');
     
     function toggle(e) {
         e.preventDefault();
         
         if (e.target.classList.contains('active')) {
-            e.target.classList.remove('active');
-            e.currentTarget.nextElementSibling.classList.remove('active');
-            e.currentTarget.parentElement.classList.remove('active');
+            e.currentTarget.classList.remove('active');
             return;
         }
         
         if (isDesktop) {
             e.currentTarget.classList.add('active');
-            e.currentTarget.nextElementSibling.classList.add('active');
-            e.currentTarget.parentElement.classList.add('active');
         } else {
             e.currentTarget.classList.toggle('active');
-            e.currentTarget.nextElementSibling.classList.toggle('active');
-            e.currentTarget.parentElement.classList.toggle('active');
         }
     }
     
