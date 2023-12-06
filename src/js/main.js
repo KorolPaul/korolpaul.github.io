@@ -39,7 +39,7 @@ solutionsSlider.forEach(sliderElement => {
         gutter: 0,
         mouseDrag: true,
         autoplay: false,
-        nav: true,
+        nav: false,
         navPosition: 'bottom',
         controls: false,
         loop: false,
@@ -112,7 +112,7 @@ solutionsSlider.forEach(sliderElement => {
 
         const observerCallback = function (e) {
             const { boundingClientRect, intersectionRatio } = e[0];
-            // const ratio = boundingClientRect.height / 2 - boundingClientRect.y;
+            const ratio = isMobile ? 0.5 : 0.9;
 
             if (intersectionRatio > 0.9) {
                 document.addEventListener(wheelEvent, preventScroll, { passive: false })
@@ -152,17 +152,17 @@ prospectsContainer.forEach(tabContainer => {
     }
 });
 
-const casesSlider = document.querySelectorAll('.cases_items');
-casesSlider.forEach(el => {
+const casesSliders = document.querySelectorAll('.cases_items');
+casesSliders.forEach(casesSlider => {
     const slider = tns({
-        container: el,
+        container: casesSlider,
         items: 1,
         gutter: 16,
         mouseDrag: true,
         autoplay: false,
         nav: false,
         navPosition: 'bottom',
-        controls: true,
+        controls: false,
         controlsPosition: 'bottom',
         loop: true,
         mode: 'gallery',
@@ -178,6 +178,12 @@ casesSlider.forEach(el => {
         const index = info.displayIndex;
         document.querySelector('.cases .tns-counter_slide').innerText = index < 10 ? `0${index}` : index;
     });
+
+    const prevButtons = casesSlider.querySelectorAll('.tns-controls button:first-child');
+    const nextButtons = casesSlider.querySelectorAll('.tns-controls button:last-child');
+
+    prevButtons.forEach(el => el.addEventListener('click', () => slider.goTo('prev')))
+    nextButtons.forEach(el => el.addEventListener('click', () => slider.goTo('next')))
 });
 
 const clientsMapSlider = document.querySelectorAll('.clients-map_slider');
@@ -315,6 +321,14 @@ positionsSlider.forEach(el => {
                 disable: true,
             }
         },
+        onInit: function (slider) {
+            document.querySelector('.positions .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
+        }
+    });
+
+    slider.events.on('transitionStart', function (info) {
+        const index = info.displayIndex;
+        document.querySelector('.positions .tns-counter_slide').innerText = index < 10 ? `0${index}` : index;
     });
 });
 
@@ -360,7 +374,7 @@ menuLinkElements.forEach(el => el.addEventListener('touchend', () => {
 }));
 
 /* Popup */
-const popupToggleElements = document.querySelectorAll('.js-popup-toggle');
+const popupToggleElements = document.querySelectorAll('button[data-popup]');
 
 function disableScroll(e) {
     const { target } = e
@@ -386,7 +400,7 @@ function disableScroll(e) {
 }
 
 function openPopup(name) {
-    const popup = document.querySelector(`.popup[data-popup="${name}"]`);
+    const popup = document.querySelector(`div[data-popup="${name}"]`);
     if (popup) {
         popup.classList.add('opened');
         document.body.classList.add('popup-opened');
@@ -394,7 +408,7 @@ function openPopup(name) {
     }
 }
 function closePopup(name) {
-    document.querySelector('.popup.opened').classList.remove('opened');
+    document.querySelector('.popup.opened, .video-popup.opened').classList.remove('opened');
     document.body.classList.remove('popup-opened');
     // window.removeEventListener(wheelEvent, disableScroll, { passive: false });
 }
@@ -404,7 +418,7 @@ popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
     openPopup(el.dataset.popup);
 }));
 
-const popupCloseElements = document.querySelectorAll('.popup_close');
+const popupCloseElements = document.querySelectorAll('.popup_close, .video-popup_close');
 popupCloseElements.forEach(el => el.addEventListener('click', (e) => {
     e.preventDefault();
     closePopup();
@@ -528,7 +542,7 @@ if (!isMobile && prospectsElement) {
         const heightWithOffset = height;
         const screenHeight = screen.availHeight;
 
-        const scrollPercent = ((((heightWithOffset - top) / heightWithOffset ) * 100) - 100) + 15;
+        const scrollPercent = ((((heightWithOffset - top) / heightWithOffset ) * 100) - 100) + 5;
 
         const onePercent = 90 * prospectsElements.length / 100;
         const angle = Math.round(scrollPercent * -onePercent) * 1.1;
@@ -547,31 +561,37 @@ if (!isMobile && prospectsElement) {
 
             switch(true) {
                 case angle > -90:
+                    prospectsElement.dataset.slide = 1;
                     prospectsNumberElements[1].classList.add('preactive');
                     prospectsNumberElements[0].classList.add('active');
                     prospectsImageElements[0].classList.add('active');
                     return;
                 case angle > -180:
+                    prospectsElement.dataset.slide = 2;
                     prospectsNumberElements[2].classList.add('preactive');
                     prospectsNumberElements[1].classList.add('active');
                     prospectsImageElements[1].classList.add('active');
                     return;
                 case angle > -270:
+                    prospectsElement.dataset.slide = 3;
                     prospectsNumberElements[3].classList.add('preactive');
                     prospectsNumberElements[2].classList.add('active');
                     prospectsImageElements[2].classList.add('active');
                     return;
                 case angle > -360:
+                    prospectsElement.dataset.slide = 4;
                     prospectsNumberElements[4].classList.add('preactive');
                     prospectsNumberElements[3].classList.add('active');
                     prospectsImageElements[3].classList.add('active');
                     return;
                 case angle > -450:
+                    prospectsElement.dataset.slide = 5;
                     prospectsNumberElements[5].classList.add('preactive');
                     prospectsNumberElements[4].classList.add('active');
                     prospectsImageElements[4].classList.add('active');
                     return;
                 case angle > -540:
+                    prospectsElement.dataset.slide = 6;
                     prospectsNumberElements[5].classList.add('active');
                     prospectsImageElements[5].classList.add('active');
                     return;
@@ -580,26 +600,6 @@ if (!isMobile && prospectsElement) {
 
     });
 
-    // prospectsElements.forEach(el => {
-    //     let ratio = .8;
-// 
-    //     const observerCallback = function (e) {
-    //         const { target, intersectionRatio } = e[0];
-    //         console.log(target, intersectionRatio);
-    //         
-    //         if (intersectionRatio > ratio) {
-    //             const number = Number(target.dataset.number);
-    //             
-    //         }
-    //     };
-// 
-    //     const observer = new IntersectionObserver(observerCallback, {
-    //         rootMargin: '0px 0px 25% 0px',
-    //         threshold: thresholdSteps,
-    //         //root: document.body
-    //     });
-    //     observer.observe(el);
-    // })
 }
 
 /* blinks animation */
@@ -608,6 +608,7 @@ if (blinksElement) {
     document.addEventListener(wheelEvent, (e) => {
         blinksElement.classList.remove('blinks__down');
         blinksElement.classList.remove('blinks__up');
+
         if (e.deltaY > 0) {
             blinksElement.classList.add('blinks__up');
         } else {
