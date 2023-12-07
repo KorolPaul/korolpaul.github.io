@@ -1,6 +1,7 @@
 .review-wrapper {
     position: relative;
     min-height: 250px;
+    filter: drop-shadow(0px 2px 2px #EEF0F5);
     @include desktop {
         min-height: 190px;
     }
@@ -19,8 +20,10 @@
     border-radius: 40px 0 0;
     opacity: 0;
     pointer-events: none;
-    background: $bg_color url(#{$img}/quotes.svg) no-repeat right top -5px / 97px 82px;
     transition: .6s $easingSmooth opacity;
+    @include tablet {
+        background: $bg_color url(#{$img}/quotes.svg) no-repeat right top -5px / 97px 82px;
+    }
     @include desktop {
         display: flex;
         align-items: stretch;

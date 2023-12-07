@@ -170,7 +170,9 @@ casesSliders.forEach(casesSlider => {
         animateOut: 'tns-goBackOut',
         speed: 800,
         onInit: function (slider) {
-            document.querySelector('.cases .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
+            if (document.querySelector('.cases .tns-counter_total')) {
+                document.querySelector('.cases .tns-counter_total').innerText = slider.slideCount < 10 ? `0${slider.slideCount}` : slider.slideCount;
+            }
         }
     });
 
@@ -267,7 +269,9 @@ partnersSlider.forEach(el => {
         items: 1.6,
         gutter: 24,
         mouseDrag: true,
-        autoplay: false,
+        autoplay: true,
+        autoplayTimeout: 3500,
+        autoplayButtonOutput: false,
         nav: false,
         controls: true,
         controlsPosition: 'bottom',
@@ -330,6 +334,46 @@ positionsSlider.forEach(el => {
         const index = info.displayIndex;
         document.querySelector('.positions .tns-counter_slide').innerText = index < 10 ? `0${index}` : index;
     });
+});
+
+const roadmapSliders = document.querySelectorAll('.roadmap_cards');
+roadmapSliders.forEach(roadmapSlider => {
+    const slider = tns({
+        container: roadmapSlider,
+        items: 1,
+        gutter: 16,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        navPosition: 'bottom',
+        controls: false,
+        controlsPosition: 'bottom',
+        loop: false,
+        speed: 800,
+    });
+
+
+    const prevButtons = roadmapSlider.querySelectorAll('.tns-controls button:first-child');
+    const nextButtons = roadmapSlider.querySelectorAll('.tns-controls button:last-child');
+    const timelineElement = document.querySelector('.roadmap_timeline-holder');
+
+    function move(index) {
+        const translate = `translate(${-220 * index}px, ${220 * index}px) rotate(-25deg)`
+
+        timelineElement.style.transform = translate;
+    }
+
+    prevButtons.forEach(el => el.addEventListener('click', () => {
+        const {displayIndex} = slider.getInfo();
+        move(displayIndex);
+        slider.goTo('prev');
+    }));
+
+    nextButtons.forEach(el => el.addEventListener('click', () => {
+        const {displayIndex} = slider.getInfo();
+        move(displayIndex);
+        slider.goTo('next')
+    }));
 });
 
 
@@ -408,8 +452,10 @@ function openPopup(name) {
     }
 }
 function closePopup(name) {
-    document.querySelector('.popup.opened, .video-popup.opened').classList.remove('opened');
+    document.querySelector('.popup.opened, .video-popup.opened')?.classList.remove('opened');
     document.body.classList.remove('popup-opened');
+
+    document.querySelectorAll('iframe').forEach(el => el.src = el.src);
     // window.removeEventListener(wheelEvent, disableScroll, { passive: false });
 }
 
@@ -618,7 +664,7 @@ if (blinksElement) {
         setTimeout(() => {
             blinksElement.classList.remove('blinks__down');
             blinksElement.classList.remove('blinks__up');
-        }, 1000);
+        }, 1600);
     });
 }
 
@@ -631,20 +677,38 @@ if (clientsMapButtons.length) {
     clientMapItems[activePlace - 1].classList.add('active');
     document.querySelector('.clients-map').dataset.place = activePlace;
 
-    clientsMapButtons.forEach(button => button.addEventListener('click', (e) => {
-        activePlace = Number(e.target.dataset.place);
-
+    function changeMap(number) {
         clientsMapButtons.forEach(el => el.classList.remove('active'));
         clientMapItems.forEach(el => el.classList.remove('active'));
 
-        clientMapItems[activePlace - 1].classList.add('active');
-        clientMapItems[activePlace - 1].querySelector('.clients-map_item-button').classList.add('active');
+        activePlace = number < 1 ? clientMapItems.length : number;
+        if (number > clientMapItems.length) {
+            activePlace = 1;
+        }
 
         document.querySelector('.clients-map').dataset.place = activePlace;
+        clientMapItems[activePlace - 1].classList.add('active');
+        clientMapItems[activePlace - 1].querySelector('.clients-map_item-button').classList.add('active');
+    }
+
+    clientsMapButtons.forEach(button => button.addEventListener('click', (e) => {
+        changeMap(Number(e.target.dataset.place));
     }));
+
+    const clientMapPrevButton = document.querySelector('.clients-map_controls button:first-child');
+    const clientMapNextButton = document.querySelector('.clients-map_controls button:last-child');
+
+    clientMapPrevButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        changeMap(activePlace - 1);
+    });
+    clientMapNextButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        changeMap(activePlace + 1);
+    });
 }
 
-const mapMarkers = document.querySelectorAll('.map_place');
+const mapMarkers = document.querySelectorAll('.map_place, .map_pin');
 mapMarkers.forEach(el => el.addEventListener('click', function(e) {
     mapMarkers.forEach(el => el.classList.remove('active'));
     e.target.classList.add('active');
@@ -655,37 +719,55 @@ if (document.querySelector('.alphabet')) {
     const letters = document.querySelectorAll('.alphabet_letter');
     const cardsLetters = document.querySelectorAll('.alphabet_item-letter');
 
-    letters.forEach(letter => letter.addEventListener('click', (e) => {
+    function handleLetterClick(e) {
         e.preventDefault();
+        const className = e.type === 'click' ? 'active' : 'hovered';
 
         const content = e.target.innerText;
-        letters.forEach(el => el.classList.remove('active'));
+        letters.forEach(el => el.classList.remove(className));
         cardsLetters.forEach(el => {
             if (el.innerText === content) {
-                el.parentElement.classList.add('active');
+                el.parentElement.classList.add(className);
             } else {
-                el.parentElement.classList.remove('active');
+                el.parentElement.classList.remove(className);
             }
         });
 
-        e.target.classList.add('active');
-    }));
+        e.target.classList.add(className);
+    }
 
-    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('click', (e) => {
+    function handleCardClick(e) {
         e.preventDefault();
+        const className = e.type === 'click' ? 'active' : 'hovered';
 
         const content = e.target.querySelector('.alphabet_item-letter').innerText;
-        cardsLetters.forEach(el => el.parentElement.classList.remove('active'));
+        cardsLetters.forEach(el => el.parentElement.classList.remove(className));
         letters.forEach(el => {
             if (el.innerText === content) {
-                el.classList.add('active');
+                el.classList.add(className);
             } else {
-                el.classList.remove('active');
+                el.classList.remove(className);
             }
         });
 
-        e.target.classList.add('active');
-    }));
+        e.target.classList.add(className);
+    }
+
+    function handleMouseLeave(e) {
+        e.preventDefault();
+        const className = 'hovered';
+
+        cardsLetters.forEach(el => el.parentElement.classList.remove(className));
+        letters.forEach(el => el.classList.remove(className));  
+    }
+
+    // letters.forEach(letter => letter.addEventListener('click', handleLetterClick));
+    letters.forEach(letter => letter.addEventListener('mouseenter', handleLetterClick));
+    letters.forEach(letter => letter.addEventListener('mouseleave', handleMouseLeave));
+
+    // cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('click', handleCardClick));
+    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('mouseenter', handleCardClick));
+    cardsLetters.forEach(cardLetter => cardLetter.parentElement.addEventListener('mouseleave', handleMouseLeave));
 };
 
 const comparisonElement = document.querySelector('#image-compare');
@@ -719,8 +801,10 @@ if (comparisonElement) {
 
 
 /* custom select input */
-if ('NiceSelect' in window && document.querySelector('select')) {
-    NiceSelect.bind(document.querySelector('select'));
+const selectElements = document.querySelectorAll('select');
+if ('NiceSelect' in window && selectElements.length) {
+    console.log();
+    selectElements.forEach(el => NiceSelect.bind(el));
 }
 
 /* changable background */
@@ -768,4 +852,23 @@ if (reviewElements.length) {
         }
 
     }, 3000);
+}
+
+/* words change */
+const wordsElements = document.querySelectorAll('.words span');
+if (wordsElements.length) {
+    wordsElements[0].classList.add('active');
+    const wordsCount = wordsElements.length;
+    let activeIndex = 0;
+
+    setInterval(() => {
+        wordsElements.forEach(el => el.classList.remove('active'));
+        wordsElements[activeIndex].classList.add('active');
+
+        if (activeIndex < wordsCount - 1) {
+            activeIndex++;
+        } else {
+            activeIndex = 0;
+        }
+    }, 2000);
 }

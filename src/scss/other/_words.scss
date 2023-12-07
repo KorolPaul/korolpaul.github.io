@@ -1,0 +1,26 @@
+.words {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+    margin: 0 8px 0 0;
+
+    span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        transition: .7s linear 0s opacity;
+
+        &:first-child {
+            position: static;
+            transform: translate(0, 0);
+        }
+
+        &.active {
+            opacity: 1;
+            transition-delay: .4s;
+        }
+    }
+}

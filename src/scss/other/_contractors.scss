@@ -1,17 +1,37 @@
 .contractors {
-    padding: 32px $indent;
+    padding: 32px 0;
     border-radius: 30px;
     background: linear-gradient(0deg, rgba(31, 53, 240, 0.30) 0%, transparent 100%),
                 #F7F9FC;
+    position: relative;
     @include tablet {
         padding: 60px 0;
     }
 
+    &_bg-grid {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    &_map {
+        position: relative;
+        z-index: 2;
+        @include tablet {
+            @include layout;
+        }
+    }
+
     &_header {
+        padding: 0 $indent;
         @include desktop {
             display: flex;
             justify-content: space-between;
             gap: 50px;
+            padding: 0;
         }
     }
 
@@ -37,7 +57,7 @@
     &_office {
         position: relative;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
         gap: 10px;
@@ -49,16 +69,16 @@
         box-sizing: border-box;
         border-radius: 56px;
         font-size: 18px;
+        max-width: 588px;
         @include tablet {
             font-size: 22px;
             gap: 30px;
-            flex-direction: row;
             padding-left: 40px;
             padding-right: 20px;
         }
 
 
-        &:nth-child(even) {
+        &:nth-child(odd) {
             filter: drop-shadow(7px 7px 0px rgba(31, 53, 240, .7));
             padding-left: 20px;
             padding-right: 40px;
@@ -69,6 +89,12 @@
     &_footer {
         text-align: center;
         margin-top: $indent;
+        padding: 0 $indent;
+        position: relative;
+        z-index: 2;
+        @include tablet {
+            padding: 0;
+        }
     }
 
     &_footer-title {

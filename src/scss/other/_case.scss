@@ -17,6 +17,7 @@
 
     &_content {
         @include desktop {
+            min-height: 340px;
             width: calc(100% - 306px);
         }
     }
@@ -85,6 +86,14 @@
 
         img {
             height: 28px;
+        }
+
+        .page-orange & {
+            background-color: $cYellow;
+        }
+        
+        .page-blue & {
+            background-color: $cBlue;
         }
     }
 
