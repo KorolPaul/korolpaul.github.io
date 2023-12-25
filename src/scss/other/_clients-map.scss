@@ -16,7 +16,7 @@
             position: absolute;
             left: 0;
             right: 0;
-            bottom: 147px;
+            bottom: 180px;
             border-bottom: 2px solid $bg_color;
             z-index: 0;
         }
@@ -39,7 +39,7 @@
     &_slider {
         position: relative;
         @include desktop {
-            padding: 440px 150px 0 0;
+            padding: 440px 0 0 150px;
             display: flex;
             gap: 24px;
         }
@@ -49,6 +49,7 @@
         position: relative;
         @include desktop {
             position: static;
+            height: 122px;
         }
     }
 
@@ -61,14 +62,16 @@
         z-index: -1;
         pointer-events: none;
         @include desktop {
-            position: relative;
-            top: auto;
+            z-index: 2;
+            top: 440px;
+            left: 150px;
             right: auto;
-            left: auto;
             text-align: left;
-            padding-top: 30px;
+            padding-top: 50px;
             border-top: 2px solid rgba(#1F35F0, .3);
             pointer-events: all;
+            min-height: 122px;
+            box-sizing: border-box;
             cursor: pointer;
             z-index: 1;
             transition: .2s $easingSmooth border;
@@ -106,16 +109,6 @@
             transition: .3s $easingSmooth transform;
             transform: translate(50%, 6%);
         }
-
-        [data-place="2"] &,
-        [data-place="3"] & {
-            transform: translate(0%, 6%);
-        }
-
-        [data-place="4"] &,
-        [data-place="5"] & {
-            transform: translate(-3%, 6%);
-        }
     }
 
     &_image {
@@ -126,50 +119,6 @@
         position: absolute;
         opacity: 0;
         transition: .2s $easingSmooth opacity;
-        
-        &[data-place="1"] {
-            left: 330px;
-            top: 308px;
-
-            .clients-map[data-place="1"] & {
-                opacity: 1;
-            }
-        }
-
-        &[data-place="2"] {
-            left: 940px;
-            top: 185px;
-
-            .clients-map[data-place="2"] & {
-                opacity: 1;
-            }
-        }
-
-        &[data-place="3"] {
-            left: 953px;
-            top: 219px;
-
-            .clients-map[data-place="3"] & {
-                opacity: 1;
-            }
-        }
-
-        &[data-place="4"] {
-            left: 1004px;
-            top: 235px;
-
-            .clients-map[data-place="4"] & {
-                opacity: 1;
-            }
-        }
-        &[data-place="5"] {
-            left: 1052px;
-            top: 118px;
-
-            .clients-map[data-place="5"] & {
-                opacity: 1;
-            }
-        }
     }
 
     &_controls {
@@ -178,7 +127,7 @@
             display: flex;
             margin: 0;
             position: absolute;
-            right: 120px;
+            left: 120px;
             bottom: 40px;
             z-index: 2;
             width: 130px;
@@ -201,6 +150,9 @@
 
     .tns-item {
         @include desktop {
+            position: static !important;
+            top: 0;
+            left: 0;
             flex: 0 0 180px;
             transition: .2s $easingSmooth opacity;
         }
