@@ -1,0 +1,30 @@
+.net {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    filter: grayscale(50%);
+    opacity: .6;
+    width: 100vw;
+    overflow: hidden;
+    height: 200vw;
+
+    &::before {
+        content: '';
+        background: url(#{$img}/net-left-animated.svg) no-repeat right top / 100vw auto;
+        position: absolute;
+        left: -30%;
+        top: 0;
+        height: 200vh;
+        width: 70vw;
+    }
+    &::after {
+        content: '';
+        background: url(#{$img}/net-right-animated.svg) no-repeat left top / 100vw auto;
+        position: absolute;
+        right: -30%;
+        top: 0;
+        height: 200vh;
+        width: 70vw;
+    }
+}

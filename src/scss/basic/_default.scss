@@ -1,60 +1,39 @@
 html {
     scroll-behavior: smooth;
-    min-height: 100vh;
 }
 
 body {
     color: $color;
-    background: $bg_color url(#{$img}/pattern-big.png)  repeat-y top center;
-    font: 500 #{$font-size}/#{1.5} $font-family;
+    font: #{$font-size__small}/#{1.4} $font-family;
+    background-color: $bg_color;
     padding: 0;
     scroll-behavior: smooth;
-    min-height: 100vh;
     @include tablet {
         font-size: $font-size;
     }
-    @include desktop-large {
-        background-size: 100% auto;
-    }
-}
-
-.page-green {
-    --cBright: #{$cPageGreen};
-}
-
-.page-blue {
-    --cBright: #{$cPageBlue};
-}
-
-.page-orange {
-    --cBright: #{$cPageOrange};
 }
 
 a {
-    color: $cBright;
-    text-decoration: none;
+    color: $cRed;
     transition: .2s $easing color;
 
-    &:hover,
-    &.hover {
-        color: #192AC2;
+    &:hover {
         outline: none;
     }
-    &:active,
-    &.active {
+    &:active {
         outline: none;
-    }
-
-    &[href^='tel'] {
-        white-space: nowrap;
     }
 }
 
 p {
-    margin: 0 0 18px;
+    margin: 0 0 10px;
+    @include tablet {
+        margin-bottom: 18px;
+    }
 }
 
-img {
+img,
+video {
     max-width: 100%;
 }
 
@@ -67,103 +46,19 @@ textarea {
 }
 
 table {
-    border-collapse: collapse;
     min-width: 100%;
 }
 
-ol,
 ul {
-    padding: 0 0 0 26px;
-    margin: 0 0 18px;
-    @include desktop {
-        padding-left: 30px;
-    }
+    padding: 0;
 }
 
 a[name] {
     position: relative;
-    top: 50px;
+    top: -50px;
 }
 
-a[href^='mailto:'] {
-    background: url(#{$img}/email.svg) no-repeat left center;
-    font-weight: 600;
-    padding: 0 0 0 34px;
-
-    .page-green & {
-        background-image: url(#{$img}/email-green.svg);
-    }
-
-    .page-blue & {
-        background-image: url(#{$img}/email-blue.svg);
-    }
-
-    .page-orange & {
-        background-image: url(#{$img}/email-orange.svg);
-    }
-}
-
-
-.bright {
-    color: $cBright;
-}
-
-.bright-orange {
-    color: #EB583C;
-}
-
-.gradiented-text {
-    @include gradiented-text($cBright, $cPurple);
-    font-weight: 600;
-}
-
-main {
-    padding-top: 82px;
-    @include tablet {
-        padding-top: 146px;
-    }
-}
-
-blockquote {
-    padding: $indent;
-    font-size: 18px;
-    font-weight: 600;
-    background: url(#{$img}/quotes.svg) no-repeat right top -5px;
-    border-radius: 15px;
-    box-shadow: 0 0 1px 1px #E4E8F0 inset;
-    background-color: $bg_color;
-    margin: 0 0 $indent;
-    @include tablet {
-        padding: 30px;
-        margin: 0 0 30px;
-    }
-}
-
-picture {
-    source,
-    img {
-        width: 100%;
-    }
-}
-
-mark {
-    background-color: #0E0B3A;
-    color: $bg_color;
-}
-
-.popup-opened {
-    overflow: hidden;
-}
-
-form {
-    margin: 0;
-}
-
-picture {
+code {
     display: block;
-}
-
-.stop-scrolling {
-    height: 100%;
-    overflow: hidden;
+    background-color: $cGrey;
 }

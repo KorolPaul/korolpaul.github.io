@@ -1,65 +1,50 @@
 .about {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    @include tablet {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &_title {
-        display: block;
-        font-size: 32px;
-        font-weight: 600;
-        line-height: 130%;
-        margin: 0 0 $indent;
-        text-align: center;
-        @include tablet {
-            font-size: 48px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .about__wideImage & {
-            text-align: left;
+    
+    &_content {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        @include desktop {
+            flex-direction: row;
+            align-items: flex-start;
         }
     }
-
     &_text {
-        font-size: 18px;
-        min-width: 40%;
-        text-align: center;
-        @include tablet {
-            font-size: 22px;
-            max-width: 690px;
-            text-align: left;
+        order: 2;
+        @include desktop {
+            order: initial;
+        }
+    }
+    &_image {
+        order: 1;
+        width: 100%;
+        margin: 0 0 30px;
+        box-shadow: 0 0 20px 2px #13151b;
+        mix-blend-mode: luminosity;
+        filter: grayscale(100%);
+        transition: .2s $easing filter;
+        @include desktop {
+            order: initial;
+            max-width: 40%;
+            margin: 0 0 0 50px;
         }
 
-        .about__wideImage & {
-            min-width: 30%;
-            text-align: left;
-        }
-
-        p {
-            margin: 0 0 $indent;
-            @include tablet {
-                margin-bottom: 30px;
-            }
+        &:hover {
+            filter: grayscale(0%);
+            mix-blend-mode: normal;
         }
     }
 
-    &_image {
-        @include tablet {
-            min-width: 40%;
-        }
+    dt {
+        color: $cRed;
+        font-size: 16px;
+    }
 
-        img.about__wideImage & {
-            width: 608px;
-            flex-shrink: 0;
-        }
-        .about__wideImage & {
-            flex-shrink: 0;
-        }
+    dd {
+        margin: 0 0 20px;
+    }
+
+    strong {
+        color: $cGreen;
     }
 }

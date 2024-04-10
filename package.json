@@ -1,14 +1,16 @@
 {
-  "name": "AV-parts",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "eleventy --serve",
+    "build": "eleventy"
   },
   "author": "Pavel Korol",
   "license": "ISC",
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",

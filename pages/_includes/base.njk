@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ '/style.css' | url }}">
+    <link rel="shortcut icon" href="48x48px.ico">
+    <link rel="icon" type="image/x-icon" href="48x48px.ico">
+    <link rel="icon" type="image/png" href="16x16px.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="32x32px.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="48x48px.png" sizes="48x48">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="HandheldFriendly" content="true">
+</head>
+<body>
+    <header class="header">
+        <div class="header_holder">
+            <nav class="menu">
+                <a href="#about" class="menu_link">
+                    Обо мне
+                </a>
+                <a href="#resume" class="menu_link">
+                    Опыт работы
+                </a>
+                <a href="#projects" class="menu_link">
+                    Проекты
+                </a>
+                <a href="#articles" class="menu_link">
+                    Публикации
+                </a>
+            </nav>
+            <a class="header_button" download href="/pavel_korol_cv.docx">
+                Резюме
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <h1>ПАВЕЛ КОРОЛЬ</h1>
+            <h4>FRONTEND DEVELOPER</h4>
+
+            <div class="about">
+                <a name="about"></a>
+                <h3>Обо мне</h3>
+                <div class="about_content">
+                    <div class="about_text">
+                        {{ content | safe }}
+                    </div>
+                    <img class="about_image" src="src/img/avatar.jpg" alt="pavel korol" />
+                </div>
+            </div>
+
+            <a name="resume"></a>
+            <h3>Резюме</h3>
+            <div class="works">
+                {% for work in collections.works|sort(false, true, 'title') %}
+                    <div class="work">
+                        <a href="{{ work.data.url }}" class="work_title" target="__blank">{{ work.data.title }}</a>
+                        <span class="work_date">{{ work.data.from }} - {{ work.data.to }}</span>
+                        {{ work.data.content | safe }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <a name="projects"></a>
+            <h3>Проекты</h3>
+            <div class="projects">
+            {% for project in collections.projects %}
+                <div class="project">
+                    <a href="{{ project.url }}" class="project_image-wrapper">
+                        <img class="project_image" src="src/img/projects/{{ project.data.thumb }}" alt="{{ project.data.title }}" />
+                    </a>
+                    <div class="project_content">
+                        {% if project.data.type %}
+                            <span class="project_type">{{ project.data.type }}</span>
+                        {% endif %}
+                        <a href="{{ project.url }}" class="project_title">{{ project.data.title }}</a>
+                        <p class="project_description">
+                            {{ project.data.description }}
+                        </p>
+                        <span class="project_tags">{{ project.data.features }}</span>
+                        <div class="project_bottom">
+                            {% if project.data.url %}
+                                <a href="{{ project.data.url }}" class="project_link" target="__blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title>External Link</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                            {% endif %}
+                            {% if project.data.repo %}
+                                <a href="{{ project.data.repo }}" class="project_link" target="__blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+
+            <a name="articles"></a>
+            <h3>Публикации</h3>
+
+            <p>Периодически пишу статьи на Хабр. Вхожу в топ-10 авторов по темам <a href="https://habr.com/ru/hub/html5/">HTML</a> и <a href="https://habr.com/ru/hub/css/">CSS</a></p>
+            <img src="src/img/habr.jpg" alt="">
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer_holder">
+            <div class="footer_left">
+                <p class="footer_copyrights">
+                    © 2022 Pavel Korol
+                </p>
+                <a href="mailto:korol.paul@gmail.com">korol.paul@gmail.com</a>
+            </div>
+            <div class="footer_right">
+                <div class="social">
+                    <a target="__blank" href="https://www.linkedin.com/in/%D0%BF%D0%B0%D0%B2%D0%B5%D0%BB-%D0%BA%D0%BE%D1%80%D0%BE%D0%BB%D1%8C-352b466a/" class="social_link">
+                        <img class="social_icon" src="src/img/social/ln.svg" alt="">
+                    </a>
+                    <a href="https://t.me/korolpaul" class="social_link">
+                        <img class="social_icon" src="src/img/social/tg.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/js/main.js"></script>
+</body>
+</html>

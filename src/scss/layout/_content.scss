@@ -1,3 +1,19 @@
 .content {
     @include layout;
+    padding-top: 100px;
+    padding-bottom: 80px;
+    text-align: center;
+    position: relative;
+    @include tablet {
+        max-width: 1000px;
+    }
+
+    &_back {
+        position: absolute;
+        left: 64px;
+        top: 124px;
+    }
+    &_more {
+        margin: 30px 0;
+    }
 }
