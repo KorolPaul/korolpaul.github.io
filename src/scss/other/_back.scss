@@ -1,0 +1,21 @@
+.back {
+    color: $color;
+    position: relative;
+    margin-left: 3px;
+    margin-top: 10px;
+    width: 26px;
+    height: 1px;
+    background-color: currentColor;
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 1px;
+        top: -5px;
+        width: 20px;
+        height: 20px;
+        border-top: solid 1px currentColor;
+        border-right: solid 1px currentColor;
+        transform: rotate(-135deg);
+    }
+}

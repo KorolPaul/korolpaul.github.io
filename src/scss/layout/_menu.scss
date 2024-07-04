@@ -1,0 +1,45 @@
+.menu {
+    box-sizing: border-box;
+    padding: 0 $side-indent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    &_link {
+        white-space: nowrap;
+        font-size: 16px;
+        color: $color;
+        padding: 0 16px;
+        position: relative;
+        height: 48px;
+        line-height: 48px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: .2s $easing opacity,
+                    .2s $easing color;
+
+        &:hover {
+            color: $cGreen;
+        }
+        &:active {
+            opacity: .8;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background: transparent;
+            transition: .2s $easing background-color;
+        }
+        &:hover::after,
+        &.active::after,
+        &:active::after {
+            background-color: $cGreen;
+        }
+    }
+ }
